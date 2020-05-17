@@ -1,0 +1,4 @@
+.payForm > label,
+.payForm > input {
+  display: block;
+}

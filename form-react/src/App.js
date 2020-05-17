@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Heroku } from "./modules/heroku";
-// import logo from "./logo.svg";
-// import "./App.css";
+import { Heroku } from "./modules/Heroku";
+import Main from "./components/Main";
 
 export default function App() {
   const [info, setData] = useState([]);
   useEffect(() => {
-    Heroku.getData();
+    Heroku.getData(setData);
   }, []);
 
-  function onSubmitOrder(data) {
-    Heroku.postOrder(data);
+  function onSubmitOrder(info) {
+    Heroku.postOrder(info);
   }
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Main onSubmitOrder={onSubmitOrder} info={info}></Main>
+    </div>
+  );
 }
