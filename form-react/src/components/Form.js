@@ -10,6 +10,7 @@ export default function Form(props) {
   }
   return (
     <form className={styles.payForm} onSubmit={submit}>
+      <label>Testing Font</label>
       <Input
         label="Title"
         floatingLabel={true}

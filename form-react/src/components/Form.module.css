@@ -1,4 +1,6 @@
 .payForm > label,
 .payForm > input {
   display: block;
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
 }
