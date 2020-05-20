@@ -1,10 +1,4 @@
-main {
-  background-color: darkblue;
-  height: 100vh;
-  position: relative;
-}
-
-h1 {
+#landingpage-h1 {
   text-align: center;
   margin-top: 20vh;
   color: white;
@@ -41,7 +35,7 @@ h1 {
   position: relative;
 }
 
-main {
+.landingpage-main {
   align-self: center;
   margin: 0 auto;
   height: 100vh;
@@ -49,5 +43,8 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(svg/landingpage.svg);
+  background-color: darkblue;
+  height: 100vh;
+  position: relative;
   /* border-radius: 50%; */
 }

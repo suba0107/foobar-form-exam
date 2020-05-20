@@ -18,9 +18,9 @@ export default function Landing_page() {
   //   }
 
   return (
-    <main>
+    <main className="landingpage-main">
       <article className="wrapper-vertical">
-        <h1>Welcome to Foobar!</h1>
+        <h1 id="landingpage-h1">Welcome to Foobar!</h1>
 
         <button
           className="orderButton"
