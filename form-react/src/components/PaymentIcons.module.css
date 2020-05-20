@@ -1,0 +1,11 @@
+.iconsContainer {
+  display: flex;
+  flex-flow: column wrap;
+}
+.iconsContainer img {
+  flex-basis: 100px;
+  flex-grow: 1;
+  height: 50vh;
+  margin-bottom: 1vw;
+  padding: 2vw;
+}

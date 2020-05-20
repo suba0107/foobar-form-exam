@@ -1,0 +1,12 @@
+.paymentIntro {
+  display: flex;
+  flex-flow: column wrap;
+  background-color: #ffffff;
+  border-radius: 10vw;
+  padding: 9vw;
+}
+.paymentIntro h2 {
+  font-family: lato, sans-serif;
+  font-weight: 800;
+  color: #4054ad;
+}

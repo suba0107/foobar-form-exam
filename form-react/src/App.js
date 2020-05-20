@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Moment from "react-moment";
 import { Heroku } from "./modules/Heroku";
 import Main from "./components/Main";
+import PaymentScreen from "./components/PaymentScreen";
 
 export default function App() {
   const [info, setData] = useState([]);
@@ -14,7 +15,7 @@ export default function App() {
   }
   return (
     <div className="App">
-      <Main onSubmitOrder={onSubmitOrder} info={info}></Main>
+      <PaymentScreen />
     </div>
   );
 }
