@@ -1,11 +1,19 @@
 .iconsContainer {
   display: flex;
   flex-flow: column wrap;
+  justify-content: space-between;
+  margin: 10vw 0;
 }
-.iconsContainer img {
-  flex-basis: 100px;
-  flex-grow: 1;
-  height: 50vh;
-  margin-bottom: 1vw;
-  padding: 2vw;
+.iconsContainer a {
+  align-self: center;
+}
+.iconsContainer a > img {
+  height: 10vh;
+}
+.iconsContainer > a:nth-child(1) > img:nth-child(1) {
+  height: 17vh;
+}
+
+.iconsContainer > a:nth-child(3) > img:nth-child(1) {
+  margin: 12vw 0;
 }
