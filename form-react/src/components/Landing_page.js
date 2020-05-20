@@ -1,26 +1,38 @@
 import React from "react";
 import { Button } from "muicss/react";
 import styles from "./Landingpage.modules.css";
+import { useHistory } from "react-router-dom";
 
 export default function Landing_page() {
-  window.addEventListener("DOMContentLoaded", start);
+  let history = useHistory();
 
-  function start() {
-    loadSvg();
-  }
-  async function loadSvg() {
-    const response = await fetch("./svg/landingpage.svg");
-    const mySVG = await response.text();
-    document.querySelector(".svg").innerHTML = mySVG;
-  }
+  //   window.addEventListener("DOMContentLoaded", start);
+
+  //   function start() {
+  //     loadSvg();
+  //   }
+  //   async function loadSvg() {
+  //     const response = await fetch("./svg/landingpage.svg");
+  //     const mySVG = await response.text();
+  //     document.querySelector(".svg").innerHTML = mySVG;
+  //   }
 
   return (
     <main>
-      <svg viewBox="0 0 2800 2100" className="svg"></svg>
-      <div className="wrapper-vertical">
+      <article className="wrapper-vertical">
         <h1>Welcome to Foobar!</h1>
-        <Button className="button">Order now</Button>
-      </div>
+
+        <button
+          className="orderButton"
+          onClick={() => {
+            history.push("/select");
+          }}
+          variant="contained"
+          color="primary"
+        >
+          Order now
+        </button>
+      </article>
     </main>
   );
 }

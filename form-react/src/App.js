@@ -4,6 +4,7 @@ import { Heroku } from "./modules/Heroku";
 import Main from "./components/Main";
 import { MemoryRouter, Router, Switch, Route, Link } from "react-router-dom";
 import Landing_page from "./components/Landing_page";
+
 export default function App() {
   // const [info, setData] = useState([]);
   // useEffect(() => {
@@ -45,7 +46,7 @@ export default function App() {
             <Route path="/end">
               <End_page />
             </Route>
-            <Route path="/select">
+            <Route exact path="/select">
               <Select_beers />
             </Route>
             <Route path="/">

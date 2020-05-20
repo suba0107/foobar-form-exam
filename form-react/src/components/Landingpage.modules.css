@@ -10,13 +10,20 @@ h1 {
   color: white;
 }
 
-.button {
+.orderButton {
   /* position: absolute;
   bottom: 10vh;
   margin: auto;
   left: 0;
   right: 0; */
   margin-bottom: 20vh;
+  border-radius: 25px;
+  border-style: none;
+  padding: 1%;
+  width: 25%;
+  background-color: yellow;
+  color: blue;
+  font-weight: 700;
 }
 
 .wrapper-vertical {
@@ -30,9 +37,17 @@ h1 {
   align-items: center;
 }
 
-.svg {
+.landing-page-svg {
+  position: relative;
+}
+
+main {
   align-self: center;
-  /* width: 100vw; */
+  margin: 0 auto;
   height: 100vh;
-  border-radius: 50%;
+  background-position: 0% 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(svg/landingpage.svg);
+  /* border-radius: 50%; */
 }
