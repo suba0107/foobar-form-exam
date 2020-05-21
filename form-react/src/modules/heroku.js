@@ -1,13 +1,15 @@
 import { foobarUrl, beertypesUrl, orderUrl } from "./Vars";
-function getData(callback) {
+function getData(callback, name) {
   fetch(foobarUrl, {
     method: "get",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
     },
   })
-    .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((e) => e.json())
+    .then((data) => {
+      callback(data[name]);
+    });
 }
 function postOrder(callback, data) {
   const postData = JSON.stringify(data);

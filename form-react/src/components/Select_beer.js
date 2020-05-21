@@ -1,26 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Select_beer.modules.css";
 import { useHistory } from "react-router-dom";
+import { Heroku } from "../modules/Heroku";
+
+import { Keg } from "./svg//keg.svg";
 import EachBeer from "./EachBeer.js";
 
 export default function Select_beer() {
   let history = useHistory();
 
-  //   window.addEventListener("DOMContentLoaded", start);
+  const [info, setData] = useState([]);
 
-  //   function start() {
-  //     loadSvg();
-  //   }
-  //   async function loadSvg() {
-  //     const response = await fetch("./svg/landingpage.svg");
-  //     const mySVG = await response.text();
-  //     document.querySelector(".svg").innerHTML = mySVG;
-  //   }
+  console.log(info);
+  useEffect(() => {
+    Heroku.getData(setData, "taps");
+  }, []);
+
+  const beers = info.map(function (item) {
+    return item.beer;
+  });
+
+  const oneOfEachBeer = beers.filter(function (item, index) {
+    return beers.indexOf(item) >= index;
+  });
 
   return (
-    <main>
-      <h1>Does it work?</h1>
-      <EachBeer />
+    <main id="select_beer_main">
+      {info.length === 0 && <h2>Loading</h2>}
+
+      <h1>Choose beers</h1>
+      <article id="selection-of-beers">
+        {oneOfEachBeer.map((data) => (
+          <EachBeer key={oneOfEachBeer.indexOf(data)} name={data} />
+        ))}
+      </article>
     </main>
   );
 }

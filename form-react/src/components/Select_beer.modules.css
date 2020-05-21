@@ -1,0 +1,13 @@
+#select_beer_main {
+}
+
+#selection-of-beers {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.keg {
+  width: 60%;
+}

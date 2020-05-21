@@ -11,7 +11,8 @@
     "react-dom": "^16.13.1",
     "react-moment": "^0.9.7",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-svg": "^11.0.22"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "file-loader": "^6.0.0",
     "muicss": "^0.10.2"
   }
 }
