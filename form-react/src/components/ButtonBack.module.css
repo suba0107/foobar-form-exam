@@ -1,0 +1,8 @@
+.roundBackBtn {
+  background-color: var(--bright-purple-bg);
+  align-self: flex-end;
+}
+.backIcon {
+  left: -2vw;
+  position: relative;
+}

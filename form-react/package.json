@@ -34,6 +34,7 @@
     ]
   },
   "devDependencies": {
-    "muicss": "^0.10.2"
+    "muicss": "^0.10.2",
+    "react-svg": "^11.0.22"
   }
 }
