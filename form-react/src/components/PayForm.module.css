@@ -1,0 +1,37 @@
+.payForm > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 7vw auto;
+}
+.payForm > div > img:nth-child(2) {
+  width: 50%;
+}
+.payForm > div > img:nth-child(1) {
+  width: 23%;
+}
+.payForm label,
+.payForm input {
+  display: block;
+  font-family: var(--text-font);
+  font-weight: 400;
+  color: var(--bright-purple-bg);
+}
+.payForm label {
+  margin: 2vw 0;
+}
+.payForm input {
+  margin: 1.5vw 0 0 0;
+  border: 0.5vw solid var(--bright-purple-bg);
+  border-radius: 10vw;
+  height: 5vh;
+  width: fit-content;
+  padding: 5vw;
+}
+.payForm fieldset {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}

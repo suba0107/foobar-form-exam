@@ -1,0 +1,13 @@
+.payButton {
+  all: initial;
+  cursor: pointer;
+  border-radius: 5vw;
+  background-color: var(--bright-purple-bg);
+  color: var(--white-sec-bg);
+  font-family: var(--text-font);
+  width: 70vw;
+  margin-top: 2.5vw;
+  padding: 2vw;
+  text-align: center;
+  align-self: center;
+}

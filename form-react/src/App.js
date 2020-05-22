@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Moment from "react-moment";
 import { Heroku } from "./modules/Heroku";
-import Main from "./components/Main";
 import PaymentScreen from "./components/PaymentScreen";
 
 export default function App() {
@@ -10,9 +9,6 @@ export default function App() {
     Heroku.getData(setData);
   }, []);
 
-  function onSubmitOrder(info) {
-    Heroku.postOrder(info);
-  }
   return (
     <div className="App">
       <PaymentScreen />
