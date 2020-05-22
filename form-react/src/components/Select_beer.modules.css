@@ -1,4 +1,8 @@
 #select_beer_main {
+  background-color: white;
+  border-radius: 25px;
+  padding: 1rem;
+  margin: 2rem;
 }
 
 #selection-of-beers {
