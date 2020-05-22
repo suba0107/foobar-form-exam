@@ -8,17 +8,6 @@ import Keg from "./Keg.js";
 
 export default function EachBeer(props) {
   console.log(props);
-  // start();
-  // function start() {
-  //   loadSvg();
-  // }
-  // async function loadSvg() {
-  //   console.log("load");
-  //   const response = await fetch("./svg/keg.svg");
-  //   const mySVG = await response.text();
-
-  //   document.querySelector(".kegs").innerHTML = mySVG;
-  // }
 
   return (
     <article
@@ -27,16 +16,17 @@ export default function EachBeer(props) {
         flexDirection: "column",
         maxWidth: "300px",
         alignItems: "center",
+        marginBottom: "1rem",
       }}
     >
       <div className="keg">
         <Keg {...props} />
       </div>
       {/* <ReactKeg image="./images/fairytaleale.png" /> */}
-      <h2>{props.beer}</h2>
-      <p>25 kr</p>
+      <h2>{props.name}</h2>
+      <p className="price">25 kr</p>
       <Amount />
-      <button>Add</button>
+      <button className="add">Add</button>
     </article>
   );
 }

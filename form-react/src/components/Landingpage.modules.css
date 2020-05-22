@@ -1,7 +1,14 @@
 #landingpage-h1 {
   text-align: center;
-  margin-top: 20vh;
+  margin-top: 15vh;
   color: white;
+  font-family: var(--headings-font);
+  line-height: 5rem;
+  font-size: clamp(40px, 7vw, 150px);
+  border-color: blue;
+  text-shadow: 5px 0 0 var(--dark-boxes-shadow);
+
+  text-transform: uppercase;
 }
 
 .orderButton {
@@ -13,12 +20,31 @@
   margin-bottom: 20vh;
   border-radius: 25px;
   border-style: none;
-  padding: 1%;
-  width: 25%;
-  background-color: yellow;
-  color: blue;
-  font-weight: 700;
+  padding: 10px 80px;
+  background-color: var(--big-button-colors);
+  font-family: var(--headings-font);
+  color: var(--bright-purple-bg);
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* box-shadow: 4px 4px 4px 4px var(--bright-purple-bg); */
+  /* border-color: var(--bright-purple-bg); */
+  /* box-shadow: 0 5px 25px #4054ad; */
+  border-width: 4px;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
+
+@keyframes pulse {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* The element to apply the animation to */
 
 .wrapper-vertical {
   top: 0;
@@ -39,7 +65,7 @@
   align-self: center;
   margin: 0 auto;
   height: 100vh;
-  background-position: 0% 20%;
+  background-position: 50% 20%;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(svg/landingpage.svg);

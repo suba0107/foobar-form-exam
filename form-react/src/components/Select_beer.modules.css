@@ -11,3 +11,66 @@
 .keg {
   width: 60%;
 }
+
+h1 {
+  color: var(--bright-purple-bg);
+  font-family: var(--headings-font);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.plusMinus {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bright-purple-bg);
+  color: white;
+  font-weight: bold;
+  font-family: var(--headings-font);
+}
+
+.plusMinus:disabled {
+  opacity: 0.5;
+}
+
+.add {
+  border-radius: 25px;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  min-width: 25%;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bright-purple-bg);
+  color: white;
+  font-weight: bold;
+  font-family: var(--headings-font);
+}
+
+.price {
+  font-family: var(--headings-font);
+  color: var(--bright-purple-bg);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: var(--headings-font);
+  color: var(--bright-purple-bg);
+  font-weight: bold;
+}
+
+.amount {
+  text-align: center;
+  font-family: var(--headings-font);
+  color: var(--bright-purple-bg);
+  font-weight: bold;
+  align-self: center;
+  font-size: 1.3rem;
+}

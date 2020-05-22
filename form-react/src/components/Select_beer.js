@@ -26,9 +26,20 @@ export default function Select_beer() {
 
   return (
     <main id="select_beer_main">
-      {info.length === 0 && <h2>Loading</h2>}
+      {info.length === 0 && (
+        <h2
+          style={{
+            margin: "45vh auto",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          Loading ...
+        </h2>
+      )}
+      {info.length !== 0 && <h1 id="chooseBeer">Choose your favorite beer!</h1>}
 
-      <h1>Choose beers</h1>
       <article id="selection-of-beers">
         {oneOfEachBeer.map((data) => (
           <EachBeer key={oneOfEachBeer.indexOf(data)} name={data} />

@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useState } from "react";
+import styles from "./Select_beer.modules.css";
 export default function Amount() {
   //   window.addEventListener("DOMContentLoaded", start);
 
@@ -12,6 +12,14 @@ export default function Amount() {
   //     document.querySelector(".svg").innerHTML = mySVG;
   //   }
 
+  const [count, setCount] = useState(0);
+  function plus(e) {
+    setCount(count + 1);
+  }
+
+  function minus(e) {
+    setCount(count - 1);
+  }
   return (
     <div
       style={{
@@ -20,9 +28,17 @@ export default function Amount() {
         width: "50%",
       }}
     >
-      <button>-</button>
-      <p></p>
-      <button>+</button>
+      <button onClick={minus} className="plusMinus" disabled={count === 0}>
+        -
+      </button>
+
+      {/* <button onClick={minus} className="plusMinus">
+        -
+      </button> */}
+      <p className="amount">{count}</p>
+      <button onClick={plus} className="plusMinus">
+        +
+      </button>
     </div>
   );
 }
