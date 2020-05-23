@@ -2,4 +2,18 @@
   background-color: var(--white-sec-bg);
   border-radius: 10vw;
   padding: 9vw;
+  z-index: 99;
+  position: absolute;
+  margin: 0 auto;
+  top: 15px;
+  left: 15px;
+  width: 90vw;
+  height: 170vw;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: space-between;
+}
+.methodsContainer img {
+  margin-top: 30vw;
 }

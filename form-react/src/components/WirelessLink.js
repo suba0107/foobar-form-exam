@@ -9,8 +9,9 @@ export default function WirelessLink(props) {
     alignSelf: "center",
   };
   return (
-    <a href="#" style={placeCenter}>
+    <a href="#" style={placeCenter} onClick={props.onClick}>
       <img src={WirelessIcon} style={imgSize} />
+      {props.children}
     </a>
   );
 }

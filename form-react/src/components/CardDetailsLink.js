@@ -10,8 +10,9 @@ export default function CardDetailsLink(props) {
     margin: "8vw 0 2vw 0",
   };
   return (
-    <a href="#" style={placeCenter}>
+    <a href="#" style={placeCenter} onClick={props.onClick}>
       <img src={CardDetailsIcon} style={imgSize} />
+      {props.children}
     </a>
   );
 }

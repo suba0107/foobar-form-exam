@@ -4,6 +4,7 @@
   background-color: var(--white-sec-bg);
   border-radius: 10vw;
   padding: 9vw;
+  height: 100vh;
 }
 .paymentIntro h2 {
   font-family: lato, sans-serif;
