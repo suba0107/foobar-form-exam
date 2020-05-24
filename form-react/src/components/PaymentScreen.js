@@ -9,24 +9,25 @@ import modalStyle from "./OnePayment.module.css";
 import PayForm from "./PayForm";
 
 export default function PaymentScreen(props) {
-  const [payment, setPayment] = useState("mobilepay");
+  let [payment, setPayment] = useState(undefined);
   const [show, setState] = useState(false);
   const toggle = () => setState(!show);
+  const reset = () => setPayment();
 
   const Modal = ({ children, show, setState, setPayment }) => {
     const content = show && (
       <article
         className={modalStyle.methodsContainer}
         onClick={() => {
-          setPayment("mobilepay");
-          setState(false);
+          setPayment();
+          toggle();
         }}
       >
         {children}
         <ButtonBack
           onClick={() => {
             setState(false);
-            setPayment("mobilepay");
+            setPayment(undefined);
           }}
         >
           X
@@ -37,13 +38,13 @@ export default function PaymentScreen(props) {
   };
 
   return (
-    <section
-      className={styles.paymentScreen}
-      onClick={() => {
-        toggle();
-      }}
-    >
-      <PaymentIntro>
+    <section className={styles.paymentScreen}>
+      <PaymentIntro
+        onClick={() => {
+          setPayment("mobilepay");
+          toggle();
+        }}
+      >
         <MobilepayLink
           onClick={() => {
             toggle();

@@ -1,9 +1,5 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import styles from "./PaymentIntro.module.css";
-import MobilepayLink from "./MobilepayLink";
-import WirelessLink from "./WirelessLink";
-import CardDetailsLink from "./CardDetailsLink";
-import ButtonBack from "./ButtonBack";
 
 export default function PaymentIntro(props) {
   return (
