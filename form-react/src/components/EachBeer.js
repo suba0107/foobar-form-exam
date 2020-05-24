@@ -6,7 +6,7 @@ import { ReactSVG } from "react-svg";
 import { ReactKeg } from "./svg/keg.svg";
 import Keg from "./Keg.js";
 
-export default function EachBeer(props) {
+export default function EachBeer(props, onInfoClick) {
   const [count, setCounting] = useState(0);
 
   function counter(count) {
@@ -19,6 +19,29 @@ export default function EachBeer(props) {
     // setCount(count - amount);
   }, [count, props, props.name]);
 
+  // function onInfo(name, toggle) {
+  //   props.onInfoClick(name, toggle);
+  // }
+
+  // useEffect(() => {
+  //   onInfo(props.name, toggleInfo);
+  // }, [props.name, toggleInfo]);
+
+  // function toggleMenu() {
+  //   console.log("Toggle");
+  //   document.querySelector("#menu").classList.toggle("hidden");
+  //   let menuHidden = document.querySelector("#menu").classList.contains("hidden");
+  //   if (menuHidden === true) {
+  //     hideOverlay();
+  //     menuicon.classList.remove("change");
+  //     document.querySelector(".menu").textContent = "MENU";
+  //   } else {
+  //     addOverlay();
+  //     menuicon.classList.add("change");
+  //     document.querySelector(".menu").textContent = "CLOSE";
+  //   }
+  // }
+
   return (
     <article
       style={{
@@ -30,6 +53,15 @@ export default function EachBeer(props) {
       }}
     >
       <div className="keg">
+        <button
+          onClick={(e) => {
+            props.onInfoClick(props.name);
+          }}
+          className={`information`}
+          name={props.name}
+        >
+          i
+        </button>
         <Keg {...props} />
       </div>
       {/* <ReactKeg image="./images/fairytaleale.png" /> */}

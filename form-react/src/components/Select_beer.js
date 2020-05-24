@@ -6,6 +6,7 @@ import { Heroku } from "../modules/Heroku";
 import { Keg } from "./svg//keg.svg";
 import EachBeer from "./EachBeer.js";
 import ShoppingCart from "./ShoppingCart.js";
+import Popup from "./Popup.js";
 
 export default function Select_beer(props) {
   let history = useHistory();
@@ -18,9 +19,32 @@ export default function Select_beer(props) {
   // let selectedBeer;
   // const [amountEachBeer, setAmountEachBeer] = useState(0);
 
+  const [desc, setDesc] = useState([]);
+  const [toggleInfoBox, setToggleInfoBox] = useState(false);
+
   useEffect(() => {
     Heroku.getData(setData, "taps");
   }, []);
+  useEffect(() => {
+    getDesc(setDesc);
+  }, []);
+
+  function getDesc(callback) {
+    fetch("https://new-foo-diverse.herokuapp.com/beertypes", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+    })
+      .then((e) => e.json())
+      .then((data) => {
+        callback(data);
+      });
+  }
+
+  console.log(name);
+
+  console.log(desc);
 
   useEffect(() => {
     // console.log(selected);
@@ -59,6 +83,22 @@ export default function Select_beer(props) {
     return beers.indexOf(item) >= index;
   });
 
+  function onInfoClick(n) {
+    console.log(n);
+    if (name === n) {
+      setName(undefined);
+      setToggleInfoBox(false);
+    } else {
+      setName(n);
+      setToggleInfoBox(true);
+      console.log(toggleInfoBox);
+    }
+  }
+
+  function onClose() {
+    setName(undefined);
+    setToggleInfoBox(false);
+  }
   return (
     <>
       <header>{<ShoppingCart beer={beer} />}</header>
@@ -78,6 +118,7 @@ export default function Select_beer(props) {
         {info.length !== 0 && <h1 id="chooseBeer">Choose your favorite beer!</h1>}
 
         <article id="selection-of-beers">
+          <Popup desc={desc} beer={name} popUp={toggleInfoBox} onClose={onClose} />
           {oneOfEachBeer.map((data) => (
             <EachBeer key={oneOfEachBeer.indexOf(data)} name={data} amount={selectingBeer} />
           ))}
