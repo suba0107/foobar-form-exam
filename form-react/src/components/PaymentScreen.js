@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { ReactSVG } from "react-svg";
+import Logo from "../images/final_logo.png";
+import LanguageLink from "./LanguageLink";
 import PaymentIntro from "./PaymentIntro";
 import MobilepayLink from "./MobilepayLink";
 import WirelessLink from "./WirelessLink";
@@ -12,7 +15,6 @@ export default function PaymentScreen(props) {
   let [payment, setPayment] = useState(undefined);
   const [show, setState] = useState(false);
   const toggle = () => setState(!show);
-  const reset = () => setPayment();
 
   const Modal = ({ children, show, setState, setPayment }) => {
     const content = show && (
@@ -39,6 +41,8 @@ export default function PaymentScreen(props) {
 
   return (
     <section className={styles.paymentScreen}>
+      {/* <img src={Logo} /> */}
+      <LanguageLink />
       <PaymentIntro
         onClick={() => {
           setPayment("mobilepay");

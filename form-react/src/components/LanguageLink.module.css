@@ -1,0 +1,46 @@
+.languageLink {
+  position: relative;
+  top: -2vw;
+  left: 65vw;
+}
+.languageLink a,
+span {
+  font-size: 4vw;
+  color: var(--white-sec-bg);
+}
+.languageLink a:hover {
+  text-decoration: underline;
+}
+@media screen and (min-width: 768px) {
+  .languageLink {
+    left: 73vw;
+  }
+  .languageLink a,
+  span {
+    font-size: 2.5vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .languageLink {
+    left: 80vw;
+  }
+  .languageLink a,
+  span {
+    font-size: 1.7vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .languageLink {
+    left: 85vw;
+  }
+  .languageLink a,
+  span {
+    font-size: 1.3vw;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .languageLink a,
+  span {
+    font-size: 1.2vw;
+  }
+}
