@@ -1,19 +1,46 @@
 .methodsContainer {
   background-color: var(--white-sec-bg);
+  /* background-color: black; */
   border-radius: 10vw;
   padding: 9vw;
   z-index: 99;
   position: absolute;
   margin: 0 auto;
   top: 15px;
-  left: 15px;
+  left: 16px;
   width: 90vw;
-  height: 170vw;
+  height: 96vh;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
   justify-content: space-between;
 }
 .methodsContainer img {
-  margin-top: 30vw;
+  margin-top: 20vw;
+  align-self: center;
+}
+@media screen and (min-width: 768px) {
+  .methodsContainer {
+    top: 5vw;
+    left: 5vw;
+    height: 84vh;
+  }
+  .methodsContainer img {
+    margin: 5vw;
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .methodsContainer {
+    width: 29vw;
+    left: 66vw;
+    height: 87vh;
+    border-radius: 5vw;
+  }
+  .methodsContainer button {
+    display: none;
+  }
+  .methodsContainer img {
+    width: 250%;
+  }
 }

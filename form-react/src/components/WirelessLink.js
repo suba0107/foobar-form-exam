@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import WirelessIcon from "../images/wireless_icon.png";
+import styles from "./PaymentLinks.module.css";
 
 export default function WirelessLink(props) {
-  const imgSize = {
-    height: "21vw",
-  };
-  const placeCenter = {
-    alignSelf: "center",
-  };
   return (
-    <a href="#" style={placeCenter} onClick={props.onClick}>
-      <img src={WirelessIcon} style={imgSize} />
+    <a href="#" className={styles.wirelessLink} onClick={props.onClick}>
+      <img src={WirelessIcon} />
       {props.children}
     </a>
   );

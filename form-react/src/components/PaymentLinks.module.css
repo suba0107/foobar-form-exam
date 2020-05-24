@@ -1,0 +1,38 @@
+.cardDetailsLink {
+  margin: 8vw 0 2vw 0;
+  align-self: center;
+}
+.mobilePayLink,
+.wirelessLink {
+  align-self: center;
+  margin-top: 2vw;
+}
+.mobilePayLink img {
+  height: 18vh;
+}
+.cardDetailsLink img,
+.wirelessLink img {
+  height: 10vh;
+}
+
+@media screen and (min-width: 768px) {
+  .mobilePayLink img {
+    height: 17vh;
+  }
+  .cardDetailsLink img,
+  .wirelessLink img {
+    height: 12vh;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .cardDetailsLink {
+    margin: 4vw 0 2vw 0;
+  }
+  .mobilePayLink img {
+    height: 15vh;
+  }
+  .cardDetailsLink img,
+  .wirelessLink img {
+    height: 10vh;
+  }
+}

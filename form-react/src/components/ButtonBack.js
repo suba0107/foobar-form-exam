@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { render } from "react-dom";
 import { ReactSVG } from "react-svg";
 import Button from "muicss/lib/react/button";
 import styles from "./ButtonBack.module.css";

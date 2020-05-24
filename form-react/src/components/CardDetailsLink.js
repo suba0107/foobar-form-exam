@@ -1,17 +1,11 @@
 import React, { useState } from "react";
 import CardDetailsIcon from "../images/carddetails.png";
+import styles from "./PaymentLinks.module.css";
 
 export default function CardDetailsLink(props) {
-  const imgSize = {
-    height: "21vw",
-  };
-  const placeCenter = {
-    alignSelf: "center",
-    margin: "8vw 0 2vw 0",
-  };
   return (
-    <a href="#" style={placeCenter} onClick={props.onClick}>
-      <img src={CardDetailsIcon} style={imgSize} />
+    <a href="#" className={styles.cardDetailsLink} onClick={props.onClick}>
+      <img src={CardDetailsIcon} />
       {props.children}
     </a>
   );

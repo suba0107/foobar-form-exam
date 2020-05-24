@@ -1,3 +1,8 @@
+.payForm {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
 .payForm > div {
   display: flex;
   flex-flow: row wrap;
@@ -8,7 +13,7 @@
   width: 50%;
 }
 .payForm > div > img:nth-child(1) {
-  width: 23%;
+  width: 20%;
 }
 .payForm label,
 .payForm input {
@@ -34,4 +39,47 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .payForm > div > img:nth-child(2) {
+    width: 44%;
+    margin: 0.8vw;
+  }
+  .payForm > div > img:nth-child(1) {
+    width: 20%;
+    margin: 0.5vw;
+  }
+  .payForm input {
+    padding: 3vw;
+  }
+  .payForm > label:nth-child(2) > input:nth-child(1),
+  .payForm > label:nth-child(3) > input:nth-child(1) {
+    width: 47vw;
+  }
+  .payForm > div {
+    margin: 4vw auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .payForm > div {
+    margin: 1vw auto;
+  }
+  .payForm > div > img:nth-child(2) {
+    width: 51%;
+  }
+  .payForm > div > img:nth-child(1) {
+    width: 25%;
+  }
+  .payForm input {
+    border: 0.3vw solid var(--bright-purple-bg);
+    padding: 1.5vw;
+    margin-top: 0.8vw;
+  }
+  .payForm label {
+    margin: 1vw 0;
+  }
+  .payForm > label:nth-child(2) > input:nth-child(1),
+  .payForm > label:nth-child(3) > input:nth-child(1) {
+    width: 20vw;
+  }
 }
