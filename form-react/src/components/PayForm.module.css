@@ -80,6 +80,17 @@
   }
   .payForm > label:nth-child(2) > input:nth-child(1),
   .payForm > label:nth-child(3) > input:nth-child(1) {
-    width: 20vw;
+    width: 25vw;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .payForm {
+    margin-top: -3vw;
+  }
+  .payForm > div > img:nth-child(1) {
+    width: 18%;
+  }
+  .payForm > div > img:nth-child(2) {
+    width: 36%;
   }
 }

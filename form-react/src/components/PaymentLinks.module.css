@@ -1,10 +1,14 @@
 .cardDetailsLink {
   margin: 8vw 0 2vw 0;
+  flex-grow: 1;
+  flex-basis: 50px;
   align-self: center;
 }
 .mobilePayLink,
 .wirelessLink {
   align-self: center;
+  flex-grow: 1;
+  flex-basis: 50px;
   margin-top: 2vw;
 }
 .mobilePayLink img {
@@ -24,15 +28,54 @@
     height: 12vh;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1024px) {
   .cardDetailsLink {
-    margin: 4vw 0 2vw 0;
+    margin: 4vw 4vw 2vw 0;
+    flex-basis: 70px;
+  }
+  .wirelessLink {
+    margin-right: 4vw;
+    flex-basis: 95px;
+  }
+  .mobilePayLink {
+    flex-grow: 2;
+    flex-basis: 150px;
+    margin-right: 1vw;
   }
   .mobilePayLink img {
-    height: 15vh;
+    height: 11vh;
+    width: 125%;
   }
   .cardDetailsLink img,
   .wirelessLink img {
-    height: 10vh;
+    height: 9vh;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mobilePayLink {
+    flex-basis: 150px;
+    margin-right: 2vw;
+  }
+  .cardDetailsLink {
+    flex-basis: 75px;
+  }
+  .wirelessLink {
+    flex-basis: 114px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .mobilePayLink {
+    flex-basis: 195px;
+    margin-right: 3vw;
+  }
+  .cardDetailsLink {
+    flex-basis: 83px;
+  }
+  .wirelessLink {
+    flex-basis: 128px;
+  }
+  .mobilePayLink img {
+    width: 122%;
+    height: 14vh;
   }
 }

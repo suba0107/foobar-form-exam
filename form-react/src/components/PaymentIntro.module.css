@@ -12,8 +12,23 @@
 }
 @media screen and (min-width: 1024px) {
   .paymentIntro {
-    width: 65%;
+    line-height: 32vw;
+    flex-flow: row wrap;
+    width: 60%;
+    height: 86vh;
     border-radius: 5vw;
     padding: 5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .paymentIntro {
+    line-height: unset;
+    width: 57%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .paymentIntro {
+    width: 57%;
+    height: 82vh;
   }
 }

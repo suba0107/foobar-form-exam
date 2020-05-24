@@ -32,15 +32,31 @@
 }
 @media screen and (min-width: 1024px) {
   .methodsContainer {
-    width: 29vw;
-    left: 66vw;
-    height: 87vh;
+    width: 33vw;
+    left: 62vw;
+    height: 86vh;
     border-radius: 5vw;
   }
   .methodsContainer button {
     display: none;
   }
   .methodsContainer img {
-    width: 250%;
+    width: 195%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .methodsContainer {
+    width: 36vw;
+    left: 59vw;
+  }
+  .methodsContainer img {
+    margin: 3.8vw;
+    width: 152%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .methodsContainer {
+    height: 82vh;
   }
 }
