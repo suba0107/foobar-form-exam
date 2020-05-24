@@ -4,7 +4,6 @@ import styles from "./Keg.modules.css";
 export default function Keg(props) {
   let imgName = props.name.toLowerCase();
   let label = imgName.split(" ").join("");
-  console.log(label);
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 210 314.17">

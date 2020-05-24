@@ -10,6 +10,7 @@
 
 .keg {
   width: 60%;
+  position: relative;
 }
 
 h1 {
@@ -73,4 +74,23 @@ h2 {
   font-weight: bold;
   align-self: center;
   font-size: 1.3rem;
+}
+
+article {
+  position: relative;
+}
+
+.information {
+  align-self: flex-end;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-style: none;
+  font-family: var(--headings-font);
+  background-color: var(--bright-purple-bg);
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  right: 1px;
+  top: 15px;
 }

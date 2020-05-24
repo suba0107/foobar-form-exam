@@ -41,8 +41,8 @@ export default function App() {
             </ul>
           </nav>
 
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+          {/* <Switch> looks through <Route>s and
+            renders the first <Route> that matches the current URL. */}
           <Switch>
             <Route path="/end">
               <End_page />
@@ -59,14 +59,6 @@ export default function App() {
     </div>
   );
 }
-
-// function Home() {
-//   return <h2>Home</h2>;
-// }
-
-// function Select_beers() {
-//   return <h2>Select beers</h2>;
-// }
 
 function End_page() {
   return <h2>End page</h2>;
