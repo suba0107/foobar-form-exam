@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ReactSVG } from "react-svg";
-import Logo from "../images/final_logo.png";
+import Logo from "../images/final-logo.png";
 import LanguageLink from "./LanguageLink";
 import PaymentIntro from "./PaymentIntro";
 import MobilepayLink from "./MobilepayLink";

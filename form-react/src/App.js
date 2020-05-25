@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Moment from "react-moment";
 import { Heroku } from "./modules/Heroku";
 import PaymentScreen from "./components/PaymentScreen";
+import EndingScreen from "./components/EndingScreen";
 
 export default function App() {
   const [info, setData] = useState([]);
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <div className="App">
       <PaymentScreen />
+      <EndingScreen />
     </div>
   );
 }

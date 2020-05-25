@@ -1,6 +1,7 @@
 .paymentScreen {
   background-color: #3d395e;
-  padding: 5vw;
+  padding: 5vw 5vw 11vw 5vw;
+  overflow-x: hidden;
 }
 /* .paymentScreen > img:nth-child(1) {
   width: 8.4vw;
