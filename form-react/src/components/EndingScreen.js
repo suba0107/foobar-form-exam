@@ -15,7 +15,7 @@ export default function EndingScreen() {
             return;
           }
           // mobile viewbox
-          svg.setAttribute("viewBox", "470 0 390 800");
+          svg.setAttribute("viewBox", "470 0 390 700");
         }}
       ></ReactSVG>
       <EndingStatus />
