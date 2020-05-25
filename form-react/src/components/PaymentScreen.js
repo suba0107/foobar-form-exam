@@ -21,8 +21,8 @@ export default function PaymentScreen(props) {
       <article
         className={modalStyle.methodsContainer}
         onClick={() => {
-          setPayment();
-          toggle();
+          setPayment(undefined);
+          setState(false);
         }}
       >
         {children}
@@ -46,24 +46,24 @@ export default function PaymentScreen(props) {
       <PaymentIntro
         onClick={() => {
           setPayment("mobilepay");
-          toggle();
+          setState();
         }}
       >
         <MobilepayLink
           onClick={() => {
-            toggle();
+            setState(true);
             setPayment("mobilepay");
           }}
         />
         <WirelessLink
           onClick={() => {
-            toggle();
+            setState(true);
             setPayment("wireless");
           }}
         />
         <CardDetailsLink
           onClick={() => {
-            toggle();
+            setState(true);
             setPayment("carddetails");
           }}
         />

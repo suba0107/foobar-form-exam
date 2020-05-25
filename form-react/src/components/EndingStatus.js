@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ReactSVG } from "react-svg";
+import ButtonEnding from "./ButtonEnding";
 import styles from "./EndingStatus.module.css";
 
 export default function EndingStatus(props) {
@@ -15,6 +16,7 @@ export default function EndingStatus(props) {
         <ReactSVG></ReactSVG>
         <h3>Waiting for a bartender to handle order.</h3>
       </div>
+      <ButtonEnding />
       {props.children}
     </article>
   );

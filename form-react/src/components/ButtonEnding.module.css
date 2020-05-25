@@ -1,0 +1,12 @@
+.buttonEnding {
+  all: initial;
+  cursor: pointer;
+  color: var(--bright-purple-bg);
+  background-color: var(--primary-btn-yel);
+  border-radius: 10vw;
+  font-family: var(--text-font);
+  font-weight: 510;
+  width: 40vw;
+  padding: 3vw;
+  text-align: center;
+}

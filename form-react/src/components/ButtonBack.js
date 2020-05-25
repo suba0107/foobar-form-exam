@@ -6,7 +6,12 @@ import BackLogo from "../svgs/back_logo.svg";
 
 export default function ButtonBack(props) {
   return (
-    <Button className={styles.roundBackBtn} size="small" variant="fab">
+    <Button
+      className={styles.roundBackBtn}
+      size="small"
+      variant="fab"
+      onClick={props.onClick}
+    >
       <ReactSVG
         src={BackLogo}
         afterInjection={(error, svg) => {
