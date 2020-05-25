@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="241" height="76.466" viewBox="0 0 241 76.466">
+  <defs>
+    <filter id="Path_1" x="20.638" y="10.001" width="53.206" height="44.216" filterUnits="userSpaceOnUse">
+      <feOffset dx="-1" dy="-5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-color="#1a2764"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_3" data-name="Group 3" transform="translate(-77 -216)">
+    <text id="MobilePay" transform="translate(172 263)" fill="#5a78ff" font-size="29" font-family="Ubuntu-Bold, Ubuntu" font-weight="700"><tspan x="0" y="0">MobilePay</tspan></text>
+    <g id="Group_2" data-name="Group 2" transform="translate(77 216)">
+      <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(0 13.194) rotate(-19)" fill="#fff" stroke="#5a78ff" stroke-width="3">
+        <rect width="40.527" height="66.917" rx="6" stroke="none"/>
+        <rect x="1.5" y="1.5" width="37.527" height="63.917" rx="4.5" fill="none"/>
+      </g>
+      <g id="Group_1" data-name="Group 1" transform="translate(21.468 8.592)">
+        <path id="Path_2" data-name="Path 2" d="M0,0S9.265,4.669,18.942,4.669,38.707,0,38.707,0V20.644a66.886,66.886,0,0,1-19.144,3.282A71.649,71.649,0,0,1,0,20.644Z" transform="translate(45.501 20.508) rotate(149)" fill="#5a78ff"/>
+        <g transform="matrix(1, 0, 0, 1, -21.47, -8.59)" filter="url(#Path_1)">
+          <path id="Path_1-2" data-name="Path 1" d="M0,0S9.265,4.669,18.942,4.669,38.707,0,38.707,0V20.644a66.886,66.886,0,0,1-19.144,3.282A71.649,71.649,0,0,1,0,20.644Z" transform="matrix(-0.95, 0.31, -0.31, -0.95, 70.34, 42.26)" fill="#5a78ff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
