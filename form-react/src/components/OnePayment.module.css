@@ -9,25 +9,37 @@
   top: 15px;
   left: 16px;
   width: 90vw;
-  height: 96vh;
+  /* height: 96vh; */
+  height: 118vh;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
   justify-content: space-between;
 }
-.methodsContainer img {
-  margin-top: 20vw;
-  align-self: center;
+.showMobilePay svg {
+  width: 90%;
+  position: relative;
+  left: 5vw;
+}
+.showWireless svg {
+  width: 77%;
+  position: relative;
+  left: 8vw;
+  top: 55vw;
 }
 @media screen and (min-width: 768px) {
   .methodsContainer {
-    top: 5vw;
+    top: 8vw;
     left: 5vw;
-    height: 84vh;
+    height: 71vh;
   }
-  .methodsContainer img {
-    margin: 5vw;
-    width: 70%;
+  .showMobilePay svg {
+    left: 3vw;
+  }
+  .showWireless svg {
+    width: 100%;
+    left: 2vw;
+    top: 23vw;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -43,6 +55,14 @@
   .methodsContainer img {
     width: 195%;
     margin: auto;
+  }
+  .showWireless svg {
+    left: 0vw;
+    top: 15vw;
+  }
+  .showMobilePay svg {
+    width: 138%;
+    left: -3vw;
   }
 }
 @media screen and (min-width: 1200px) {

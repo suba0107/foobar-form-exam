@@ -17,7 +17,7 @@
     width: 60%;
     height: 86vh;
     border-radius: 5vw;
-    padding: 5vw;
+    padding: 10vw 5vw;
   }
 }
 @media screen and (min-width: 1200px) {

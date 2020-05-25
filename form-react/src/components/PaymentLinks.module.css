@@ -1,81 +1,53 @@
-.cardDetailsLink {
-  margin: 8vw 0 2vw 0;
-  flex-grow: 1;
-  flex-basis: 50px;
-  align-self: center;
-}
+.cardDetailsLink,
 .mobilePayLink,
 .wirelessLink {
   align-self: center;
-  flex-grow: 1;
-  flex-basis: 50px;
-  margin-top: 2vw;
+  margin: 0.8vw auto;
 }
-.mobilePayLink img {
-  height: 18vh;
+.mobilePayLink svg,
+.cardDetailsLink svg {
+  width: 60%;
 }
-.cardDetailsLink img,
-.wirelessLink img {
-  height: 10vh;
+.mobilePayLink {
+  margin-top: 12vw;
 }
-
+.wirelessLink svg {
+  width: 48%;
+}
+.mobilePayLink > div:nth-child(1) > div:nth-child(1),
+.wirelessLink > div:nth-child(1) > div:nth-child(1),
+.cardDetailsLink > div:nth-child(1) > div:nth-child(1) {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
 @media screen and (min-width: 768px) {
-  .mobilePayLink img {
-    height: 17vh;
+  .mobilePayLink svg,
+  .cardDetailsLink svg {
+    width: 88%;
   }
-  .cardDetailsLink img,
-  .wirelessLink img {
-    height: 12vh;
+  .mobilePayLink {
+    margin-top: 7vw;
+  }
+  .wirelessLink svg {
+    width: 70%;
   }
 }
 @media screen and (min-width: 1024px) {
-  .cardDetailsLink {
-    margin: 4vw 4vw 2vw 0;
-    flex-basis: 70px;
-  }
+  .mobilePayLink,
   .wirelessLink {
-    margin-right: 4vw;
-    flex-basis: 95px;
+    flex-grow: 2;
+    flex-basis: 100px;
   }
   .mobilePayLink {
-    flex-grow: 2;
-    flex-basis: 150px;
-    margin-right: 1vw;
+    margin: unset;
   }
-  .mobilePayLink img {
-    height: 11vh;
-    width: 125%;
-  }
-  .cardDetailsLink img,
-  .wirelessLink img {
-    height: 9vh;
+  .cardDetailsLink {
+    flex-grow: 1;
+    flex-basis: 55px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .mobilePayLink {
-    flex-basis: 150px;
-    margin-right: 2vw;
-  }
-  .cardDetailsLink {
-    flex-basis: 75px;
-  }
-  .wirelessLink {
-    flex-basis: 114px;
-  }
 }
 @media screen and (min-width: 1400px) {
-  .mobilePayLink {
-    flex-basis: 195px;
-    margin-right: 3vw;
-  }
-  .cardDetailsLink {
-    flex-basis: 83px;
-  }
-  .wirelessLink {
-    flex-basis: 128px;
-  }
-  .mobilePayLink img {
-    width: 122%;
-    height: 14vh;
-  }
 }

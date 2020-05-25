@@ -9,7 +9,8 @@
 @media screen and (min-width: 1024px) {
   .roundBackBtn {
     position: relative;
-    left: 39vw;
+    /* left: 39vw; */
+    left: -4vw;
   }
 }
 @media screen and (min-width: 1200px) {

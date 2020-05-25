@@ -24,3 +24,10 @@
 .endingStatus > div:nth-child(2) > h3:nth-child(1) {
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .endingStatus {
+    top: -106vh;
+    left: 32vw;
+    width: 61%;
+  }
+}

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ReactSVG } from "react-svg";
+import MobilePayIcon from "../svgs/mobilepay_code.svg";
+import OnePaymentStyle from "./OnePayment.module.css";
+import WirelessIcon from "../svgs/wireless_icon.svg";
 import Logo from "../images/final-logo.png";
 import LanguageLink from "./LanguageLink";
 import PaymentIntro from "./PaymentIntro";
@@ -14,7 +17,7 @@ import PayForm from "./PayForm";
 export default function PaymentScreen(props) {
   let [payment, setPayment] = useState(undefined);
   const [show, setState] = useState(false);
-  const toggle = () => setState(!show);
+  // const toggle = () => setState(!show);
 
   const Modal = ({ children, show, setState, setPayment }) => {
     const content = show && (
@@ -71,10 +74,16 @@ export default function PaymentScreen(props) {
       </PaymentIntro>
       <Modal show={show} setState={setState} setPayment={setPayment}>
         {payment === "mobilepay" && (
-          <img src={require("../images/mobilepay_code.png")} />
+          <ReactSVG
+            src={MobilePayIcon}
+            className={OnePaymentStyle.showMobilePay}
+          />
         )}
         {payment === "wireless" && (
-          <img src={require("../images/wireless_icon.png")} />
+          <ReactSVG
+            src={WirelessIcon}
+            className={OnePaymentStyle.showWireless}
+          />
         )}
         {payment === "carddetails" && <PayForm />}
       </Modal>
