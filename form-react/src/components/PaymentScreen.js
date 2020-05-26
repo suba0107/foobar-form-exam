@@ -39,7 +39,8 @@ export default function PaymentScreen(props) {
     );
     return content;
   };
-
+  // const mobileFirst = useMediaPredicate("(max-width: 500px)");
+  // const ipad768px = useMediaPredicate("(min-width: 768px)");
   return (
     <section className={styles.paymentScreen}>
       {/* <img src={Logo} /> */}
@@ -50,25 +51,29 @@ export default function PaymentScreen(props) {
           setState();
         }}
       >
-        <MobilepayLink
-          onClick={() => {
-            setState(true);
-            setPayment("mobilepay");
-          }}
-        />
-        <WirelessLink
-          onClick={() => {
-            setState(true);
-            setPayment("wireless");
-          }}
-        />
-        <CardDetailsLink
-          onClick={() => {
-            setState(true);
-            setPayment("carddetails");
-          }}
-        />
-        <ButtonBack></ButtonBack>
+        <div>
+          <MobilepayLink
+            onClick={() => {
+              setState(true);
+              setPayment("mobilepay");
+            }}
+          />
+          <WirelessLink
+            onClick={() => {
+              setState(true);
+              setPayment("wireless");
+            }}
+          />
+          <CardDetailsLink
+            onClick={() => {
+              setState(true);
+              setPayment("carddetails");
+            }}
+          />
+        </div>
+        <ButtonBack />
+        {/* {mobileFirst && <ButtonBack></ButtonBack>}
+        {ipad768px && <Button variant="fab" size="large" />} */}
       </PaymentIntro>
       <Modal show={show} setState={setState} setPayment={setPayment}>
         {payment === "mobilepay" && (

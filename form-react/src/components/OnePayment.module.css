@@ -78,9 +78,14 @@
     left: 59vw;
     top: 7vw;
   }
-  .methodsContainer img {
-    margin: 3.8vw;
-    width: 152%;
+  .showMobilePay svg {
+    width: 100%;
+    top: 0vw;
+    left: 0vw;
+  }
+  .showWireless svg {
+    width: 100%;
+    top: 11vw;
   }
 }
 @media screen and (min-width: 1400px) {
