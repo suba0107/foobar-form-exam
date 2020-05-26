@@ -11,7 +11,7 @@ import WirelessLink from "./WirelessLink";
 import CardDetailsLink from "./CardDetailsLink";
 import ButtonBack from "./ButtonBack";
 import styles from "./PaymentScreen.module.css";
-import modalStyle from "./OnePayment.module.css";
+import onePayment from "./OnePayment.module.css";
 import PayForm from "./PayForm";
 
 export default function PaymentScreen(props) {
@@ -22,7 +22,7 @@ export default function PaymentScreen(props) {
   const Modal = ({ children, show, setState, setPayment }) => {
     const content = show && (
       <article
-        className={modalStyle.methodsContainer}
+        className={onePayment.methodsContainer}
         onClick={() => {
           setPayment(undefined);
           setState(false);
@@ -34,9 +34,7 @@ export default function PaymentScreen(props) {
             setState(false);
             setPayment(undefined);
           }}
-        >
-          X
-        </ButtonBack>
+        ></ButtonBack>
       </article>
     );
     return content;
