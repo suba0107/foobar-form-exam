@@ -43,6 +43,9 @@
   .showMobilePay svg {
     left: 3vw;
   }
+  .showWireless > div:nth-child(1) {
+    width: 50vw;
+  }
   .showWireless svg {
     width: 100%;
     left: 2vw;

@@ -8,9 +8,8 @@ import { useMediaPredicate } from "react-media-hook";
 export default function ButtonBack(props) {
   const mobileFirst = useMediaPredicate("(min-width: 300px)");
   const ipad768px = useMediaPredicate("(min-width: 700px)");
-  const breakPoint1 = useMediaPredicate("(max-width: 1000px)");
   const ipad1024px = useMediaPredicate("(min-width:1024px)");
-  let backBtn;
+
   function MediaQueriesBtn(props) {
     if (ipad768px) {
       return (
