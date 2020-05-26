@@ -27,6 +27,13 @@
   left: 8vw;
   top: 55vw;
 }
+/* iPhone 6/7/8 */
+@media screen and (min-width: 370px) {
+  .methodsContainer {
+    height: 104vh;
+    left: 5vw;
+  }
+}
 @media screen and (min-width: 768px) {
   .methodsContainer {
     top: 8vw;
