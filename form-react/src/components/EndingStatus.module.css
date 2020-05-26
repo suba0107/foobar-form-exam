@@ -26,8 +26,16 @@
 }
 @media screen and (min-width: 768px) {
   .endingStatus {
-    top: -106vh;
+    top: -144vh;
     left: 32vw;
     width: 61%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .endingStatus {
+    top: -131vh;
+    left: 52vw;
+    width: 41%;
+    padding: 5vw;
   }
 }

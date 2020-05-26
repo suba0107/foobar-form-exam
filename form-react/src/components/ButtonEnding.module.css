@@ -10,3 +10,17 @@
   padding: 3vw;
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .buttonEnding {
+    font-size: 3vw;
+    width: 27vw;
+    padding: 2vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .buttonEnding {
+    font-size: 2vw;
+    width: 21vw;
+    padding: 1.5vw;
+  }
+}

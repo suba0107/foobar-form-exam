@@ -13,7 +13,7 @@ export default function EndingStatus(props) {
       </div>
       <div id="bottom">
         <h3>Status:</h3>
-        <ReactSVG></ReactSVG>
+        {/* <ReactSVG></ReactSVG> */}
         <h3>Waiting for a bartender to handle order.</h3>
       </div>
       <ButtonEnding />
