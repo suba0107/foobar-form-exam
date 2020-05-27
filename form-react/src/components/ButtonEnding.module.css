@@ -19,8 +19,20 @@
 }
 @media screen and (min-width: 1024px) {
   .buttonEnding {
-    font-size: 2vw;
+    font-size: 1.8vw;
     width: 21vw;
     padding: 1.5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .buttonEnding {
+    width: 17vw;
+    padding: 1vw;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .buttonEnding {
+    font-size: 1.5vw;
+    width: 15vw;
   }
 }

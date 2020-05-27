@@ -2,3 +2,17 @@
   overflow-y: hidden;
   max-height: 100vh;
 }
+.endingScreen svg {
+  width: 100%;
+}
+.endingScreen > div:nth-child(1) > div:nth-child(1) {
+  background-color: var(--bright-purple-bg);
+}
+@media screen and (min-width: 1000px) {
+  .endingScreen {
+    max-height: unset;
+  }
+}
+/* .endingScreen svg {
+  width: 100%;
+} */

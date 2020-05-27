@@ -8,6 +8,8 @@ export default function EndingBg() {
     const mobileFirst = useMediaPredicate("(max-width: 460px)");
     const ipad768px = useMediaPredicate("(max-width: 800px)");
     const ipad1024px = useMediaPredicate("(max-width: 1100px)");
+    const screen1200px = useMediaPredicate("(max-width: 1300px)");
+    const screen1400px = useMediaPredicate("min-width: 1400px");
     if (mobileFirst) {
       return (
         <ReactSVG
@@ -40,7 +42,6 @@ export default function EndingBg() {
         ></ReactSVG>
       );
     } else if (ipad1024px) {
-      console.log(ipad1024px);
       return (
         <ReactSVG
           src={EndingBgSVG}
@@ -51,13 +52,45 @@ export default function EndingBg() {
             }
           }}
           beforeInjection={(svg) => {
-            console.log("1024px");
-            svg.setAttribute("viewBox", "300 0 700 768");
+            console.log(ipad1024px);
+            svg.setAttribute("viewBox", "350 0 670 740");
+          }}
+        />
+      );
+    } else if (screen1200px) {
+      return (
+        <ReactSVG
+          src={EndingBgSVG}
+          afterInjection={(error, svg) => {
+            if (error) {
+              console.error(error);
+              return;
+            }
+          }}
+          beforeInjection={(svg) => {
+            console.log(screen1200px);
+            svg.setAttribute("viewBox", "25 30 1000 690");
+          }}
+        />
+      );
+    } else if (screen1400px) {
+      return (
+        <ReactSVG
+          src={EndingBgSVG}
+          afterInjection={(error, svg) => {
+            if (error) {
+              console.error(error);
+              return;
+            }
+          }}
+          beforeInjection={(svg) => {
+            console.log(screen1400px);
+            svg.setAttribute("viewBox", "0 0 1026 800");
           }}
         />
       );
     }
-    //Return default Mobile first
+
     return (
       <ReactSVG
         src={EndingBgSVG}
@@ -66,10 +99,9 @@ export default function EndingBg() {
             console.error(error);
             return;
           }
-          // mobile viewbox
-          svg.setAttribute("viewBox", "470 0 390 700");
+          svg.setAttribute("viewBox", "0 0 1026 768");
+          svg.setAttribute("width", "100%");
         }}
-        loading={() => <span>Loading</span>}
       ></ReactSVG>
     );
   }

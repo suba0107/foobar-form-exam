@@ -1,5 +1,5 @@
 .endingStatus {
-  position: relative;
+  position: absolute;
   background-color: var(--white-sec-bg);
   border-radius: 5vw;
   padding: 8vw;
@@ -26,16 +26,33 @@
 }
 @media screen and (min-width: 768px) {
   .endingStatus {
-    top: -144vh;
+    top: 115vh;
     left: 32vw;
     width: 61%;
   }
 }
 @media screen and (min-width: 1024px) {
   .endingStatus {
-    top: -131vh;
-    left: 52vw;
+    top: 149vh;
+    left: 53vw;
     width: 41%;
     padding: 5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .endingStatus {
+    top: 138vh;
+    left: 60vw;
+    width: 35%;
+    padding: 4vw;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .endingStatus {
+    /* top: -119vh; */
+    top: 155vh;
+    left: 64vw;
+    width: 30%;
+    padding: 3.5vw;
   }
 }
