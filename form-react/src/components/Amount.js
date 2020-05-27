@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Select_beer.modules.css";
 
-export default function Amount(props) {
+export default function Amount(props, onClickButton) {
   let [count, setCount] = useState(0);
-  let [amount, setAmount] = useState(0);
+  const [state, setState] = useState(props.onState);
 
+  const [amount, setAmount] = useState(props.countBeers);
+
+  console.log(props.countBeers + "count Beers" + state);
   useEffect(() => {
-    props.count(amount);
-    setCount(0);
-  }, [amount, props]);
+    setAmount(count + props.countBeers);
+  }, [count]);
 
   return (
     <>
@@ -19,24 +21,44 @@ export default function Amount(props) {
           width: "50%",
         }}
       >
-        <button onClick={() => setCount(count - 1)} className="plusMinus" disabled={count === 0}>
+        <button
+          onClick={() => {
+            setState(props.onState);
+            setCount(count - 1);
+
+            if (state === true) {
+              props.onClickButton(amount);
+              setAmount(0);
+            }
+          }}
+          className="plusMinus"
+          disabled={!state && count === 0}
+        >
           -
         </button>
 
-        {/* <button onClick={minus} className="plusMinus">
-        -
-      </button> */}
-        <p className="amount">{count}</p>
-        <button onClick={() => setCount(count + 1)} className="plusMinus">
+        <p className="amount">{props.countBeers + count}</p>
+        <button
+          onClick={() => {
+            setState(props.onState);
+            setCount(count + 1);
+
+            console.log(state + " " + amount);
+            if (state === true) {
+              props.onClickButton(amount);
+              setAmount(0);
+            }
+          }}
+          className="plusMinus"
+        >
           +
         </button>
       </div>
       <button
         onClick={() => {
-          setAmount(count + amount);
+          props.amount(count);
+          console.log(state + " " + amount);
           setCount(0);
-
-          console.log(amount);
         }}
         className="add"
       >

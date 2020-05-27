@@ -1,0 +1,82 @@
+#shopping-cart-amount div {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-popUp .plusMinus {
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  border-style: solid;
+  color: var(--bright-purple-bg);
+  background-color: white;
+  font-weight: bold;
+  font-family: var(--headings-font);
+  font-size: 1.5rem;
+  line-height: 1rem;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.plusMinus:disabled {
+  opacity: 0.5;
+}
+
+.price {
+  font-family: var(--headings-font);
+  color: var(--bright-purple-bg);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.cart-popUp h2 {
+  font-family: var(--headings-font);
+  color: white;
+  font-weight: bold;
+}
+
+.cart-popUp .amount {
+  text-align: center;
+  font-family: var(--headings-font);
+  color: white;
+  font-weight: bold;
+  align-self: center;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  padding-top: 5px;
+}
+
+article {
+  position: relative;
+}
+
+.information {
+  align-self: flex-end;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-style: none;
+  font-family: var(--headings-font);
+  background-color: var(--bright-purple-bg);
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  right: 1px;
+  top: 15px;
+}
+
+#total-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-popUp .total {
+  font-size: 1.2rem;
+  padding-top: 5px;
+}
+
+.buttonWrapper {
+  display: flex;
+}

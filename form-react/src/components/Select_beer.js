@@ -13,11 +13,11 @@ export default function Select_beer(props) {
 
   const [info, setData] = useState([]);
   const [name, setName] = useState("");
-  let [amount, setAmount] = useState(0);
+  // let [amount, setAmount] = useState(0);
   const [selected, setSelected] = useState([]);
   let beer;
   // let selectedBeer;
-  // const [amountEachBeer, setAmountEachBeer] = useState(0);
+  const [amountEachBeer, setAmountEachBeer] = useState(0);
 
   const [desc, setDesc] = useState([]);
   const [toggleInfoBox, setToggleInfoBox] = useState(false);
@@ -42,38 +42,21 @@ export default function Select_beer(props) {
       });
   }
 
-  console.log(name);
-
-  console.log(desc);
-
-  useEffect(() => {
-    // console.log(selected);
-  }, []);
+  useEffect(() => {}, [amountEachBeer]);
 
   function selectingBeer(beers) {
-    // beer = beers;
-    console.log(beers);
-
-    // setSelected(beers);
+    const nextState = [...selected];
+    const doesBeerExist = nextState.filter((order) => order.name === beers.name);
+    console.log(doesBeerExist.length);
+    if (doesBeerExist.length > 0) {
+      const newState = nextState.map((obj) => (obj.name === beers.name ? beers : obj));
+      setSelected(newState);
+    } else {
+      nextState.push(beers);
+      setSelected(nextState);
+    }
   }
-  // function selectedBeers(selectedBeers) {
 
-  //   // // setAmount(amount + amountBeers);
-
-  //   // // setName(name);
-  //   // // selectedBeer = selectedBeers;
-  //   // setSelected(selectedBeers);
-  //   // // setSelected(selected.concat(selectedBeers));
-  //   // // setSelected({ beer });
-  //   let beers = [];
-  //   console.log((x) => x.concat(selectedBeers));
-  //   // console.log(beers.concat(selectedBeers));
-  // }
-
-  //   useEffect(() => {
-  // props.  }, [selected]);
-
-  // function amountEachBeer(eachBeer) {}
   console.log(beer);
   const beers = info.map(function (item) {
     return item.beer;
@@ -101,7 +84,7 @@ export default function Select_beer(props) {
   }
   return (
     <>
-      <header>{<ShoppingCart beer={beer} />}</header>
+      <ShoppingCart beer={selected} />
       <main id="select_beer_main">
         {info.length === 0 && (
           <h2
@@ -120,7 +103,7 @@ export default function Select_beer(props) {
         <article id="selection-of-beers">
           <Popup desc={desc} beer={name} popUp={toggleInfoBox} onClose={onClose} />
           {oneOfEachBeer.map((data) => (
-            <EachBeer key={oneOfEachBeer.indexOf(data)} name={data} amount={selectingBeer} />
+            <EachBeer key={oneOfEachBeer.indexOf(data)} name={data} popUp={onInfoClick} amountOfBeer={selectingBeer} />
           ))}
         </article>
       </main>

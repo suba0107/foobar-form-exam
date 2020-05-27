@@ -47,6 +47,9 @@ export default function App() {
             <Route path="/end">
               <End_page />
             </Route>
+            <Route exact path="/checkOrder">
+              <Select_beer />
+            </Route>
             <Route exact path="/select">
               <Select_beer />
             </Route>

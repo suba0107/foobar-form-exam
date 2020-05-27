@@ -3,15 +3,11 @@ import styles from "./Popup.modules.css";
 import Keg from "./Keg.js";
 
 export default function Popup(props) {
-  console.log(props);
   let desc = props.desc.filter((desc) => desc.name === props.beer);
   let something = desc[0];
-  console.log(show());
 
-  console.log(props.popUp);
   const [toggleInfo, setToggleInfo] = useState(false);
 
-  console.log(toggleInfo);
   function show() {
     if (desc[0] !== undefined) {
       return desc[0].alc;
@@ -24,11 +20,8 @@ export default function Popup(props) {
       return elm != "";
     });
 
-    console.log(array);
-
     for (let i = 0; i < array.length - 1; i++) {
       array[i] += " ";
-      console.log(array.join(""));
     }
 
     return array.join("");

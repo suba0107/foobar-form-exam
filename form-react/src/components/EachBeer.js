@@ -7,41 +7,31 @@ import { ReactKeg } from "./svg/keg.svg";
 import Keg from "./Keg.js";
 
 export default function EachBeer(props, onInfoClick) {
-  const [count, setCounting] = useState(0);
+  const [counting, setCounting] = useState(0);
+  const [beerAmount, setBeerAmount] = useState();
 
   function counter(count) {
     // setCounting(count);
-    setCounting(count);
+    // setCounting(count);
+    setCounting(counting + count);
   }
 
   useEffect(() => {
-    props.amount({ count: count, name: props.name });
-    // setCount(count - amount);
-  }, [count, props, props.name]);
+    console.log({ count: counting, name: props.name });
+    if (counting !== 0) {
+      props.amountOfBeer({ count: counting, name: props.name });
+    }
+    // // setCount(count - amount);
+    // console.log({ count: count, name: props.name });
+  }, [counting]);
 
-  // function onInfo(name, toggle) {
-  //   props.onInfoClick(name, toggle);
+  function onInfo(name) {}
+
   // }
 
-  // useEffect(() => {
-  //   onInfo(props.name, toggleInfo);
-  // }, [props.name, toggleInfo]);
-
-  // function toggleMenu() {
-  //   console.log("Toggle");
-  //   document.querySelector("#menu").classList.toggle("hidden");
-  //   let menuHidden = document.querySelector("#menu").classList.contains("hidden");
-  //   if (menuHidden === true) {
-  //     hideOverlay();
-  //     menuicon.classList.remove("change");
-  //     document.querySelector(".menu").textContent = "MENU";
-  //   } else {
-  //     addOverlay();
-  //     menuicon.classList.add("change");
-  //     document.querySelector(".menu").textContent = "CLOSE";
-  //   }
-  // }
-
+  function something(beer) {
+    console.log(beer);
+  }
   return (
     <article
       style={{
@@ -55,7 +45,7 @@ export default function EachBeer(props, onInfoClick) {
       <div className="keg">
         <button
           onClick={(e) => {
-            props.onInfoClick(props.name);
+            props.popUp(props.name);
           }}
           className={`information`}
           name={props.name}
@@ -67,7 +57,7 @@ export default function EachBeer(props, onInfoClick) {
       {/* <ReactKeg image="./images/fairytaleale.png" /> */}
       <h2>{props.name}</h2>
       <p className="price">25 kr</p>
-      <Amount count={counter} name={props.name} />
+      <Amount count={counter} name={props.name} startAt={0} countBeers={0} amount={counter} onState={false} />
     </article>
   );
 }
