@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { ReactSVG } from "react-svg";
+import EndingStt from "./EndingStt";
 import ButtonEnding from "./ButtonEnding";
-import styles from "./EndingStatus.module.css";
 
-export default function EndingStatus(props) {
+import styles from "./EndingStatusBox.module.css";
+
+export default function EndingStatusBox(props) {
   return (
-    <article className={styles.endingStatus}>
-      <div id="top">
+    <article className={styles.endingStatusBox}>
+      <div>
         {" "}
         <h2>We will be handling your order very soon!</h2>
         <h2>You can keep track with your order on this screen.</h2>
       </div>
-      <div id="bottom">
+      <div>
         <h3>Status:</h3>
-        {/* <ReactSVG></ReactSVG> */}
+        <EndingStt />
         <h3>Waiting for a bartender to handle order.</h3>
       </div>
       <ButtonEnding />

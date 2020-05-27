@@ -68,7 +68,7 @@ export default function EndingBg() {
           }}
           beforeInjection={(svg) => {
             console.log(screen1200px);
-            svg.setAttribute("viewBox", "25 30 1000 690");
+            svg.setAttribute("viewBox", "26 30 1000 700");
           }}
         />
       );
@@ -98,6 +98,7 @@ export default function EndingBg() {
             console.error(error);
             return;
           }
+          svg.setAttribute("viewBox", "0 0 1026 680");
         }}
       ></ReactSVG>
     );

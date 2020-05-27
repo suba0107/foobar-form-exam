@@ -1,9 +1,9 @@
-.endingStatus {
+.endingStatusBox {
   position: absolute;
   background-color: var(--white-sec-bg);
   border-radius: 5vw;
   padding: 8vw;
-  top: -90vh;
+  top: 130vh;
   left: 5vw;
   width: 90%;
   display: flex;
@@ -11,47 +11,54 @@
   justify-content: space-between;
   align-items: center;
 }
-.endingStatus h2 {
+.endingStatusBox h2 {
   font-family: var(--text-font);
   color: var(--bright-purple-bg);
   font-weight: 550;
+  font-size: 22px;
 }
-.endingStatus h3 {
+.endingStatusBox h3 {
   font-family: var(--text-font);
   color: var(--pink-highlight);
   font-weight: 550;
 }
-.endingStatus > div:nth-child(2) > h3:nth-child(1) {
+.endingStatusBox > div:nth-child(1),
+.endingStatusBox > div:nth-child(2) {
+  margin: 1.5vw auto;
+}
+.endingStatusBox > div:nth-child(2) > h3:nth-child(1) {
   text-align: center;
 }
 @media screen and (min-width: 768px) {
-  .endingStatus {
-    top: 115vh;
+  .endingStatusBox {
+    top: 105vh;
     left: 32vw;
     width: 61%;
   }
+  .endingStatusBox h2 {
+    font-size: 24px;
+  }
 }
 @media screen and (min-width: 1024px) {
-  .endingStatus {
+  .endingStatusBox {
     top: 149vh;
-    left: 53vw;
-    width: 41%;
+    left: 44vw;
+    width: 50%;
     padding: 5vw;
   }
 }
 @media screen and (min-width: 1200px) {
-  .endingStatus {
-    top: 138vh;
+  .endingStatusBox {
+    top: 130vh;
     left: 60vw;
     width: 35%;
     padding: 4vw;
   }
 }
 @media screen and (min-width: 1400px) {
-  .endingStatus {
-    /* top: -119vh; */
-    top: 155vh;
-    left: 64vw;
+  .endingStatusBox {
+    top: 142vh;
+    left: 65vw;
     width: 30%;
     padding: 3.5vw;
   }
