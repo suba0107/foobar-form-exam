@@ -6,7 +6,7 @@
   width: 100%;
 }
 .endingScreen > div:nth-child(1) > div:nth-child(1) {
-  background-color: var(--bright-purple-bg);
+  background-color: var(--purple-ish-bg);
 }
 @media screen and (min-width: 1000px) {
   .endingScreen {

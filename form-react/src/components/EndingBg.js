@@ -98,7 +98,6 @@ export default function EndingBg() {
             console.error(error);
             return;
           }
-          svg.setAttribute("viewBox", "0 0 1026 768");
         }}
       ></ReactSVG>
     );

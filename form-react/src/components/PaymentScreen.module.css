@@ -1,6 +1,5 @@
 .paymentScreen {
-  background-color: #3d395e;
+  background-color: var(--purple-ish-bg);
   padding: 5vw 5vw 11vw 5vw;
   overflow-x: hidden;
 }
-
