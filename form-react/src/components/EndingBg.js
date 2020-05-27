@@ -19,7 +19,6 @@ export default function EndingBg() {
               console.error(error);
               return;
             }
-            // mobile viewbox
             svg.setAttribute("viewBox", "470 0 390 700");
           }}
           loading={() => <span>Loading</span>}
@@ -100,7 +99,6 @@ export default function EndingBg() {
             return;
           }
           svg.setAttribute("viewBox", "0 0 1026 768");
-          svg.setAttribute("width", "100%");
         }}
       ></ReactSVG>
     );
