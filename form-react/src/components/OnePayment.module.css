@@ -15,7 +15,30 @@
   flex-flow: column wrap;
   align-content: center;
   justify-content: space-between;
+  animation: slide-left 1s ease-in-out;
 }
+/*----------slide left animation--------*/
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
 .showMobilePay svg {
   width: 90%;
   position: relative;

@@ -45,7 +45,7 @@ export default function EndingStt(props) {
       // document.querySelector(setActiveStt)
       document.querySelector("#stage2").style.backgroundColor =
         "var(--pink-highlight)";
-    }, 3000);
+    }, 4000);
     return () => {
       clearInterval(fakeStt);
     };

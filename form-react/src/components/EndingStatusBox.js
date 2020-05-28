@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import EndingStt from "./EndingStt";
+import EndingMsg from "./EndingMsg";
 import ButtonEnding from "./ButtonEnding";
 
 import styles from "./EndingStatusBox.module.css";
@@ -15,7 +16,7 @@ export default function EndingStatusBox(props) {
       <div>
         <h3>Status:</h3>
         <EndingStt />
-        <h3>Waiting for a bartender to handle order.</h3>
+        <EndingMsg />
       </div>
       <ButtonEnding />
       {props.children}
