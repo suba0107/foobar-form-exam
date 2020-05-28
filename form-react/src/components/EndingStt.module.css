@@ -15,23 +15,28 @@
   width: 8vw;
   height: 8vw;
 }
-.endingSttRoundCon > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) {
+.endingSttRoundCon > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1),
+.endingSttRoundConInactive
+  > div:nth-child(1)
+  > div:nth-child(1)
+  > svg:nth-child(1) {
   width: 80%;
   position: relative;
   left: 0.6vw;
   top: -1.2vw;
 }
-/* .endingSttRoundConInactive {
+.endingSttRoundConInactive {
   border-radius: 50%;
   border: 0.7vw solid var(--pink-highlight);
   width: 8vw;
   height: 8vw;
-} */
-.inactive {
+}
+.endingSttRoundCon .inactive {
   background-color: white;
 }
 @media screen and (min-width: 768px) {
-  .endingSttRoundCon {
+  .endingSttRoundCon,
+  .endingSttRoundConInactive {
     width: 5vw;
     height: 5vw;
   }
@@ -39,14 +44,19 @@
     height: 3vw;
     border-bottom: 0.7vw solid var(--pink-highlight);
   }
-  .endingSttRoundCon > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) {
+  .endingSttRoundCon > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1),
+  .endingSttRoundConInactive
+    > div:nth-child(1)
+    > div:nth-child(1)
+    > svg:nth-child(1) {
     width: 90%;
     left: 0vw;
     top: 0vw;
   }
 }
 @media screen and (min-width: 1024px) {
-  .endingSttRoundCon {
+  .endingSttRoundCon,
+  .endingSttRoundConInactive {
     width: 3vw;
     height: 3vw;
     border: 0.4vw solid var(--pink-highlight);
@@ -56,14 +66,19 @@
     width: 4vw;
     border-bottom: 0.4vw solid var(--pink-highlight);
   }
-  .endingSttRoundCon > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) {
+  .endingSttRoundCon > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1),
+  .endingSttRoundConInactive
+    > div:nth-child(1)
+    > div:nth-child(1)
+    > svg:nth-child(1) {
     width: 100%;
     left: 0vw;
     top: -0.2vw;
   }
 }
 @media screen and (min-width: 1400px) {
-  .endingSttRoundCon {
+  .endingSttRoundCon,
+  .endingSttRoundConInactive {
     width: 2.6vw;
     height: 2.6vw;
   }
