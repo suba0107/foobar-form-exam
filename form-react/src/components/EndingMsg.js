@@ -8,6 +8,7 @@ export default function EndingMsg(props) {
     const msg2 = setInterval(() => {
       document.querySelector("#status-msg").textContent =
         "A bartender has accepted your order.";
+      console.log(msg2);
     }, 4000);
     return () => {
       clearInterval(msg2);
@@ -18,7 +19,6 @@ export default function EndingMsg(props) {
       document.querySelector("#status-msg").textContent = "Pouring beer...";
     }, 7000);
     return () => {
-      console.log("clear message 3");
       clearInterval(msg3);
     };
   }, []);
