@@ -1,9 +1,9 @@
 .endingStatusBox {
   position: absolute;
   background-color: var(--white-sec-bg);
-  border-radius: 5vw;
+  border-radius: 10vw;
   padding: 8vw;
-  top: 130vh;
+  top: 145vh;
   left: 5vw;
   width: 90%;
   display: flex;
@@ -38,6 +38,7 @@
     top: 105vh;
     left: 32vw;
     width: 61%;
+    border-radius: 5vw;
   }
   .endingStatusBox h2 {
     font-size: 24px;
