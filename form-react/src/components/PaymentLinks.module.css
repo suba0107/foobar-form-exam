@@ -46,6 +46,9 @@
     flex-grow: 1;
     flex-basis: 100px;
   }
+  .cardDetailsLink svg {
+    width: 75%;
+  }
 }
 @media screen and (min-width: 1200px) {
 }

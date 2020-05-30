@@ -38,7 +38,6 @@
     transform: translateX(0);
   }
 }
-
 .showMobilePay svg {
   width: 90%;
   position: relative;
@@ -50,6 +49,14 @@
   left: 8vw;
   top: 55vw;
 }
+.methodsContainer > div:nth-child(1) > h3:nth-child(2) {
+  text-align: center;
+  position: relative;
+  top: 46vw;
+  font-family: var(--text-font);
+  color: var(--bright-purple-bg);
+  font-weight: 530;
+}
 /* iPhone 6/7/8 */
 @media screen and (min-width: 370px) {
   .methodsContainer {
@@ -58,6 +65,9 @@
   }
 }
 @media screen and (min-width: 768px) {
+  .methodsContainer > div:nth-child(1) > h3:nth-child(2) {
+    top: 25vw;
+  }
   .methodsContainer {
     top: 8vw;
     left: 5vw;
@@ -67,7 +77,7 @@
     left: 3vw;
   }
   .showWireless > div:nth-child(1) {
-    width: 50vw;
+    width: 40vw;
   }
   .showWireless svg {
     width: 100%;
@@ -76,6 +86,9 @@
   }
 }
 @media screen and (min-width: 1024px) {
+  .methodsContainer > div:nth-child(1) > h3:nth-child(2) {
+    top: 10vw;
+  }
   .methodsContainer {
     width: 33vw;
     left: 62vw;
@@ -91,7 +104,7 @@
   }
   .showWireless svg {
     left: 0vw;
-    top: 15vw;
+    top: 10vw;
   }
   .showMobilePay svg {
     width: 138%;
@@ -106,16 +119,22 @@
   }
   .showMobilePay svg {
     width: 100%;
-    top: 0vw;
+    top: -1vw;
     left: 0vw;
   }
   .showWireless svg {
     width: 100%;
-    top: 11vw;
+    top: 7vw;
+  }
+  .methodsContainer > div:nth-child(1) > h3:nth-child(2) {
+    top: 7vw;
   }
 }
 @media screen and (min-width: 1400px) {
   .methodsContainer {
     height: 82vh;
+  }
+  .showWireless svg {
+    top: 3vw;
   }
 }

@@ -83,10 +83,13 @@ export default function PaymentScreen(props) {
           />
         )}
         {payment === "wireless" && (
-          <ReactSVG
-            src={WirelessIcon}
-            className={OnePaymentStyle.showWireless}
-          />
+          <div>
+            <ReactSVG
+              src={WirelessIcon}
+              className={OnePaymentStyle.showWireless}
+            />
+            <h3>Tap your card</h3>
+          </div>
         )}
         {payment === "carddetails" && <PayForm />}
       </Modal>
