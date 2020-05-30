@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Moment from "react-moment";
-import { Heroku } from "./modules/heroku";
+import { Heroku } from "./modules/Heroku";
 import PaymentScreen from "./components/PaymentScreen";
 import EndingScreen from "./components/EndingScreen";
 
