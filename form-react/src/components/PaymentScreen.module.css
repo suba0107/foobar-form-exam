@@ -1,5 +1,28 @@
 .paymentScreen {
   background-color: var(--purple-ish-bg);
-  padding: 5vw 5vw 11vw 5vw;
+  padding: 10vw 5vw 11vw 5vw;
   overflow-x: hidden;
+}
+.paymentScreen img:nth-child(1) {
+  width: 10%;
+  position: absolute;
+  top: 2vw;
+}
+@media screen and (min-width: 768px) {
+  .paymentScreen {
+    padding: 6vw 5vw 11vw 5vw;
+  }
+  .paymentScreen img:nth-child(1) {
+    width: 6%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .paymentScreen img:nth-child(1) {
+    width: 4.5%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .paymentScreen img:nth-child(1) {
+    width: 4%;
+  }
 }

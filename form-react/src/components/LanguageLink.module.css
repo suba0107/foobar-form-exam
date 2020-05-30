@@ -1,6 +1,7 @@
 .languageLink {
   position: relative;
-  top: -2vw;
+  /* top: -2vw; */
+  top: -4vw;
   left: 65vw;
 }
 .languageLink a,
@@ -13,7 +14,8 @@ span {
 }
 @media screen and (min-width: 768px) {
   .languageLink {
-    left: 73vw;
+    left: 75vw;
+    top: -2vw;
   }
   .languageLink a,
   span {
@@ -31,7 +33,7 @@ span {
 }
 @media screen and (min-width: 1200px) {
   .languageLink {
-    left: 85vw;
+    left: 83vw;
   }
   .languageLink a,
   span {

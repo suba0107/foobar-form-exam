@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { ReactSVG } from "react-svg";
+import Logo from "../images/final-logo.png";
 import MobilePayIcon from "../svgs/mobilepay_code.svg";
 import OnePaymentStyle from "./OnePayment.module.css";
 import WirelessIcon from "../svgs/wireless_icon.svg";
-import Logo from "../images/final-logo.png";
 import LanguageLink from "./LanguageLink";
 import PaymentIntro from "./PaymentIntro";
 import MobilepayLink from "./MobilepayLink";
@@ -43,7 +43,7 @@ export default function PaymentScreen(props) {
   // const ipad768px = useMediaPredicate("(min-width: 768px)");
   return (
     <section className={styles.paymentScreen}>
-      {/* <img src={Logo} /> */}
+      <img src={Logo} />
       <LanguageLink />
       <PaymentIntro
         onClick={() => {
