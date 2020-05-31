@@ -12,6 +12,7 @@
   --dark-boxes: #2c383e;
   --dark-boxes-shadow: #1a262c;
   --big-button-colors: #fedb50;
+  --primary-btn-yel: #fedb50;
   --headings-font: futura-pt, sans-serif;
   --text-font: lato, sans-serif;
 }
@@ -21,10 +22,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--purple-ish-bg);
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
-img {
+/* img {
   width: 100%;
-}
+} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import Moment from "react-moment";
 import { Heroku } from "./modules/Heroku";
 import Main from "./components/Main";
+import styles from "./App.css";
 import { MemoryRouter, Router, Switch, Route, Link } from "react-router-dom";
 import Landing_page from "./components/Landing_page";
 import Select_beer from "./components/Select_beer";
 import CheckOrder from "./components/CheckOrder";
+import PaymentScreen from "./components/PaymentScreen";
+import EndingScreen from "./components/EndingScreen";
 
 export default function App() {
   // const [info, setData] = useState([]);
@@ -62,6 +65,10 @@ export default function App() {
                 <Link to="/select">Select</Link>
               </li>
               <li>
+                <Link to="/payment">Payment</Link>
+              </li>
+
+              <li>
                 <Link to="/end">End</Link>
               </li>
             </ul>
@@ -71,8 +78,14 @@ export default function App() {
             renders the first <Route> that matches the current URL. */}
           <Switch>
             <Route path="/end">
-              <End_page />
+              <EndingScreen />
             </Route>
+            <Route path="/payment">
+              <div className="App">
+                <PaymentScreen />
+              </div>
+            </Route>
+
             <Route path="/checkOrder">
               <CheckOrder orders={orders} sendBackOrders={sendBackOrders} getState={getState} />
             </Route>
@@ -87,8 +100,4 @@ export default function App() {
       </MemoryRouter>
     </div>
   );
-}
-
-function End_page() {
-  return <h2>End page</h2>;
 }

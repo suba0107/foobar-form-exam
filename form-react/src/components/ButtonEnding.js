@@ -1,0 +1,12 @@
+import React, { useState } from "react";
+import { ReactSVG } from "react-svg";
+import styles from "./ButtonEnding.module.css"
+
+export default function ButtonEnding(props) {
+  return (
+    <button onClick={props.onClick} className={styles.buttonEnding}>
+      Back home
+      {props.children}
+    </button>
+  );
+}

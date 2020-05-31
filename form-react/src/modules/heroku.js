@@ -10,6 +10,8 @@ function getData(callback, name) {
     .then((data) => {
       callback(data[name]);
     });
+  // .then((res) => res.json())
+  // .then((data) => {});
 }
 function postOrder(callback, data) {
   const postData = JSON.stringify(data);

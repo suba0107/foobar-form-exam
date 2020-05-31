@@ -1,0 +1,70 @@
+.endingStatusBox {
+  position: absolute;
+  background-color: var(--white-sec-bg);
+  border-radius: 10vw;
+  padding: 8vw;
+  top: 145vh;
+  left: 5vw;
+  width: 90%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.endingStatusBox h2 {
+  font-family: var(--text-font);
+  color: var(--bright-purple-bg);
+  font-weight: 550;
+  font-size: 22px;
+}
+.endingStatusBox h3 {
+  font-family: var(--text-font);
+  color: var(--pink-highlight);
+  font-weight: 550;
+  text-align: center;
+}
+.endingStatusBox > div:nth-child(1),
+.endingStatusBox > div:nth-child(2) {
+  margin: 1.5vw auto;
+}
+.endingStatusBox > div:nth-child(2) > h3:nth-child(1) {
+  text-align: center;
+}
+.emptyMsg {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .endingStatusBox {
+    top: 105vh;
+    left: 32vw;
+    width: 61%;
+    border-radius: 5vw;
+  }
+  .endingStatusBox h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .endingStatusBox {
+    top: 149vh;
+    left: 44vw;
+    width: 50%;
+    padding: 5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .endingStatusBox {
+    top: 130vh;
+    left: 60vw;
+    width: 35%;
+    padding: 4vw;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .endingStatusBox {
+    top: 142vh;
+    left: 65vw;
+    width: 30%;
+    padding: 3.5vw;
+  }
+}

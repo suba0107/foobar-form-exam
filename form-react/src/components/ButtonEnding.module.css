@@ -1,0 +1,39 @@
+.buttonEnding {
+  all: initial;
+  cursor: pointer;
+  color: var(--bright-purple-bg);
+  background-color: var(--primary-btn-yel);
+  border-radius: 10vw;
+  font-family: var(--text-font);
+  font-weight: 510;
+  width: 40vw;
+  padding: 3vw;
+  text-align: center;
+  margin: 1vw auto;
+}
+@media screen and (min-width: 768px) {
+  .buttonEnding {
+    font-size: 3vw;
+    width: 27vw;
+    padding: 2vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .buttonEnding {
+    font-size: 1.8vw;
+    width: 21vw;
+    padding: 1.5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .buttonEnding {
+    width: 17vw;
+    padding: 1vw;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .buttonEnding {
+    font-size: 1.5vw;
+    width: 15vw;
+  }
+}
