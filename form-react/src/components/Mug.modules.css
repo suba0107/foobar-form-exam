@@ -1,0 +1,36 @@
+.mug-1 {
+  fill: #e7e7e7;
+}
+
+.mug-2 {
+  fill: #ffd228;
+}
+
+.mug-3 {
+  fill: #fffeff;
+}
+
+.mug-4 {
+  fill: #d8d8d8;
+}
+
+.mug-5 {
+  fill: #e4b825;
+}
+
+.mug-6,
+.mug-8 {
+  fill: #fff;
+}
+
+.mug-6 {
+  opacity: 0.55;
+}
+
+.mug-7 {
+  opacity: 0.08;
+}
+
+.mug-8 {
+  opacity: 0.8;
+}

@@ -2,23 +2,27 @@ import React, { useState, useEffect } from "react";
 import styles from "./EditAmount.modules.css";
 
 export default function EditAmount(props, onClickButton) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(props.startAt);
   // let [amount, setAmount] = useState(props.countBeers);
 
   let amount = props.countBeers;
   useEffect(() => {
-    props.onClickButton({ count: count, name: props.countBeers.name });
+    console.log(props.countBeers.count + count);
+    props.onClickButton({ count: count, name: props.countBeers.name }, "counter");
   }, [count]);
+
+  useEffect(() => {
+    setCount(props.countBeers.count);
+  }, [props.countBeers]);
 
   return (
     <>
       <div
+        id="editAmount"
         style={{
           display: "flex",
           alignItems: "center",
-          width: "80%",
           justifyContent: "space-between",
-          justifySelf: "flex-end",
         }}
       >
         <div className="buttonWrapper">
@@ -31,8 +35,7 @@ export default function EditAmount(props, onClickButton) {
           >
             -
           </button>
-
-          <p className="amount">{count + props.countBeers.count}</p>
+          <p className="amount">{count}</p>
           <button
             onClick={() => {
               setCount(count + 1);
@@ -42,7 +45,7 @@ export default function EditAmount(props, onClickButton) {
             +
           </button>
         </div>
-        <p className="total">{(count + props.countBeers.count) * 25} kr</p>
+        <p className="total">{count * 25} kr</p>
       </div>
     </>
   );

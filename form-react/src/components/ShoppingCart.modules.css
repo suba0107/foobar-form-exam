@@ -93,10 +93,9 @@ header {
 #allWrapper {
   margin-right: 2rem;
   margin-top: 2rem;
-  margin-bottom: ;
 }
 #allWrapper h2 {
-  color: var(--bright-purple-bg);
+  color: white;
   font-size: 1.3rem;
   text-align: right;
   margin: 0;
@@ -110,6 +109,9 @@ header {
   margin: 0;
 }
 
+#beerAmount {
+  color: white;
+}
 .heading-wrapper {
   position: relative;
   width: 2vw;

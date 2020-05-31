@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import styles from "./Select_beer.modules.css";
 
 export default function Amount(props, onClickButton) {
-  let [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
   const [state, setState] = useState(props.onState);
 
-  const [amount, setAmount] = useState(props.countBeers);
+  const [amount, setAmount] = useState(0);
 
   console.log(props.countBeers + "count Beers" + state);
   useEffect(() => {
-    setAmount(count + props.countBeers);
+    setAmount(count);
   }, [count]);
 
   return (
@@ -56,7 +56,9 @@ export default function Amount(props, onClickButton) {
       </div>
       <button
         onClick={() => {
-          props.amount(count);
+          // props.amount(count);
+          props.amount({ count: count, name: props.name });
+          console.log(count);
           console.log(state + " " + amount);
           setCount(0);
         }}

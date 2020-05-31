@@ -1,70 +1,65 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ShoppingCart.modules.css";
 import EditAmount from "./EditAmount.js";
-import { useHistory as history } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function ShoppingCart(props) {
+  let history = useHistory();
+  const [state, setState] = useState(props.state);
   const [order, setOrder] = useState([]);
   const [togglePopUp, setTogglePopUp] = useState(false);
-  const [added, setAdded] = useState(0);
-  const [total, setTotal] = useState([]);
-  const [totalEdited, setTotalEdited] = useState(0);
-  let beers = props.beer;
-  console.log(order);
-  function showOrder() {
-    return console.log(order);
-  }
 
-  console.log("total" + total);
+  useEffect(() => {
+    setState(props.state);
+    if (state === "Start order") {
+      setOrder(props.beer);
+    } else if (state === "Gone back") {
+      setOrder(props.orderSentBack);
+    }
+  }, [props.state]);
+
+  useEffect(() => {
+    setOrder(props.orderSentBack);
+  }, [props.orderSentBack]);
+
+  useEffect(() => {
+    if (state === "Start order" || props.beer <= 1) {
+      handleAddedBeers(props.beer);
+    } else {
+      setState("Start order");
+    }
+  }, [props.beer]);
 
   function totalAmount() {
     let beerCount = 0;
-    console.log(props.beer);
-    if (props.beer.length !== 0) {
-      props.beer.forEach((elm) => {
+    order.forEach((elm) => {
+      if (elm.name !== undefined) {
         beerCount = elm.count + beerCount;
-      });
-      console.log(beerCount);
-      return beerCount;
-    } else {
-      console.log(beerCount);
-      return beerCount;
-    }
-  }
-  // setTotal(props.beer.count + beer);
-  // function amountOfBeer(beer) {
-  //   let beers = 0;
-  //   console.log(beer + beers + 1);
-  // }
-
-  useEffect(() => {
-    let beerCount = 0;
-    total.forEach((elm) => {
-      beerCount = elm.count + beerCount;
+      }
     });
-    // console.log();
-    console.log(beerCount);
-    setTotalEdited(beerCount);
-    console.log(totalEdited);
-  }, [total]);
-
-  function hej(x) {
-    console.log(x);
+    return beerCount;
   }
-  function amountOfBeer(beers) {
-    console.log(beers);
-    console.log(total);
-    let beerCount = 0;
-    const nextState = [...total];
-    const doesBeerExist = nextState.filter((order) => order.name === beers.name);
-    console.log(doesBeerExist.length);
 
+  function handleAddedBeers(beer, from) {
+    const nextState = [...order];
+    const doesBeerExist = nextState.filter((order) => order.name === beer.name);
     if (doesBeerExist.length > 0) {
-      const newState = nextState.map((obj) => (obj.name === beers.name ? beers : obj));
-      setTotal(newState);
+      if (beer.count === 0 || beer === undefined) {
+        const newState = nextState.filter((order) => order.name !== beer.name);
+        setOrder(newState);
+      } else {
+        if (from === "counter") {
+          const newState = nextState.map((obj) => (obj.name === beer.name ? beer : obj));
+          setOrder(newState);
+        } else {
+          const newObj = { count: doesBeerExist[0].count + beer.count, name: beer.name };
+          const newState = nextState.map((obj) => (obj.name === beer.name ? newObj : obj));
+          setOrder(newState);
+        }
+      }
     } else {
-      nextState.push(beers);
-      setTotal(nextState);
+      nextState.push(beer);
+      setOrder(nextState);
     }
   }
 
@@ -81,34 +76,53 @@ export default function ShoppingCart(props) {
           }}
           className="heading-wrapper"
         >
-          {totalEdited + totalAmount() !== 0 && <p id="showTotal">{totalEdited + totalAmount()}</p>}
+          {totalAmount() !== 0 && <p id="showTotal">{totalAmount()}</p>}
           <h2 id="shopping-cart-heading">🛒</h2>
         </div>
         {togglePopUp && (
           <article className="cart-popUp">
             <h2 className="title">Your Shopping cart</h2>
-            {props.beer.length === 0 ? (
+            {order.length <= 1 ? (
               <h3>No beers added yet</h3>
             ) : (
               <>
-                {props.beer.map((data) => (
-                  <article id="amountWrapper" key={props.beer.indexOf(data)}>
-                    <h3>{data.name}</h3>
-                    <EditAmount id="shopping-cart-amount" startAt={data.count} countBeers={data} onClickButton={amountOfBeer} />
-                  </article>
-                ))}
+                {order.map((data) => {
+                  if (data.name !== undefined) {
+                    return (
+                      <article id="amountWrapper" key={data.name}>
+                        <h3>{data.name}</h3>
+                        <EditAmount id="shopping-cart-amount" startAt={data.count} countBeers={data} onClickButton={handleAddedBeers} />
+                      </article>
+                    );
+                  }
+                })}
+
                 <section id="allWrapper">
-                  <h2>Total</h2>
-                  <h3 className="allBeers">{(totalEdited + totalAmount()) * 25} kr</h3>
+                  <h2 id="beerAmount">Total: {totalAmount()}</h2>
+                  <section>
+                    <h3 className="allBeers">{totalAmount() * 25} kr</h3>
+                  </section>
                 </section>
               </>
             )}
 
-            <button>Keep shopping</button>
             <button
               onClick={() => {
+                if (togglePopUp) {
+                  setTogglePopUp(false);
+                } else {
+                  setTogglePopUp(true);
+                }
+              }}
+            >
+              Keep shopping
+            </button>
+            <button
+              onClick={() => {
+                props.getOrders(order);
                 history.push("/checkOrder");
               }}
+              disabled={totalAmount() === 0}
             >
               Checkout
             </button>

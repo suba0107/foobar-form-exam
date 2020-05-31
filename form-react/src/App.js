@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import { MemoryRouter, Router, Switch, Route, Link } from "react-router-dom";
 import Landing_page from "./components/Landing_page";
 import Select_beer from "./components/Select_beer";
+import CheckOrder from "./components/CheckOrder";
 
 export default function App() {
   // const [info, setData] = useState([]);
@@ -15,6 +16,28 @@ export default function App() {
   // function onSubmitOrder(info) {
   //   Heroku.postOrder(info);
   // }
+
+  const [orders, setOrders] = useState([]);
+  const [sentBackOrders, setSentBackOrders] = useState([]);
+  const [state, setState] = useState("");
+
+  function getState(state) {
+    setState(state);
+  }
+
+  console.log(state);
+  function getOrders(orders) {
+    console.log(orders);
+    setOrders(orders);
+  }
+  function sendBackOrders(orders) {
+    setSentBackOrders(orders);
+    console.log(orders);
+  }
+
+  useEffect(() => {
+    console.log(sentBackOrders);
+  }, [sentBackOrders]);
 
   return (
     <div>
@@ -33,6 +56,9 @@ export default function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
+                <Link to="/checkorder">Check order</Link>
+              </li>
+              <li>
                 <Link to="/select">Select</Link>
               </li>
               <li>
@@ -47,14 +73,14 @@ export default function App() {
             <Route path="/end">
               <End_page />
             </Route>
-            <Route exact path="/checkOrder">
-              <Select_beer />
+            <Route path="/checkOrder">
+              <CheckOrder orders={orders} sendBackOrders={sendBackOrders} getState={getState} />
             </Route>
-            <Route exact path="/select">
-              <Select_beer />
+            <Route path="/select">
+              <Select_beer orderSentBack={sentBackOrders} getOrders={getOrders} state={state} />
             </Route>
             <Route path="/">
-              <Landing_page />
+              <Landing_page getState={getState} />
             </Route>
           </Switch>
         </div>

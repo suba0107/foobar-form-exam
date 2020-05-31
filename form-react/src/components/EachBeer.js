@@ -7,19 +7,20 @@ import { ReactKeg } from "./svg/keg.svg";
 import Keg from "./Keg.js";
 
 export default function EachBeer(props, onInfoClick) {
-  const [counting, setCounting] = useState(0);
+  const [counting, setCounting] = useState();
   const [beerAmount, setBeerAmount] = useState();
 
   function counter(count) {
     // setCounting(count);
     // setCounting(count);
-    setCounting(counting + count);
+    console.log(count);
+    setCounting(count);
   }
 
   useEffect(() => {
-    console.log({ count: counting, name: props.name });
-    if (counting !== 0) {
-      props.amountOfBeer({ count: counting, name: props.name });
+    // console.log({ count: counting, name: props.name });
+    if (counting !== undefined) {
+      props.amountOfBeer(counting);
     }
     // // setCount(count - amount);
     // console.log({ count: count, name: props.name });

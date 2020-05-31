@@ -3,19 +3,8 @@ import { Button } from "muicss/react";
 import styles from "./Landingpage.modules.css";
 import { useHistory } from "react-router-dom";
 
-export default function Landing_page() {
+export default function Landing_page(props) {
   let history = useHistory();
-
-  //   window.addEventListener("DOMContentLoaded", start);
-
-  //   function start() {
-  //     loadSvg();
-  //   }
-  //   async function loadSvg() {
-  //     const response = await fetch("./svg/landingpage.svg");
-  //     const mySVG = await response.text();
-  //     document.querySelector(".svg").innerHTML = mySVG;
-  //   }
 
   return (
     <main className="landingpage-main">
@@ -25,10 +14,9 @@ export default function Landing_page() {
         <button
           className="orderButton"
           onClick={() => {
+            props.getState("Start order");
             history.push("/select");
           }}
-          variant="contained"
-          color="primary"
         >
           Order now
         </button>
