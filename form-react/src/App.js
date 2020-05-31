@@ -87,10 +87,18 @@ export default function App() {
             </Route>
 
             <Route path="/checkOrder">
-              <CheckOrder orders={orders} sendBackOrders={sendBackOrders} getState={getState} />
+              <CheckOrder
+                orders={orders}
+                sendBackOrders={sendBackOrders}
+                getState={getState}
+              />
             </Route>
             <Route path="/select">
-              <Select_beer orderSentBack={sentBackOrders} getOrders={getOrders} state={state} />
+              <Select_beer
+                orderSentBack={sentBackOrders}
+                getOrders={getOrders}
+                state={state}
+              />
             </Route>
             <Route path="/">
               <Landing_page getState={getState} />
