@@ -13,7 +13,7 @@ function getData(callback, name) {
   // .then((res) => res.json())
   // .then((data) => {});
 }
-function postOrder(callback, data) {
+function postOrder(data) {
   const postData = JSON.stringify(data);
   fetch(orderUrl, {
     method: "post",

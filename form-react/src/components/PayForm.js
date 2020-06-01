@@ -10,18 +10,29 @@ import { useHistory } from "react-router-dom";
 
 export default function Form(props) {
   console.log(props.orders);
-  const orders = props.orders;
-  console.log(orders[1].name);
-  const changeArr = Object.values(orders[1]); //["1", "Fairy tale"]
-  changeArr.shift();
-  console.log(changeArr);
+  const [orders, setOrders] = useState([]);
+  // console.log(orders[1].name);
+  // const changeArr = Object.values(orders[1]); //["1", "Fairy tale"]
+  // changeArr.shift();
+  // console.log(changeArr);
   let history = useHistory();
+
+  useEffect(() => {
+    const ordertest = [];
+    props.orders.forEach((elm) => {
+      if (elm.name !== undefined) {
+        ordertest.push({ name: elm.name, amount: elm.count });
+      }
+    });
+
+    console.log(ordertest);
+    setOrders(ordertest);
+  }, [props.orders]);
 
   function submit(evt) {
     evt.preventDefault();
-    Heroku.postOrder({
-      order: changeArr,
-    });
+    // console.log(changeArr);
+    Heroku.postOrder(orders);
     history.push("/end");
   }
   function limitCardDate(val, max) {
@@ -49,22 +60,18 @@ export default function Form(props) {
     return month + (year.length ? "/" + year : "");
   }
   function showCardNoExample(evt) {
-    document.querySelector("#cardNoExample").textContent =
-      "Example: 1234 1234 1234 1234";
+    document.querySelector("#cardNoExample").textContent = "Example: 1234 1234 1234 1234";
   }
   function showExpireExample(evt) {
-    document.querySelector("#expireDateExample").textContent =
-      "Example: mm / yy";
+    document.querySelector("#expireDateExample").textContent = "Example: mm / yy";
   }
   function showCVVExample(evt) {
     document.querySelector("#cvvExample").textContent = "Ex: 123";
   }
   function hideExample(evt) {
-    document
-      .querySelectorAll("#cardNoExample,#expireDateExample,#cvvExample")
-      .forEach((elm) => {
-        elm.textContent = "";
-      });
+    document.querySelectorAll("#cardNoExample,#expireDateExample,#cvvExample").forEach((elm) => {
+      elm.textContent = "";
+    });
   }
 
   return (
@@ -76,36 +83,18 @@ export default function Form(props) {
       </div>
       <label className={styles.cardHolderName}>
         Name on Card
-        <input
-          id="nameOnCard"
-          type="text"
-          placeholder="John Something"
-          autoCapitalize="words"
-          name="nameOnCard"
-          required
-        />
+        <input id="nameOnCard" type="text" placeholder="John Something" autoCapitalize="words" name="nameOnCard" required />
         <p id="nameError"></p>
       </label>
       <label className={styles.cardNumber}>
         Card number
-        <NumberFormat
-          format="#### #### #### ####"
-          placeholder="1234 1234 1234 1234"
-          onKeyDown={showCardNoExample}
-          onBlur={hideExample}
-        />
+        <NumberFormat format="#### #### #### ####" placeholder="1234 1234 1234 1234" onKeyDown={showCardNoExample} onBlur={hideExample} />
         <p id="cardNoExample"></p>
       </label>
       <fieldset className={styles.fieldsetWrapper}>
         <label className={styles.expireDateLabel}>
           Expire
-          <NumberFormat
-            format={cardExpiry}
-            placeholder="mm/yy"
-            className={styles.cardExpire}
-            onKeyDown={showExpireExample}
-            onBlur={hideExample}
-          />
+          <NumberFormat format={cardExpiry} placeholder="mm/yy" className={styles.cardExpire} onKeyDown={showExpireExample} onBlur={hideExample} />
           <p id="expireDateExample"></p>
         </label>
         <label className={styles.cvvLabel}>
