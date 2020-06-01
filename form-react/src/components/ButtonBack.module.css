@@ -2,8 +2,8 @@
   align-self: flex-end;
   background-color: var(--bright-purple-bg);
   position: absolute;
-  right: 50px;
-  bottom: 50px;
+  right: 27px;
+  bottom: 20px;
 }
 .backIcon > span:nth-child(1) > svg:nth-child(1) {
   /* width: 20vw; */
@@ -19,10 +19,9 @@
     top: 0.8vw;
   }
   .buttonContainer {
-    /* position: relative; */
-    /* left: 39vw; */
-    /* right: -36vw; */
-    /* top: 0vw; */
+    left: 74vw;
+    /* right: -36vw;
+    top: 0vw; */
   }
 }
 @media screen and (min-width: 1024px) {
@@ -35,9 +34,8 @@
     top: 0.4vw;
   }
   .buttonContainer {
-    /* position: relative;
-    right: 7vw;
-    top: 38vw; */
+    left: 45vw;
+    bottom: 30px;
   }
 }
 @media screen and (min-width: 1200px) {
