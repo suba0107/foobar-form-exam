@@ -32,3 +32,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+.navigationButton {
+  border-radius: 25px;
+  border-style: none;
+  padding: 5px 40px;
+  background-color: var(--primary-btn-yel);
+  font-family: var(--headings-font);
+  color: var(--bright-purple-bg);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-width: 4px;
+}
+
+.navigationButton:disabled {
+  opacity: 0.6;
+  background-color: #ceb039;
+}

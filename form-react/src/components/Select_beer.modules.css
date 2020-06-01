@@ -98,3 +98,18 @@ article {
   right: 1px;
   top: 15px;
 }
+
+.add:disabled {
+  opacity: 0.5;
+}
+
+.changeColor {
+  /* FROM https://codepen.io/priosoft/pen/dMryaY */
+  background-image: -webkit-linear-gradient(45deg, transparent 50%, #eb627e 50%);
+  background-image: linear-gradient(45deg, transparent 50%, #eb627e 50%);
+  background-position: 100%;
+  background-size: 250%;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  /* FROM https://codepen.io/priosoft/pen/dMryaY */
+}
