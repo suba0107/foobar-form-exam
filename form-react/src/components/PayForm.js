@@ -10,25 +10,23 @@ import { useHistory } from "react-router-dom";
 
 export default function Form(props) {
   console.log(props.orders);
-  const [orders, setOrders] = useState([]);
   // console.log(orders[1].name);
   // const changeArr = Object.values(orders[1]); //["1", "Fairy tale"]
   // changeArr.shift();
   // console.log(changeArr);
   let history = useHistory();
-
+  const [orders, setOrders] = useState([]);
   useEffect(() => {
-    const ordertest = [];
+    const newOrders = [];
     props.orders.forEach((elm) => {
       if (elm.name !== undefined) {
-        ordertest.push({ name: elm.name, amount: elm.count });
+        newOrders.push({ name: elm.name, amount: elm.count });
       }
     });
 
-    console.log(ordertest);
-    setOrders(ordertest);
+    // console.log(newOrders);
+    setOrders(newOrders);
   }, [props.orders]);
-
   function submit(evt) {
     evt.preventDefault();
     Heroku.postOrder(orders);

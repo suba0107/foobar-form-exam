@@ -21,15 +21,15 @@ export default function PaymentScreen(props) {
   const [show, setState] = useState(false);
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    const ordertest = [];
+    const newOrders = [];
     props.orders.forEach((elm) => {
       if (elm.name !== undefined) {
-        ordertest.push({ name: elm.name, amount: elm.count });
+        newOrders.push({ name: elm.name, amount: elm.count });
       }
     });
 
-    console.log(ordertest);
-    setOrders(ordertest);
+    // console.log(newOrders);
+    setOrders(newOrders);
   }, [props.orders]);
   const Modal = ({ children, show, setState, setPayment, setOrders }) => {
     const content = show && (
