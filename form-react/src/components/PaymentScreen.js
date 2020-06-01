@@ -13,15 +13,23 @@ import styles from "./PaymentScreen.module.css";
 import { useMediaPredicate } from "react-media-hook";
 import onePayment from "./OnePayment.module.css";
 import PayForm from "./PayForm";
+import {
+  MemoryRouter,
+  Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+} from "react-router-dom";
 
 export default function PaymentScreen(props) {
+  let history = useHistory();
+  console.log(props);
   let [payment, setPayment] = useState(undefined);
   const [show, setState] = useState(false);
-  const ipad1024px = useMediaPredicate("(max-width: 1024px)");
-
   const Modal = ({ children, show, setState, setPayment }) => {
     const content = show && (
-      <article className={onePayment.methodsContainer}>
+      <article id="popUp" className={onePayment.methodsContainer}>
         {children}
         <div
           className={styles.hideBackBtn}
@@ -30,14 +38,18 @@ export default function PaymentScreen(props) {
             setPayment(undefined);
           }}
         >
-          <ButtonBack />{" "}
+          <ButtonBack />
         </div>
       </article>
     );
     return content;
   };
-  // const mobileFirst = useMediaPredicate("(max-width: 500px)");
-  // const ipad768px = useMediaPredicate("(min-width: 768px)");
+  useEffect(() => {
+    const donePayment = setInterval(() => {
+      console.log("done payment");
+    }, 4000);
+    return clearInterval(donePayment);
+  }, []);
   return (
     <section className={styles.paymentScreen}>
       <img src={Logo} className={styles.fooBarLogo} />
@@ -65,9 +77,22 @@ export default function PaymentScreen(props) {
             }}
           />
         </div>
-        <ButtonBack className={styles.btnPosition} />
+        <div
+          onClick={() => {
+            history.push("/checkorder");
+          }}
+        >
+          <ButtonBack className={styles.btnPosition} />
+        </div>
       </article>
-      <Modal show={show} setState={setState} setPayment={setPayment}>
+      <Modal
+        id="popUp"
+        show={show}
+        setState={setState}
+        setPayment={setPayment}
+        sendBackOrders={props.sendBackOrders}
+        orders={props.orders}
+      >
         {payment === "mobilepay" && (
           <ReactSVG
             src={MobilePayIcon}
@@ -84,7 +109,12 @@ export default function PaymentScreen(props) {
           </div>
         )}
         {payment === "carddetails" && (
-          <PayForm setState={setState} setPayment={setPayment} />
+          <PayForm
+            setState={setState}
+            setPayment={setPayment}
+            sendBackOrders={props.sendBackOrders}
+            orders={props.orders}
+          />
         )}
       </Modal>
     </section>

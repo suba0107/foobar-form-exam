@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CheckOrder.modules.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import EditAmount from "./EditAmount.js";
 import Mug from "./Mug.js";
 import { useMediaPredicate } from "react-media-hook";
 
 export default function CheckOrder(props) {
   let history = useHistory();
+  let location = useLocation();
   const isMin815px = useMediaPredicate("(min-width: 815px)");
   const [info, setInfo] = useState(props.orders);
 
@@ -26,7 +27,13 @@ export default function CheckOrder(props) {
                   </div>
                   <h3>{data.name}</h3>
                   <h4>{data.count * 25} kr</h4>
-                  <EditAmount id="check-order-amount" startAt={data.count} page={"CheckOrder"} countBeers={{ count: data.count, name: data.name }} onClickButton={amountOfBeer} />
+                  <EditAmount
+                    id="check-order-amount"
+                    startAt={data.count}
+                    page={"CheckOrder"}
+                    countBeers={{ count: data.count, name: data.name }}
+                    onClickButton={amountOfBeer}
+                  />
                 </article>
               );
             }
@@ -44,10 +51,14 @@ export default function CheckOrder(props) {
     let beerCount = 0;
     const nextState = [...info];
     if (beers.count === 0) {
-      const withoutBeer = nextState.filter((order) => order.name !== beers.name);
+      const withoutBeer = nextState.filter(
+        (order) => order.name !== beers.name
+      );
       setInfo(withoutBeer);
     } else {
-      const newState = nextState.map((obj) => (obj.name === beers.name ? beers : obj));
+      const newState = nextState.map((obj) =>
+        obj.name === beers.name ? beers : obj
+      );
       setInfo(newState);
     }
   }
@@ -119,7 +130,14 @@ export default function CheckOrder(props) {
             <h3 className="allBeers">{totalCount() * 25} kr</h3>
           </section>
         </section>
-        <button disabled={totalCount() === 0} id="goToPayment">
+        <button
+          disabled={totalCount() === 0}
+          id="goToPayment"
+          onClick={() => {
+            props.sendBackOrders(info);
+            history.push("/payment");
+          }}
+        >
           Go to payment
         </button>
       </article>

@@ -6,17 +6,19 @@ import Dankort from "../images/dankort.png";
 import MastercardIcon from "../images/mastercard.png";
 import VisaIcon from "../images/visa.png";
 import styles from "./PayForm.module.css";
+import { useHistory } from "react-router-dom";
 
 export default function Form(props) {
-  const [orders, setOrders] = useState([]);
-  const form = document.querySelector("form");
-  const allInputs = document.querySelectorAll("input");
+  let history = useHistory();
+  console.log(props);
+  // const [orders, setOrders] = useState([]);
+  // const form = document.querySelector("form");
+  // const allInputs = document.querySelectorAll("input");
 
   function submit(evt) {
     evt.preventDefault();
-    Heroku.postOrder(setOrders, orders);
-    form.reset();
-    console.log(orders);
+    history.push("/end");
+    // Heroku.postOrder(setOrders, orders);
   }
   function limitCardDate(val, max) {
     if (val.length === 1 && val[0] > max[0]) {
@@ -51,8 +53,7 @@ export default function Form(props) {
       "Example: mm / yy";
   }
   function showCVVExample(evt) {
-    document.querySelector("#cvvExample").textContent =
-      "Needs 3 digits. Example: 123";
+    document.querySelector("#cvvExample").textContent = "Ex: 123";
   }
   function hideExample(evt) {
     document
@@ -62,17 +63,7 @@ export default function Form(props) {
       });
   }
 
-  const inputStyle = {
-    borderColor:
-      EventTarget.keyCode < 48 || EventTarget.keyCode > 57
-        ? "var(--bright-purple-bg)"
-        : "var(--pink-highlight)" || EventTarget.length <= 0
-        ? "var(--bright-purple-bg)"
-        : console.log("None"),
-  };
   return (
-    // <article id="paymentOption">
-    //
     <form className={styles.payForm} onSubmit={submit}>
       <div id="paymentOptionsLogo" className={styles.paymentOptionLogos}>
         <img id="dankort" src={Dankort} />
@@ -128,6 +119,5 @@ export default function Form(props) {
       </fieldset>
       <ButtonPay type="submit"></ButtonPay>
     </form>
-    // </article>
   );
 }
