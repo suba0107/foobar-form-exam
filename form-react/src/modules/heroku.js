@@ -23,7 +23,7 @@ function postOrder(callback, data) {
     body: postData,
   })
     .then((res) => res.json())
-    .then((orders) => console.log(orders));
+    .then((orders) => callback(orders));
 }
 
 export const Heroku = {
