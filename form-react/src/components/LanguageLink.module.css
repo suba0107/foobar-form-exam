@@ -16,7 +16,7 @@ span {
 }
 @media screen and (min-width: 768px) {
   .languageLink {
-    left: 75vw;
+    left: 36vw;
     top: -2vw;
   }
   .languageLink a,

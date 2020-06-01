@@ -39,9 +39,9 @@
   }
 }
 @media screen and (min-width: 1200px) {
-  .buttonContainer {
-    /* top: 34vw; */
-  }
+  /* .buttonContainer {
+   top: 34vw; 
+  }*/
   .roundBackBtn {
     left: 35vw;
   }
@@ -50,7 +50,7 @@
   }
 }
 @media screen and (min-width: 1400px) {
-  .buttonContainer {
-    /* top: 25vw; */
-  }
+  /* .buttonContainer {
+    top: 25vw; 
+  }*/
 }

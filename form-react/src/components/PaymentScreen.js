@@ -5,14 +5,12 @@ import MobilePayIcon from "../svgs/mobilepay_code.svg";
 import OnePaymentStyle from "./OnePayment.module.css";
 import WirelessIcon from "../svgs/wireless_icon.svg";
 import LanguageLink from "./LanguageLink";
-import PaymentIntro from "./PaymentIntro";
 import MobilepayLink from "./MobilepayLink";
 import WirelessLink from "./WirelessLink";
 import CardDetailsLink from "./CardDetailsLink";
 import ButtonBack from "./ButtonBack";
 import styles from "./PaymentScreen.module.css";
 import { useMediaPredicate } from "react-media-hook";
-import introStyle from "./PaymentIntro.module.css";
 import onePayment from "./OnePayment.module.css";
 import PayForm from "./PayForm";
 
@@ -47,12 +45,6 @@ export default function PaymentScreen(props) {
       <article className={styles.paymentIntro}>
         <h2>Almost there!</h2>
         <h2>Please choose a payment method</h2>
-        {/* <PaymentIntro
-          onClick={() => {
-            setPayment("mobilepay");
-            setState();
-          }}
-        > */}
         <div className={styles.paymentWrapper}>
           <MobilepayLink
             onClick={() => {

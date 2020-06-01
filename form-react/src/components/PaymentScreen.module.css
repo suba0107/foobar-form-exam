@@ -40,9 +40,9 @@
   flex-flow: column wrap;
 }
 @media screen and (min-width: 768px) {
-  .paymentScreen {
-    /* padding: 6vw 5vw 1vw 5vw; */
-  }
+  /*.paymentScreen {
+     padding: 6vw 5vw 1vw 5vw; 
+  }*/
   .fooBarLogo {
     width: 6%;
     top: 15vw;
@@ -63,6 +63,10 @@
     flex-flow: row wrap;
     /* margin: 4.5vw auto; */
   }
+  .fooBarLogo {
+    width: 4.5%;
+    top: 13vw;
+  }
 }
 @media screen and (min-width: 1200px) {
   .paymentIntro {
@@ -72,23 +76,16 @@
   .paymentIntro > div:nth-child(2) {
     margin: 3.5vw auto;
   }
+  .fooBarLogo {
+    width: 4%;
+  }
 }
 @media screen and (min-width: 1400px) {
   .paymentIntro {
     /* width: 57%; */
     height: 82vh;
   }
-  .paymentIntro > div:nth-child(2) {
-    /* margin: 1vw auto; */
-  }
-}
-@media screen and (min-width: 1024px) {
-  .fooBarLogo {
-    width: 4.5%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .fooBarLogo {
-    width: 4%;
-  }
+  /*.paymentIntro > div:nth-child(2) {
+     margin: 1vw auto; 
+  }*/
 }
