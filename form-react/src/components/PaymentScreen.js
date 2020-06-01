@@ -13,25 +13,31 @@ import styles from "./PaymentScreen.module.css";
 import onePayment from "./OnePayment.module.css";
 import PayForm from "./PayForm";
 import { useHistory } from "react-router-dom";
+import { Heroku } from "../modules/Heroku";
 
 export default function PaymentScreen(props) {
   let history = useHistory();
   let [payment, setPayment] = useState(undefined);
   const [show, setState] = useState(false);
-  console.log(props);
-  const orders = props.orders;
-  const newArr = [];
-
-  function showData() {
-    orders.forEach((o) => {
-      const obj = orders[1].values;
-      newArr.push(obj);
+  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    const ordertest = [];
+    props.orders.forEach((elm) => {
+      if (elm.name !== undefined) {
+        ordertest.push({ name: elm.name, amount: elm.count });
+      }
     });
-  }
 
-  const Modal = ({ children, show, setState, setPayment }) => {
+    console.log(ordertest);
+    setOrders(ordertest);
+  }, [props.orders]);
+  const Modal = ({ children, show, setState, setPayment, setOrders }) => {
     const content = show && (
-      <article id="popUp" className={onePayment.methodsContainer}>
+      <article
+        id="popUp"
+        className={onePayment.methodsContainer}
+        onClick={setOrders}
+      >
         {children}
         <div
           className={styles.hideBackBtn}
@@ -46,12 +52,6 @@ export default function PaymentScreen(props) {
     );
     return content;
   };
-  useEffect(() => {
-    const donePayment = setInterval(() => {
-      console.log("done payment");
-    }, 4000);
-    return clearInterval(donePayment);
-  }, []);
   return (
     <section className={styles.paymentScreen}>
       <img src={Logo} className={styles.fooBarLogo} />
@@ -89,13 +89,25 @@ export default function PaymentScreen(props) {
       </article>
       <Modal id="popUp" show={show} setState={setState}>
         {payment === "mobilepay" && (
-          <ReactSVG
-            src={MobilePayIcon}
-            className={OnePaymentStyle.showMobilePay}
-          />
+          <div
+            onClick={() => {
+              Heroku.postOrder(orders);
+              history.push("/end");
+            }}
+          >
+            <ReactSVG
+              src={MobilePayIcon}
+              className={OnePaymentStyle.showMobilePay}
+            />
+          </div>
         )}
         {payment === "wireless" && (
-          <div>
+          <div
+            onClick={() => {
+              Heroku.postOrder(orders);
+              history.push("/end");
+            }}
+          >
             <ReactSVG
               src={WirelessIcon}
               className={OnePaymentStyle.showWireless}

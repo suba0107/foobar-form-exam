@@ -31,7 +31,6 @@ export default function Form(props) {
 
   function submit(evt) {
     evt.preventDefault();
-    // console.log(changeArr);
     Heroku.postOrder(orders);
     history.push("/end");
   }
@@ -60,18 +59,22 @@ export default function Form(props) {
     return month + (year.length ? "/" + year : "");
   }
   function showCardNoExample(evt) {
-    document.querySelector("#cardNoExample").textContent = "Example: 1234 1234 1234 1234";
+    document.querySelector("#cardNoExample").textContent =
+      "Example: 1234 1234 1234 1234";
   }
   function showExpireExample(evt) {
-    document.querySelector("#expireDateExample").textContent = "Example: mm / yy";
+    document.querySelector("#expireDateExample").textContent =
+      "Example: mm / yy";
   }
   function showCVVExample(evt) {
     document.querySelector("#cvvExample").textContent = "Ex: 123";
   }
   function hideExample(evt) {
-    document.querySelectorAll("#cardNoExample,#expireDateExample,#cvvExample").forEach((elm) => {
-      elm.textContent = "";
-    });
+    document
+      .querySelectorAll("#cardNoExample,#expireDateExample,#cvvExample")
+      .forEach((elm) => {
+        elm.textContent = "";
+      });
   }
 
   return (
@@ -83,18 +86,36 @@ export default function Form(props) {
       </div>
       <label className={styles.cardHolderName}>
         Name on Card
-        <input id="nameOnCard" type="text" placeholder="John Something" autoCapitalize="words" name="nameOnCard" required />
+        <input
+          id="nameOnCard"
+          type="text"
+          placeholder="John Something"
+          autoCapitalize="words"
+          name="nameOnCard"
+          required
+        />
         <p id="nameError"></p>
       </label>
       <label className={styles.cardNumber}>
         Card number
-        <NumberFormat format="#### #### #### ####" placeholder="1234 1234 1234 1234" onKeyDown={showCardNoExample} onBlur={hideExample} />
+        <NumberFormat
+          format="#### #### #### ####"
+          placeholder="1234 1234 1234 1234"
+          onKeyDown={showCardNoExample}
+          onBlur={hideExample}
+        />
         <p id="cardNoExample"></p>
       </label>
       <fieldset className={styles.fieldsetWrapper}>
         <label className={styles.expireDateLabel}>
           Expire
-          <NumberFormat format={cardExpiry} placeholder="mm/yy" className={styles.cardExpire} onKeyDown={showExpireExample} onBlur={hideExample} />
+          <NumberFormat
+            format={cardExpiry}
+            placeholder="mm/yy"
+            className={styles.cardExpire}
+            onKeyDown={showExpireExample}
+            onBlur={hideExample}
+          />
           <p id="expireDateExample"></p>
         </label>
         <label className={styles.cvvLabel}>
