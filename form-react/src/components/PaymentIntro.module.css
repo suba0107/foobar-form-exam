@@ -4,6 +4,8 @@
   background-color: var(--white-sec-bg);
   border-radius: 10vw;
   padding: 8vw;
+  text-align: left;
+  min-width: 100px;
 }
 .paymentIntro > div:nth-child(2) {
   display: flex;
@@ -13,6 +15,12 @@
   font-family: lato, sans-serif;
   font-weight: 550;
   color: var(--bright-purple-bg);
+}
+.paymentIntro__2DnJ6 button.mui-btn.mui-btn--fab.mui-btn--small.ButtonBack_buttonContainer__3gi3T
+.mui-btn {
+  position: absolute;
+  top: 100vw;
+  left: 20vw;
 }
 @media screen and (min-width: 768px) {
 }

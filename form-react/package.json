@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "moment": "^2.25.3",
     "react": "^16.13.1",
+    "react-credit-cards": "^0.8.2",
     "react-dom": "^16.13.1",
     "react-media-hook": "^0.4.7",
     "react-moment": "^0.9.7",
@@ -40,6 +41,8 @@
   "devDependencies": {
     "file-loader": "^6.0.0",
     "muicss": "^0.10.2",
+    "react-hook-form": "^5.7.2",
+    "react-number-format": "^4.4.1",
     "react-svg": "^11.0.22"
   }
 }

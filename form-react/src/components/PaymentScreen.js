@@ -11,30 +11,29 @@ import WirelessLink from "./WirelessLink";
 import CardDetailsLink from "./CardDetailsLink";
 import ButtonBack from "./ButtonBack";
 import styles from "./PaymentScreen.module.css";
+import { useMediaPredicate } from "react-media-hook";
+import introStyle from "./PaymentIntro.module.css";
 import onePayment from "./OnePayment.module.css";
 import PayForm from "./PayForm";
 
 export default function PaymentScreen(props) {
   let [payment, setPayment] = useState(undefined);
   const [show, setState] = useState(false);
-  // const toggle = () => setState(!show);
+  const ipad1024px = useMediaPredicate("(max-width: 1024px)");
 
   const Modal = ({ children, show, setState, setPayment }) => {
     const content = show && (
-      <article
-        className={onePayment.methodsContainer}
-        onClick={() => {
-          setPayment(undefined);
-          setState(false);
-        }}
-      >
+      <article className={onePayment.methodsContainer}>
         {children}
-        <ButtonBack
+        <div
+          className={styles.hideBackBtn}
           onClick={() => {
             setState(false);
             setPayment(undefined);
           }}
-        ></ButtonBack>
+        >
+          <ButtonBack />{" "}
+        </div>
       </article>
     );
     return content;
@@ -42,60 +41,60 @@ export default function PaymentScreen(props) {
   // const mobileFirst = useMediaPredicate("(max-width: 500px)");
   // const ipad768px = useMediaPredicate("(min-width: 768px)");
   return (
-    <main className={styles.paymentScreen}>
-      <img src={Logo} />
+    <section className={styles.paymentScreen}>
+      <img src={Logo} className={styles.fooBarLogo} />
       <LanguageLink />
-      {/* <PaymentIntro
-      // onClick={() => {
-      //   setPayment("mobilepay");
-      //   setState();
-      // }}
-      > */}
-
-      <article className="paymentWrapper">
-        <section className={styles.paymentIntro}>
-          <div>
-            <h2>Almost there!</h2>
-            <h2>Please choose a payment method</h2>
-          </div>
-          {/* {props.children} */}
-
-          <div id="icons">
-            <MobilepayLink
-              onClick={() => {
-                setState(true);
-                setPayment("mobilepay");
-              }}
-            />
-            <WirelessLink
-              onClick={() => {
-                setState(true);
-                setPayment("wireless");
-              }}
-            />
-            <CardDetailsLink
-              onClick={() => {
-                setState(true);
-                setPayment("carddetails");
-              }}
-            />
-          </div>
-          <ButtonBack />
-        </section>
-        {/* {mobileFirst && <ButtonBack></ButtonBack>}
-        {ipad768px && <Button variant="fab" size="large" />} */}
-        {/* </PaymentIntro> */}
-        <Modal show={show} setState={setState} setPayment={setPayment}>
-          {payment === "mobilepay" && <ReactSVG src={MobilePayIcon} className={OnePaymentStyle.showMobilePay} />}
-          {payment === "wireless" && (
-            <div>
-              <ReactSVG src={WirelessIcon} className={OnePaymentStyle.showWireless} />
-              <h3>Tap your card</h3>
-            </div>
-          )}
-          {payment === "carddetails" && <PayForm />}
-        </Modal>
+      <article className={styles.paymentIntro}>
+        <h2>Almost there!</h2>
+        <h2>Please choose a payment method</h2>
+        {/* <PaymentIntro
+          onClick={() => {
+            setPayment("mobilepay");
+            setState();
+          }}
+        > */}
+        <div className={styles.paymentWrapper}>
+          <MobilepayLink
+            onClick={() => {
+              setState(true);
+              setPayment("mobilepay");
+            }}
+          />
+          <WirelessLink
+            onClick={() => {
+              setState(true);
+              setPayment("wireless");
+            }}
+          />
+          <CardDetailsLink
+            onClick={() => {
+              setState(true);
+              setPayment("carddetails");
+            }}
+          />
+        </div>
+        <ButtonBack className={styles.btnPosition} />
       </article>
-    </main>
+      <Modal show={show} setState={setState} setPayment={setPayment}>
+        {payment === "mobilepay" && (
+          <ReactSVG
+            src={MobilePayIcon}
+            className={OnePaymentStyle.showMobilePay}
+          />
+        )}
+        {payment === "wireless" && (
+          <div>
+            <ReactSVG
+              src={WirelessIcon}
+              className={OnePaymentStyle.showWireless}
+            />
+            <h3>Tap your card</h3>
+          </div>
+        )}
+        {payment === "carddetails" && (
+          <PayForm setState={setState} setPayment={setPayment} />
+        )}
+      </Modal>
+    </section>
   );
 }

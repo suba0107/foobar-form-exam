@@ -2,18 +2,17 @@
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
+  padding: 1vw;
 }
-.payForm > div {
+.paymentOptionLogos {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin: 7vw auto;
 }
-.payForm > div > img:nth-child(2) {
-  width: 50%;
-}
-.payForm > div > img:nth-child(1) {
+.paymentOptionLogos > img {
   width: 20%;
+  margin: 1vw;
 }
 .payForm label,
 .payForm input {
@@ -22,16 +21,43 @@
   font-weight: 400;
   color: var(--bright-purple-bg);
 }
-.payForm label {
+.cardHolderName,
+.cardNumber,
+.expireDateLabel,
+.cvvLabel {
+  text-align: left;
   margin: 2vw 0;
+}
+.cardExpire,
+.cardCVV {
+  width: 27vw;
+  text-align: left;
 }
 .payForm input {
   margin: 1.5vw 0 0 0;
   border: 0.5vw solid var(--bright-purple-bg);
   border-radius: 10vw;
   height: 5vh;
-  width: fit-content;
+  /* width: fit-content; */
   padding: 5vw;
+}
+.payForm p {
+  color: var(--bright-purple-bg);
+  font-size: 3.5vw;
+  padding-top: 3vw;
+  text-align: center;
+}
+.payForm > fieldset:nth-child(3) > label:nth-child(1) > p:nth-child(2),
+.payForm > fieldset:nth-child(3) > label:nth-child(2) > p:nth-child(2) {
+  max-width: 26vw;
+}
+.payForm input[type="number"]::-webkit-outer-spin-button,
+.payForm input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.payForm input[type="number"] {
+  -moz-appearance: textfield;
 }
 .payForm fieldset {
   border: none;
@@ -41,57 +67,90 @@
   justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
-  .payForm > div > img:nth-child(2) {
-    width: 44%;
-    margin: 0.8vw;
+  .payForm {
+    margin: 2vw 6vw;
   }
-  .payForm > div > img:nth-child(1) {
-    width: 20%;
-    margin: 0.5vw;
+  .payForm label {
+    font-size: 2vw;
+  }
+  .paymentOptionLogos > img {
+    width: 15%;
   }
   .payForm input {
     padding: 3vw;
+  }
+  .cardHolderName,
+  .cardNumber,
+  .expireDateLabel,
+  .cvvLabel {
+    margin: 1vw 0;
+  }
+  .cardExpire,
+  .cardCVV {
+    width: 17vw;
   }
   .payForm > label:nth-child(2) > input:nth-child(1),
   .payForm > label:nth-child(3) > input:nth-child(1) {
     width: 47vw;
   }
-  .payForm > div {
+  .paymentOptionLogos {
     /* margin: 4vw auto; */
     margin: 0.5vw auto;
   }
+  .payForm p {
+    font-size: 2vw;
+  }
 }
 @media screen and (min-width: 1024px) {
-  .payForm > div {
+  .payForm p {
+    font-size: 1.3vw;
+    padding-top: 0.7vw;
+  }
+  .payForm {
+    margin: 0vw;
+  }
+  .paymentOptionLogos {
     margin: 1vw auto;
-  }
-  .payForm > div > img:nth-child(2) {
-    width: 51%;
-  }
-  .payForm > div > img:nth-child(1) {
-    width: 25%;
   }
   .payForm input {
     border: 0.3vw solid var(--bright-purple-bg);
     padding: 1.5vw;
     margin-top: 0.8vw;
+    /* font-size: 1vw; */
   }
   .payForm label {
+    font-size: 1.5vw;
     margin: 1vw 0;
   }
   .payForm > label:nth-child(2) > input:nth-child(1),
   .payForm > label:nth-child(3) > input:nth-child(1) {
     width: 25vw;
   }
+  .cardExpire,
+  .cardCVV {
+    width: 10vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .payForm p {
+    font-size: 1vw;
+  }
+  .payForm input {
+    font-size: 1.3vw;
+  }
+  .paymentOptionLogos {
+    margin: 0vw;
+  }
 }
 @media screen and (min-width: 1400px) {
   .payForm {
-    margin-top: -3vw;
+    margin-top: -4vw;
+    line-height: normal;
   }
-  .payForm > div > img:nth-child(1) {
-    width: 18%;
+  .payForm input {
+    font-size: 1.2vw;
   }
-  .payForm > div > img:nth-child(2) {
-    width: 36%;
+  .payForm label {
+    font-size: 1.3vw;
   }
 }
