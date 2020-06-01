@@ -10,23 +10,25 @@ import WirelessLink from "./WirelessLink";
 import CardDetailsLink from "./CardDetailsLink";
 import ButtonBack from "./ButtonBack";
 import styles from "./PaymentScreen.module.css";
-import { useMediaPredicate } from "react-media-hook";
 import onePayment from "./OnePayment.module.css";
 import PayForm from "./PayForm";
-import {
-  MemoryRouter,
-  Router,
-  Switch,
-  Route,
-  Link,
-  useHistory,
-} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function PaymentScreen(props) {
   let history = useHistory();
-  console.log(props);
   let [payment, setPayment] = useState(undefined);
   const [show, setState] = useState(false);
+  console.log(props);
+  const orders = props.orders;
+  const newArr = [];
+
+  function showData() {
+    orders.forEach((o) => {
+      const obj = orders[1].values;
+      newArr.push(obj);
+    });
+  }
+
   const Modal = ({ children, show, setState, setPayment }) => {
     const content = show && (
       <article id="popUp" className={onePayment.methodsContainer}>
@@ -85,14 +87,7 @@ export default function PaymentScreen(props) {
           <ButtonBack className={styles.btnPosition} />
         </div>
       </article>
-      <Modal
-        id="popUp"
-        show={show}
-        setState={setState}
-        setPayment={setPayment}
-        sendBackOrders={props.sendBackOrders}
-        orders={props.orders}
-      >
+      <Modal id="popUp" show={show} setState={setState}>
         {payment === "mobilepay" && (
           <ReactSVG
             src={MobilePayIcon}
@@ -110,8 +105,6 @@ export default function PaymentScreen(props) {
         )}
         {payment === "carddetails" && (
           <PayForm
-            setState={setState}
-            setPayment={setPayment}
             sendBackOrders={props.sendBackOrders}
             orders={props.orders}
           />

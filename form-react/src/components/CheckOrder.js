@@ -7,7 +7,6 @@ import { useMediaPredicate } from "react-media-hook";
 
 export default function CheckOrder(props) {
   let history = useHistory();
-  let location = useLocation();
   const isMin815px = useMediaPredicate("(min-width: 815px)");
   const [info, setInfo] = useState(props.orders);
 

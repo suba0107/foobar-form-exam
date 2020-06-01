@@ -9,16 +9,20 @@ import styles from "./PayForm.module.css";
 import { useHistory } from "react-router-dom";
 
 export default function Form(props) {
+  console.log(props.orders);
+  const orders = props.orders;
+  console.log(orders[1].name);
+  const changeArr = Object.values(orders[1]); //["1", "Fairy tale"]
+  changeArr.shift();
+  console.log(changeArr);
   let history = useHistory();
-  console.log(props);
-  // const [orders, setOrders] = useState([]);
-  // const form = document.querySelector("form");
-  // const allInputs = document.querySelectorAll("input");
 
   function submit(evt) {
     evt.preventDefault();
+    Heroku.postOrder({
+      order: changeArr,
+    });
     history.push("/end");
-    // Heroku.postOrder(setOrders, orders);
   }
   function limitCardDate(val, max) {
     if (val.length === 1 && val[0] > max[0]) {
@@ -57,7 +61,7 @@ export default function Form(props) {
   }
   function hideExample(evt) {
     document
-      .querySelectorAll("#cardNoExample,#expireDateExample,  #cvvExample")
+      .querySelectorAll("#cardNoExample,#expireDateExample,#cvvExample")
       .forEach((elm) => {
         elm.textContent = "";
       });
