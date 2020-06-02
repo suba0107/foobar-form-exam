@@ -59,7 +59,6 @@ export default function Form(props) {
 
     return month + (year.length ? "/" + year : "");
   }
-
   function showCardNoExample(evt) {
     document.querySelector("#cardNoExample").textContent =
       "Example: 1234 1234 1234 1234";
@@ -68,6 +67,7 @@ export default function Form(props) {
     document.querySelector("#expireDateExample").textContent =
       "Example: mm / yy";
   }
+
   function showCVVExample(evt) {
     document.querySelector("#cvvExample").textContent = "Ex: 123";
   }
@@ -79,25 +79,6 @@ export default function Form(props) {
       });
   }
 
-  //function handleChangeUserName(e) {
-  //  if (e.target.value.match("[a-zA-Z ]") != null) {
-  //    this.setState({ UserName: e.target.value });
-  //  }
-  //}
-  // onInputChange(term) {
-  //   this.setState({ term });
-  //}
-
-  //renderOptionsSelect(term) {
-  //    return _.map(this.props.pos_list, p => {
-  //        var searchTerm = this.state.term.toLowerCase();
-  //        if (p.pos_code.toLowerCase().match(searchTerm)) {
-  //            return (
-  //                <option key={p.pos_code} value={p.pos_code}>{p.pos_code}</option>
-  //            );
-  //        }
-  //    });
-  //}
   class NameCard extends React.PureComponent {
     state = {
       value: "",
@@ -118,7 +99,13 @@ export default function Form(props) {
       );
     }
   }
-
+  document.querySelector("#card-number").oninput = function () {
+    var foo = this.value.split(" ").join("");
+    if (foo.length > 0) {
+      foo = foo.match(new RegExp(".{1,4}", "g")).join(" ");
+    }
+    this.value = foo;
+  };
   return (
     <form className={styles.payForm} onSubmit={submit}>
       <div id="paymentOptionsLogo" className={styles.paymentOptionLogos}>
@@ -133,11 +120,13 @@ export default function Form(props) {
       </label>
       <label className={styles.cardNumber} id="cardnumber">
         Card number
-        <NumberFormat
-          format="#### #### #### ####"
+        <input
           id="card-number"
           placeholder="1234 5678 9012 3456"
+          onKeyDown={showCardNoExample}
           name="card"
+          maxLength={18}
+          minLength={18}
           required
         />
         <p id="cardNoExample"></p>
@@ -146,6 +135,7 @@ export default function Form(props) {
         <label className={styles.expireDateLabel}>
           Expire
           <NumberFormat
+            id="DateYear"
             format={cardExpiry}
             placeholder="mm/yy"
             className={styles.cardExpire}
@@ -160,6 +150,7 @@ export default function Form(props) {
           <NumberFormat
             // customInput={Input}
             format="###"
+            minLength={3}
             placeholder="123"
             className={styles.cardCVV}
             onKeyDown={showCVVExample}
