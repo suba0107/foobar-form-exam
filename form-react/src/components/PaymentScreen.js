@@ -13,6 +13,7 @@ import styles from "./PaymentScreen.module.css";
 import onePayment from "./OnePayment.module.css";
 import PayForm from "./PayForm";
 import { useHistory } from "react-router-dom";
+import ButtonPay from "./ButtonPay";
 
 export default function PaymentScreen(props) {
   let history = useHistory();
@@ -100,7 +101,10 @@ export default function PaymentScreen(props) {
               src={WirelessIcon}
               className={OnePaymentStyle.showWireless}
             />
-            <h3>Tap your card</h3>
+            {/* <h3>Tap your card</h3> */}
+            <div onClick={(e) => history.push("/end")}>
+              <ButtonPay>Pay</ButtonPay>
+            </div>
           </div>
         )}
         {payment === "carddetails" && (

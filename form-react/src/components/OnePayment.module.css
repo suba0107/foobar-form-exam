@@ -52,7 +52,7 @@
   left: 2vw;
   top: 38vw;
 }
-.methodsContainer > div:nth-child(1) > h3:nth-child(2) {
+.methodsContainer > div:nth-child(1) > div:nth-child(2) {
   text-align: center;
   position: relative;
   top: 46vw;

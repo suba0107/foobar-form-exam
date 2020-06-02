@@ -7,6 +7,7 @@ import MastercardIcon from "../images/mastercard.png";
 import VisaIcon from "../images/visa.png";
 import styles from "./PayForm.module.css";
 import { useHistory } from "react-router-dom";
+import CreditCardInput from "react-credit-card-input";
 
 export default function Form(props) {
   console.log(props.orders);
@@ -31,9 +32,20 @@ export default function Form(props) {
 
   function submit(evt) {
     evt.preventDefault();
-    // console.log(changeArr);
-    Heroku.postOrder(orders);
-    history.push("/end");
+    let cardno = document.querySelector("#cardnumber > input:nth-child(1)");
+    let value = cardno.value.split(" ");
+    let test = value.join("");
+    // let visa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+    // let master = /^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/;
+    if (test.length < 16) {
+      evt.preventDefault();
+      console.log(false);
+      document.querySelector("#cardNoExample").textContent =
+        "Invalid card number";
+    } else {
+      Heroku.postOrder(orders);
+      history.push("/end");
+    }
   }
   function limitCardDate(val, max) {
     if (val.length === 1 && val[0] > max[0]) {
@@ -52,7 +64,6 @@ export default function Form(props) {
 
     return val;
   }
-
   function cardExpiry(val) {
     let month = limitCardDate(val.substring(0, 2), "12");
     let year = val.substring(2, 4);
@@ -60,14 +71,8 @@ export default function Form(props) {
     return month + (year.length ? "/" + year : "");
   }
   function showCardNoExample(evt) {
-    let cardInput = evt.target.value;
-    if (cardInput === " ") {
-      document.querySelector("#cardNoExample").textContent =
-        "Please fill this out";
-    } else {
-      document.querySelector("#cardNoExample").textContent =
-        "Example: 1234 1234 1234 1234";
-    }
+    document.querySelector("#cardNoExample").textContent =
+      "Example: 1234 1234 1234 1234";
   }
   function showExpireExample(evt) {
     document.querySelector("#expireDateExample").textContent =
@@ -102,7 +107,6 @@ export default function Form(props) {
       evt.preventDefault();
     }
   }
-
   // class NameCard extends React.PureComponent {
   //   state = {
   //     value: "",
@@ -131,6 +135,7 @@ export default function Form(props) {
   //   }
   //   this.value = foo;
   // };
+
   return (
     <form className={styles.payForm} onSubmit={submit}>
       <div id="paymentOptionsLogo" className={styles.paymentOptionLogos}>
@@ -165,11 +170,17 @@ export default function Form(props) {
           required
         /> */}
         <NumberFormat
+          id="cardNo"
+          name="cardNo"
           format="#### #### #### ####"
           placeholder="1234 1234 1234 1234"
-          onKeyDown={showCardNoExample}
-          onBlur={hideExample}
-          isAllowed={(values) => true}
+          onKeyDown={() => {
+            showCardNoExample();
+          }}
+          onBlur={() => {
+            hideExample();
+          }}
+          onInput={() => {}}
           allowEmptyFormatting={false}
           required
         />
@@ -179,7 +190,7 @@ export default function Form(props) {
         <label className={styles.expireDateLabel}>
           Expire
           <NumberFormat
-            id="DateYear"
+            id="dateYear"
             format={cardExpiry}
             placeholder="mm/yy"
             className={styles.cardExpire}
