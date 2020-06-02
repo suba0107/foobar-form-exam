@@ -80,10 +80,44 @@ export default function Form(props) {
   }
 
   //function handleChangeUserName(e) {
-  //  if (e.target.value.match("^[a-zA-Z ]*$") != null) {
+  //  if (e.target.value.match("[a-zA-Z ]") != null) {
   //    this.setState({ UserName: e.target.value });
   //  }
   //}
+  // onInputChange(term) {
+  //   this.setState({ term });
+  //}
+
+  //renderOptionsSelect(term) {
+  //    return _.map(this.props.pos_list, p => {
+  //        var searchTerm = this.state.term.toLowerCase();
+  //        if (p.pos_code.toLowerCase().match(searchTerm)) {
+  //            return (
+  //                <option key={p.pos_code} value={p.pos_code}>{p.pos_code}</option>
+  //            );
+  //        }
+  //    });
+  //}
+  class NameCard extends React.PureComponent {
+    state = {
+      value: "",
+    };
+    render() {
+      return (
+        <input
+          value={this.state.value}
+          placeholder={"John Smith"}
+          onChange={(e) => {
+            let value = e.target.value;
+            value = value.replace(/[^A-Za-z]/, "");
+            this.setState({
+              value,
+            });
+          }}
+        />
+      );
+    }
+  }
 
   return (
     <form className={styles.payForm} onSubmit={submit}>
@@ -94,18 +128,10 @@ export default function Form(props) {
       </div>
       <label id="cardName" className={styles.cardHolderName}>
         Name on Card
-        <input
-          //onChange={this.handleChangeUserName}
-          id="nameOnCard"
-          type="text"
-          placeholder="John Smith"
-          autoCapitalize="words"
-          name="nameOnCard"
-          required
-        />
+        <NameCard />
         <p id="nameError"></p>
       </label>
-      <label className={styles.cardNumber}>
+      <label className={styles.cardNumber} id="cardnumber">
         Card number
         <NumberFormat
           format="#### #### #### ####"
