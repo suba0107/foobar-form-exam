@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./ShoppingCart.modules.css";
 import EditAmount from "./EditAmount.js";
 import { useHistory } from "react-router-dom";
-import { shoppingcarticon } from "../svgs/shopping-cart.svg";
+import shoppingcarticon from "../svgs/shopping-cart.svg";
 
 export default function ShoppingCart(props) {
   let history = useHistory();

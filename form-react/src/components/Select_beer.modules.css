@@ -37,6 +37,7 @@ h1 {
   color: white;
   font-weight: bold;
   font-family: var(--headings-font);
+  border-style: none;
 }
 
 .plusMinus:disabled {

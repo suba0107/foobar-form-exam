@@ -119,7 +119,7 @@ export default function CheckOrder(props) {
             <h3 className="allBeers">{totalCount() * 25} kr</h3>
           </section>
         </section>
-        <button disabled={totalCount() === 0} id="goToPayment">
+        <button className="navigationButton" disabled={totalCount() === 0} id="goToPayment">
           Go to payment
         </button>
       </article>
