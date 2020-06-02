@@ -37,7 +37,7 @@ export default function PaymentScreen(props) {
           className={styles.hideBackBtn}
           onClick={() => {
             setState(false);
-            setPayment(undefined);
+            // setPayment(undefined);
           }}
         >
           <ButtonBack />

@@ -1,4 +1,4 @@
-import { foobarUrl, beertypesUrl, orderUrl } from "./vars";
+import { foobarUrl, beertypesUrl, orderUrl } from "./Vars";
 function getData(callback, name) {
   fetch(foobarUrl, {
     method: "get",

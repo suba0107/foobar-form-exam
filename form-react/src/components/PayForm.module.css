@@ -78,6 +78,7 @@
   }
   .payForm input {
     padding: 3vw;
+    width: 71vw;
   }
   .cardHolderName,
   .cardNumber,

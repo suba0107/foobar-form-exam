@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ButtonPay from "./ButtonPay";
-import { Heroku } from "../modules/heroku";
+import { Heroku } from "../modules/Heroku";
 import NumberFormat from "react-number-format";
 import Dankort from "../images/dankort.png";
 import MastercardIcon from "../images/mastercard.png";
@@ -60,8 +60,14 @@ export default function Form(props) {
     return month + (year.length ? "/" + year : "");
   }
   function showCardNoExample(evt) {
-    document.querySelector("#cardNoExample").textContent =
-      "Example: 1234 1234 1234 1234";
+    let cardInput = evt.target.value;
+    if (cardInput === " ") {
+      document.querySelector("#cardNoExample").textContent =
+        "Please fill this out";
+    } else {
+      document.querySelector("#cardNoExample").textContent =
+        "Example: 1234 1234 1234 1234";
+    }
   }
   function showExpireExample(evt) {
     document.querySelector("#expireDateExample").textContent =
@@ -78,34 +84,53 @@ export default function Form(props) {
         elm.textContent = "";
       });
   }
-
-  class NameCard extends React.PureComponent {
-    state = {
-      value: "",
-    };
-    render() {
-      return (
-        <input
-          value={this.state.value}
-          placeholder={"John Smith"}
-          onChange={(e) => {
-            let value = e.target.value;
-            value = value.replace(/[^A-Za-z]/, "");
-            this.setState({
-              value,
-            });
-          }}
-        />
-      );
+  function checkName(evt) {
+    // let value = evt.target.value.replace(/[^A-Za-z]/, "");
+    // //value = value.replace(/[^A-Za-z]/, "");
+    // setState(value);
+    //https://stackoverflow.com/questions/29823591/html-input-do-not-allow-numbers
+    let key = evt.keyCode;
+    if (
+      !(
+        key === 8 ||
+        key === 32 ||
+        key === 46 ||
+        (key >= 35 && key <= 40) ||
+        (key >= 65 && key <= 90)
+      )
+    ) {
+      evt.preventDefault();
     }
   }
-  document.querySelector("#card-number").oninput = function () {
-    var foo = this.value.split(" ").join("");
-    if (foo.length > 0) {
-      foo = foo.match(new RegExp(".{1,4}", "g")).join(" ");
-    }
-    this.value = foo;
-  };
+
+  // class NameCard extends React.PureComponent {
+  //   state = {
+  //     value: "",
+  //   };
+  //   render() {
+  //     return (
+  //       <input
+  //         value={this.state.value}
+  //         placeholder={"John Smith"}
+  //         onChange={(e) => {
+  //           let value = e.target.value;
+  //           value = value.replace(/[^A-Za-z]/, "");
+  //           this.setState({
+  //             value,
+  //           });
+  //         }}
+  //         required
+  //       />
+  //     );
+  //   }
+  // }
+  // document.querySelector("#card-number").oninput = function () {
+  //   var foo = this.value.split(" ").join("");
+  //   if (foo.length > 0) {
+  //     foo = foo.match(new RegExp(".{1,4}", "g")).join(" ");
+  //   }
+  //   this.value = foo;
+  // };
   return (
     <form className={styles.payForm} onSubmit={submit}>
       <div id="paymentOptionsLogo" className={styles.paymentOptionLogos}>
@@ -115,18 +140,37 @@ export default function Form(props) {
       </div>
       <label id="cardName" className={styles.cardHolderName}>
         Name on Card
-        <NameCard />
+        {/* <NameCard /> */}
+        <input
+          id="nameOnCard"
+          type="text"
+          placeholder="John Something"
+          autoCapitalize="words"
+          name="nameOnCard"
+          onKeyDown={checkName}
+          pattern="[a-zA-Z]*"
+          required
+        />
         <p id="nameError"></p>
       </label>
       <label className={styles.cardNumber} id="cardnumber">
         Card number
-        <input
+        {/* <input
           id="card-number"
           placeholder="1234 5678 9012 3456"
           onKeyDown={showCardNoExample}
           name="card"
           maxLength={18}
           minLength={18}
+          required
+        /> */}
+        <NumberFormat
+          format="#### #### #### ####"
+          placeholder="1234 1234 1234 1234"
+          onKeyDown={showCardNoExample}
+          onBlur={hideExample}
+          isAllowed={(values) => true}
+          allowEmptyFormatting={false}
           required
         />
         <p id="cardNoExample"></p>

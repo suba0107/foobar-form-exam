@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Select_beer.modules.css";
 import { useHistory } from "react-router-dom";
-import { Heroku } from "../modules/heroku";
+import { Heroku } from "../modules/Heroku";
 import EachBeer from "./EachBeer.js";
 import ShoppingCart from "./ShoppingCart.js";
 import Popup from "./Popup.js";
