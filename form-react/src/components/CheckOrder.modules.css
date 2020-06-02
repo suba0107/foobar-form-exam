@@ -71,7 +71,6 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1rem;
 }
 
 .mug {
@@ -82,7 +81,7 @@
 #your-order {
   background-color: white;
   border-radius: 25px;
-  padding: 1rem;
+  padding: clamp(2rem, 5vw, 3rem);
   margin: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -105,7 +104,6 @@
 }
 
 #your-order button {
-  margin: 0 auto;
   text-align: center;
 }
 #allWrapper h3 {
@@ -129,4 +127,10 @@
   color: var(--bright-purple-bg);
   font-weight: bold;
   font-size: 1.5rem;
+}
+
+#goToPayment {
+  margin: 1rem auto;
+  width: clamp(50%, 200px, 100%);
+  padding: 0.5rem;
 }

@@ -1,16 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Select_beer.modules.css";
 
 export default function Amount(props, onClickButton) {
   const [count, setCount] = useState(0);
   const [state, setState] = useState(props.onState);
+  const [addButton, setaddButton] = useState("Add");
 
   const [amount, setAmount] = useState(0);
+  const color = useRef();
 
   console.log(props.countBeers + "count Beers" + state);
   useEffect(() => {
     setAmount(count);
   }, [count]);
+
+  useEffect(() => {
+    if (addButton === "✓") {
+      color.current.classList.add("changeColor");
+      setTimeout(() => {
+        setaddButton("Add");
+        color.current.classList.remove("changeColor");
+      }, 1000);
+    }
+  }, [addButton]);
 
   return (
     <>
@@ -43,7 +55,6 @@ export default function Amount(props, onClickButton) {
             setState(props.onState);
             setCount(count + 1);
 
-            console.log(state + " " + amount);
             if (state === true) {
               props.onClickButton(amount);
               setAmount(0);
@@ -55,16 +66,16 @@ export default function Amount(props, onClickButton) {
         </button>
       </div>
       <button
+        disabled={count === 0 && addButton === "Add"}
+        ref={color}
         onClick={() => {
-          // props.amount(count);
+          setaddButton("✓");
           props.amount({ count: count, name: props.name });
-          console.log(count);
-          console.log(state + " " + amount);
           setCount(0);
         }}
         className="add"
       >
-        Add
+        {addButton}
       </button>
     </>
   );

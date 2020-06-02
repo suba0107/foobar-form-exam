@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./ShoppingCart.modules.css";
 import EditAmount from "./EditAmount.js";
 import { useHistory } from "react-router-dom";
+import shoppingcarticon from "../svgs/shopping-cart.svg";
 
 export default function ShoppingCart(props) {
   let history = useHistory();
@@ -17,6 +18,10 @@ export default function ShoppingCart(props) {
       setOrder(props.orderSentBack);
     }
   }, [props.state]);
+
+  useEffect(() => {
+    setOrder(props.orderSentBack);
+  }, [props.orderSentBack]);
 
   useEffect(() => {
     setOrder(props.orderSentBack);
@@ -77,7 +82,7 @@ export default function ShoppingCart(props) {
           className="heading-wrapper"
         >
           {totalAmount() !== 0 && <p id="showTotal">{totalAmount()}</p>}
-          <h2 id="shopping-cart-heading">🛒</h2>
+          <img src={shoppingcarticon} id="shopping-cart-heading" />
         </div>
         {togglePopUp && (
           <article className="cart-popUp">
@@ -107,6 +112,7 @@ export default function ShoppingCart(props) {
             )}
 
             <button
+              className="navigationButton"
               onClick={() => {
                 if (togglePopUp) {
                   setTogglePopUp(false);
@@ -118,6 +124,7 @@ export default function ShoppingCart(props) {
               Keep shopping
             </button>
             <button
+              className="navigationButton"
               onClick={() => {
                 props.getOrders(order);
                 history.push("/checkOrder");
