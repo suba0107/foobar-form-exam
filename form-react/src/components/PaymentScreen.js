@@ -33,17 +33,13 @@ export default function PaymentScreen(props) {
   }, [props.orders]);
   const Modal = ({ children, show, setState, setPayment, setOrders }) => {
     const content = show && (
-      <article
-        id="popUp"
-        className={onePayment.methodsContainer}
-        onClick={setOrders}
-      >
+      <article id="popUp" className={onePayment.methodsContainer}>
         {children}
         <div
           className={styles.hideBackBtn}
           onClick={() => {
             setState(false);
-            setPayment(undefined);
+            // setPayment(undefined);
           }}
         >
           <ButtonBack />

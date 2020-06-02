@@ -12,6 +12,7 @@
   /* width: clamp(50vw, 259px, 90%);
   margin: 1rem; */
   height: 109vh;
+  /* height: max-content; */
   display: flex;
   flex-flow: column wrap;
   align-content: center;
@@ -91,22 +92,29 @@
 }
 @media screen and (min-width: 1024px) {
   .methodsContainer > div:nth-child(1) > h3:nth-child(2) {
-    top: 10vw;
+    top: 4vw;
   }
   .methodsContainer {
     top: 21vw;
     width: 33vw;
     left: 62vw;
-    height: 86vh;
+    height: fit-content;
+    /* height: 86vh; */
     border-radius: 5vw;
   }
   .methodsContainer img {
     width: 195%;
     margin: auto;
   }
+  .showWireless {
+    padding: 11vw 0;
+  }
+  .showMobilePay {
+    padding: 2.3vw 0;
+  }
   .showWireless svg {
     left: 0vw;
-    top: 10vw;
+    top: 3vw;
   }
   .showMobilePay svg {
     width: 138%;
@@ -118,10 +126,14 @@
     /* width: 36vw;
     left: 59vw;
     top: 18vw; */
+    padding: 6vw;
     width: 31vw;
     left: 62vw;
     top: 19vw;
-    height: 86vh;
+    /* height: 86vh; */
+  }
+  .showWireless {
+    padding: 1vw 0;
   }
   .showMobilePay svg {
     width: 100%;
@@ -130,18 +142,29 @@
   }
   .showWireless svg {
     width: 100%;
-    top: 7vw;
+    top: 3vw;
   }
   .methodsContainer > div:nth-child(1) > h3:nth-child(2) {
-    top: 7vw;
+    top: 4vw;
   }
 }
 @media screen and (min-width: 1400px) {
   .methodsContainer {
-    height: 82vh;
+    /* height: 82vh; */
     top: 18vw;
   }
   .showWireless svg {
     top: 3vw;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .methodsContainer {
+    top: 16vw;
+  }
+  .methodsContainer > div:nth-child(1) > h3:nth-child(2) {
+    top: 3vw;
+  }
+  .showWireless {
+    padding: 6vw 0;
   }
 }

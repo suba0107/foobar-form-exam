@@ -154,3 +154,15 @@
     font-size: 1.3vw;
   }
 }
+@media screen and (min-width: 1900px) {
+  .payForm input,
+  .payForm label {
+    font-size: 1vw;
+  }
+  .payForm input {
+    padding: 1.2vw;
+  }
+  .payForm p {
+    font-size: 0.8vw;
+  }
+}
