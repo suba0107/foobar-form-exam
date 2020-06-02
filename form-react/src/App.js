@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Moment from "react-moment";
-import { Heroku } from "./modules/Heroku";
+import { Heroku } from "./modules/heroku";
 import Main from "./components/Main";
 import styles from "./App.css";
 import { MemoryRouter, Router, Switch, Route, Link } from "react-router-dom";

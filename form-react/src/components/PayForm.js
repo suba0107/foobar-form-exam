@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ButtonPay from "./ButtonPay";
-import { Heroku } from "../modules/Heroku";
+import { Heroku } from "../modules/heroku";
 import NumberFormat from "react-number-format";
 import Dankort from "../images/dankort.png";
 import MastercardIcon from "../images/mastercard.png";
@@ -59,20 +59,31 @@ export default function Form(props) {
 
     return month + (year.length ? "/" + year : "");
   }
+
   function showCardNoExample(evt) {
-    document.querySelector("#cardNoExample").textContent = "Example: 1234 1234 1234 1234";
+    document.querySelector("#cardNoExample").textContent =
+      "Example: 1234 1234 1234 1234";
   }
   function showExpireExample(evt) {
-    document.querySelector("#expireDateExample").textContent = "Example: mm / yy";
+    document.querySelector("#expireDateExample").textContent =
+      "Example: mm / yy";
   }
   function showCVVExample(evt) {
     document.querySelector("#cvvExample").textContent = "Ex: 123";
   }
   function hideExample(evt) {
-    document.querySelectorAll("#cardNoExample,#expireDateExample,#cvvExample").forEach((elm) => {
-      elm.textContent = "";
-    });
+    document
+      .querySelectorAll("#cardNoExample,#expireDateExample,#cvvExample")
+      .forEach((elm) => {
+        elm.textContent = "";
+      });
   }
+
+  //function handleChangeUserName(e) {
+  //  if (e.target.value.match("^[a-zA-Z ]*$") != null) {
+  //    this.setState({ UserName: e.target.value });
+  //  }
+  //}
 
   return (
     <form className={styles.payForm} onSubmit={submit}>
@@ -81,20 +92,41 @@ export default function Form(props) {
         <img id="visa" src={VisaIcon} />
         <img id="master" src={MastercardIcon} />
       </div>
-      <label className={styles.cardHolderName}>
+      <label id="cardName" className={styles.cardHolderName}>
         Name on Card
-        <input id="nameOnCard" type="text" placeholder="John Something" autoCapitalize="words" name="nameOnCard" required />
+        <input
+          //onChange={this.handleChangeUserName}
+          id="nameOnCard"
+          type="text"
+          placeholder="John Smith"
+          autoCapitalize="words"
+          name="nameOnCard"
+          required
+        />
         <p id="nameError"></p>
       </label>
       <label className={styles.cardNumber}>
         Card number
-        <NumberFormat format="#### #### #### ####" placeholder="1234 1234 1234 1234" onKeyDown={showCardNoExample} onBlur={hideExample} />
+        <NumberFormat
+          format="#### #### #### ####"
+          id="card-number"
+          placeholder="1234 5678 9012 3456"
+          name="card"
+          required
+        />
         <p id="cardNoExample"></p>
       </label>
       <fieldset className={styles.fieldsetWrapper}>
         <label className={styles.expireDateLabel}>
           Expire
-          <NumberFormat format={cardExpiry} placeholder="mm/yy" className={styles.cardExpire} onKeyDown={showExpireExample} onBlur={hideExample} />
+          <NumberFormat
+            format={cardExpiry}
+            placeholder="mm/yy"
+            className={styles.cardExpire}
+            onKeyDown={showExpireExample}
+            onBlur={hideExample}
+            required
+          />
           <p id="expireDateExample"></p>
         </label>
         <label className={styles.cvvLabel}>
@@ -106,6 +138,7 @@ export default function Form(props) {
             className={styles.cardCVV}
             onKeyDown={showCVVExample}
             onBlur={hideExample}
+            required
           />
           <p id="cvvExample"></p>
         </label>

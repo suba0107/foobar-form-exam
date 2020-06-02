@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Select_beer.modules.css";
 import { useHistory } from "react-router-dom";
-import { Heroku } from "../modules/Heroku";
+import { Heroku } from "../modules/heroku";
 import EachBeer from "./EachBeer.js";
 import ShoppingCart from "./ShoppingCart.js";
 import Popup from "./Popup.js";
@@ -71,7 +71,12 @@ export default function Select_beer(props) {
   }
   return (
     <>
-      <ShoppingCart beer={selected} getOrders={getOrders} state={props.state} orderSentBack={props.orderSentBack} />
+      <ShoppingCart
+        beer={selected}
+        getOrders={getOrders}
+        state={props.state}
+        orderSentBack={props.orderSentBack}
+      />
       <main id="select_beer_main">
         {info.length === 0 && (
           <h2
@@ -85,12 +90,24 @@ export default function Select_beer(props) {
             Loading ...
           </h2>
         )}
-        {info.length !== 0 && <h1 id="chooseBeer">Choose your favorite beer!</h1>}
+        {info.length !== 0 && (
+          <h1 id="chooseBeer">Choose your favorite beer!</h1>
+        )}
 
         <article id="selection-of-beers">
-          <Popup desc={desc} beer={name} popUp={toggleInfoBox} onClose={onClose} />
+          <Popup
+            desc={desc}
+            beer={name}
+            popUp={toggleInfoBox}
+            onClose={onClose}
+          />
           {oneOfEachBeer.map((data) => (
-            <EachBeer key={data} name={data} popUp={onInfoClick} amountOfBeer={selectingBeer} />
+            <EachBeer
+              key={data}
+              name={data}
+              popUp={onInfoClick}
+              amountOfBeer={selectingBeer}
+            />
           ))}
         </article>
       </main>
