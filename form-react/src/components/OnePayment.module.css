@@ -1,19 +1,17 @@
 .methodsContainer {
   background-color: var(--white-sec-bg);
   /* background-color: black; */
-  border-radius: 10vw;
-  /* padding: 9vw; */
+  border-radius: 8vw;
+  padding: 9vw;
   z-index: 99;
   position: absolute;
   margin: 0 auto;
-  top: 0;
-  right: 0;
-  /* margin-right: 1rem; */
-  /* width: 90vw; */
-  width: clamp(35vw, 350px, 100%);
-
-  min-height: 100%;
-  /* height: 118vh; */
+  top: 38vw;
+  left: 10vw;
+  width: 80vw;
+  /* width: clamp(50vw, 259px, 90%);
+  margin: 1rem; */
+  height: 109vh;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
@@ -44,13 +42,15 @@
 .showMobilePay svg {
   width: 90%;
   position: relative;
-  left: 5vw;
+  left: 0vw;
 }
 .showWireless svg {
   width: 77%;
   position: relative;
-  left: 8vw;
-  top: 55vw;
+  /* left: 8vw;
+  top: 55vw; */
+  left: 2vw;
+  top: 38vw;
 }
 .methodsContainer > div:nth-child(1) > h3:nth-child(2) {
   text-align: center;
@@ -63,8 +63,8 @@
 /* iPhone 6/7/8 */
 @media screen and (min-width: 370px) {
   .methodsContainer {
-    /* height: 104vh; */
-    /* left: 5vw; */
+    height: 104vh;
+    left: 5vw;
   }
 }
 @media screen and (min-width: 768px) {
@@ -72,12 +72,13 @@
     top: 25vw;
   }
   .methodsContainer {
-    /* top: 9vw; */
-    /* left: 5vw; */
-    /* height: 71vh; */
-  }
-  .showMobilePay svg {
-    left: 3vw;
+    /* top: 22vw;
+    left: 6vw;
+    height: 60vh; */
+    top: 22vw;
+    left: 7vw;
+    height: 69vh;
+    width: 86vw;
   }
   .showWireless > div:nth-child(1) {
     width: 40vw;
@@ -93,13 +94,11 @@
     top: 10vw;
   }
   .methodsContainer {
-    /* width: 33vw; */
-    /* left: 62vw; */
-    /* height: 86vh; */
+    top: 21vw;
+    width: 33vw;
+    left: 62vw;
+    height: 86vh;
     border-radius: 5vw;
-  }
-  .methodsContainer button {
-    display: none;
   }
   .methodsContainer img {
     width: 195%;
@@ -116,9 +115,13 @@
 }
 @media screen and (min-width: 1200px) {
   .methodsContainer {
-    /* width: 36vw; */
-    /* left: 59vw; */
-    /* top: 8vw; */
+    /* width: 36vw;
+    left: 59vw;
+    top: 18vw; */
+    width: 31vw;
+    left: 62vw;
+    top: 19vw;
+    height: 86vh;
   }
   .showMobilePay svg {
     width: 100%;
@@ -135,7 +138,8 @@
 }
 @media screen and (min-width: 1400px) {
   .methodsContainer {
-    /* height: 82vh; */
+    height: 82vh;
+    top: 18vw;
   }
   .showWireless svg {
     top: 3vw;

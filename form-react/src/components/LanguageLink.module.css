@@ -1,8 +1,10 @@
 .languageLink {
-  /* position: relative; */
+  position: relative;
   /* top: -2vw; */
   top: -4vw;
-  left: 65vw;
+  /* left: 2vw; */
+  /* top: 0vw; */
+  left: 36vw;
 }
 .languageLink a,
 span {
@@ -14,7 +16,7 @@ span {
 }
 @media screen and (min-width: 768px) {
   .languageLink {
-    left: 75vw;
+    left: 36vw;
     top: -2vw;
   }
   .languageLink a,
@@ -24,7 +26,7 @@ span {
 }
 @media screen and (min-width: 1024px) {
   .languageLink {
-    left: 80vw;
+    left: 42vw;
   }
   .languageLink a,
   span {
@@ -32,9 +34,6 @@ span {
   }
 }
 @media screen and (min-width: 1200px) {
-  .languageLink {
-    left: 83vw;
-  }
   .languageLink a,
   span {
     font-size: 1.3vw;

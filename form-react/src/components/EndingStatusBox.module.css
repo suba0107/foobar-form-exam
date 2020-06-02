@@ -3,7 +3,8 @@
   background-color: var(--white-sec-bg);
   border-radius: 10vw;
   padding: 8vw;
-  top: 145vh;
+  /* top: 145vh; */
+  top: 21vh;
   left: 5vw;
   width: 90%;
   display: flex;
@@ -35,7 +36,7 @@
 }
 @media screen and (min-width: 768px) {
   .endingStatusBox {
-    top: 105vh;
+    top: 29vh;
     left: 32vw;
     width: 61%;
     border-radius: 5vw;
@@ -46,7 +47,7 @@
 }
 @media screen and (min-width: 1024px) {
   .endingStatusBox {
-    top: 149vh;
+    top: 53vh;
     left: 44vw;
     width: 50%;
     padding: 5vw;
@@ -54,7 +55,7 @@
 }
 @media screen and (min-width: 1200px) {
   .endingStatusBox {
-    top: 130vh;
+    top: 26vh;
     left: 60vw;
     width: 35%;
     padding: 4vw;
@@ -62,7 +63,7 @@
 }
 @media screen and (min-width: 1400px) {
   .endingStatusBox {
-    top: 142vh;
+    top: 38vh;
     left: 65vw;
     width: 30%;
     padding: 3.5vw;

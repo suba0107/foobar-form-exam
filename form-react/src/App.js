@@ -82,7 +82,10 @@ export default function App() {
             </Route>
             <Route path="/payment">
               <div className="App">
-                <PaymentScreen />
+                <PaymentScreen
+                  sendBackOrders={sendBackOrders}
+                  orders={orders}
+                />
               </div>
             </Route>
 

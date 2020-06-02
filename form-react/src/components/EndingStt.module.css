@@ -71,7 +71,7 @@
     > div:nth-child(1)
     > div:nth-child(1)
     > svg:nth-child(1) {
-    width: 100%;
+    /* width: 100%; */
     left: 0vw;
     top: -0.2vw;
   }

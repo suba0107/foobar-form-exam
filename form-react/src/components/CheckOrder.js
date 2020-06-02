@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CheckOrder.modules.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import EditAmount from "./EditAmount.js";
 import Mug from "./Mug.js";
 import { useMediaPredicate } from "react-media-hook";
@@ -119,7 +119,15 @@ export default function CheckOrder(props) {
             <h3 className="allBeers">{totalCount() * 25} kr</h3>
           </section>
         </section>
-        <button className="navigationButton" disabled={totalCount() === 0} id="goToPayment">
+        <button
+          disabled={totalCount() === 0}
+          id="goToPayment"
+          className="navigationButton"
+          onClick={() => {
+            props.sendBackOrders(info);
+            history.push("/payment");
+          }}
+        >
           Go to payment
         </button>
       </article>

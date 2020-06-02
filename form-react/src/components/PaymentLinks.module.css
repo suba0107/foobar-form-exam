@@ -4,7 +4,9 @@
   align-self: center;
   margin: 0.8vw auto;
 }
-.mobilePayLink svg,
+.mobilePayLink svg {
+  width: 60%;
+}
 .cardDetailsLink svg {
   width: 60%;
 }
@@ -26,11 +28,8 @@
   .cardDetailsLink svg {
     width: 88%;
   }
-  .mobilePayLink {
-    margin-top: 7vw;
-  }
   .wirelessLink svg {
-    width: 70%;
+    width: 75%;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -46,8 +45,11 @@
     flex-grow: 1;
     flex-basis: 100px;
   }
-  .cardDetailsLink svg {
+  .cardDetailsLink svg,
+  .wirelessLink svg,
+  .mobilePayLink svg {
     width: 75%;
+    margin-top: 1vw;
   }
 }
 @media screen and (min-width: 1200px) {

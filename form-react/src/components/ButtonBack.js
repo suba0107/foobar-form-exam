@@ -12,7 +12,11 @@ export default function ButtonBack(props) {
   function MediaQueriesBtn(props) {
     if (ipad768px) {
       return (
-        <Button variant="fab" className={styles.buttonContainer} onClick={props.onClick}>
+        <Button
+          variant="fab"
+          className={styles.buttonContainer}
+          onClick={props.onClick}
+        >
           <ReactSVG
             src={BackLogo}
             wrapper="span"
@@ -28,7 +32,12 @@ export default function ButtonBack(props) {
       );
     } else if (ipad1024px) {
       return (
-        <Button size="large" variant="fab" className={styles.buttonContainer} onClick={props.onClick}>
+        <Button
+          size="large"
+          variant="fab"
+          className={styles.buttonContainer}
+          onClick={props.onClick}
+        >
           <ReactSVG
             src={BackLogo}
             wrapper="span"
@@ -45,7 +54,12 @@ export default function ButtonBack(props) {
     }
     return (
       //default Small mobile first
-      <Button size="small" variant="fab" className={styles.buttonContainer} onClick={props.onClick}>
+      <Button
+        size="small"
+        variant="fab"
+        className={styles.buttonContainer}
+        onClick={props.onClick}
+      >
         <ReactSVG
           src={BackLogo}
           wrapper="span"
