@@ -25,6 +25,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  margin: 0 auto;
 }
 /* img {
   width: 100%;
@@ -48,4 +49,45 @@ code {
 .navigationButton:disabled {
   opacity: 0.6;
   background-color: #ceb039;
+}
+
+header {
+  max-width: 1400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.header-other {
+  /* position: fixed; */
+  max-width: 1400px;
+  width: 100vw;
+  margin: 0 auto;
+  /* position: absolute; */
+  /* background */
+  /* background-color: var(--purple-ish-bg); */
+  top: 0;
+}
+
+.landing-header {
+  position: absolute;
+  z-index: 10000;
+  left: 15px;
+}
+
+/* .landing {
+  position: fixed;
+  z-index: 10000;
+  width: 100vw;
+  background-color: transparent;
+  top: 0;
+} */
+
+.fooBarLogo {
+  height: 70px;
+  margin-left: 2rem;
+  margin-top: 1.3rem;
+  margin-bottom: 1rem;
+  /* position: absolute; */
+  /* top: 21vw;
+  left: 2.5vw; */
 }

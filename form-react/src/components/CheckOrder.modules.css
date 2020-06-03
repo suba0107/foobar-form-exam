@@ -4,9 +4,9 @@
   margin: 0 auto;
   align-self: center;
   display: grid;
-  max-width: 1400px;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-  padding: 2rem 0.5rem 2rem 0.5rem;
+  max-width: 1350px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  padding: 0rem 0.5rem 2rem 0.5rem;
 }
 
 #checkOrder-grid {
@@ -25,7 +25,8 @@
   margin: 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  padding: clamp(3rem, 7vw, 5rem);
 }
 
 #editWrapper {
@@ -33,6 +34,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  margin-bottom: 2rem;
 }
 
 #editWrapper .buttonWrapper {
@@ -81,13 +83,17 @@
 #your-order {
   background-color: white;
   border-radius: 25px;
-  padding: clamp(2rem, 5vw, 3rem);
+  padding: clamp(2rem, 6vw, 5rem);
   margin: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding-top: 4rem;
 }
 
+#your-order .name {
+  padding: 2rem;
+}
 #amountWrapperCheckOrder h3 {
   font-size: 1.5rem;
   margin: 0;
@@ -105,6 +111,8 @@
 
 #your-order button {
   text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 #allWrapper h3 {
   color: var(--bright-purple-bg);
@@ -131,6 +139,23 @@
 
 #goToPayment {
   margin: 1rem auto;
-  width: clamp(50%, 200px, 100%);
+  width: clamp(40%, 200px, 100%);
   padding: 0.5rem;
+}
+
+.checkOrderBackButton {
+  width: 50px;
+  height: 50px;
+  background-color: var(--bright-purple-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-end;
+  align-self: flex-end;
+  border-radius: 25px;
+  margin-top: 1rem;
+}
+
+.checkOrderBackButtonSVG {
+  width: 80%;
 }

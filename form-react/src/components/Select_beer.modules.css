@@ -3,12 +3,14 @@
   border-radius: 25px;
   padding: 1rem;
   margin: 2rem;
+  margin-top: 130px;
 }
 
 #selection-of-beers {
   display: grid;
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 

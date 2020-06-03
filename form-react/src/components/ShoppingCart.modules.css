@@ -19,11 +19,12 @@
   text-align: center;
 }
 #shopping-cart-heading {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin-top: 1rem;
   position: relative;
   right: 1rem;
+  top: 1.5rem;
 
   /* font-size: 2.5rem;
   z-index: 10000;
@@ -41,7 +42,8 @@
   justify-content: center;
   position: absolute;
   font-weight: bold;
-  bottom: 0;
+  top: 2rem;
+  left: 0.7rem;
   z-index: 200;
 }
 #shopping-wrapper .heading-wrapper {
@@ -59,12 +61,17 @@
   width: 100%;
 }
 
-header {
-  display: flex;
-  justify-content: flex-end;
+#shopping-cart {
+  /* display: flex; */
   margin-right: 5rem;
+  width: 100%;
 }
 
+#shopping-cart .fooBarLogo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .cart-popUp {
   background-color: var(--pink-highlight);
   width: clamp(20vw, 375px, 90vw);

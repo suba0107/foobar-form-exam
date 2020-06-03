@@ -1,6 +1,6 @@
 .paymentScreen {
   background-color: var(--purple-ish-bg);
-  padding: 10vw 5vw 11vw 5vw;
+  padding: 1rem 5vw 11vw 5vw;
   overflow-x: hidden;
   /* max-width: 1400px;
   margin: 0 auto; */

@@ -36,9 +36,7 @@ export default function Form(props) {
     evt.preventDefault();
     // let validForm = true;
     // const form = document.querySelector("form");
-    let cardnoInput = document.querySelector(
-      "#cardnumber > input:nth-child(1)"
-    );
+    let cardnoInput = document.querySelector("#cardnumber > input:nth-child(1)");
     let ccvalue = cardnoInput.value.split(" ");
     const ccLength = ccvalue.join("");
 
@@ -46,7 +44,9 @@ export default function Form(props) {
     let datevalue = dateInput.value.split("/");
     const dateLength = datevalue.join("");
 
-    let cvvInput = document.querySelector("#cvvNumber > input:nth-child(1)");
+    let cvvInput = document.querySelector("#cvvNumber > input");
+    // let cvvValue = cvvInput.value.split(" ");
+    // const cvvLength = cvvValue.join("");
     // let cvvLength = cvvInput.value;
     // let visa = /^4[0-9]{12}(?:[0-9]{3})?$/;
     // let master = /^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/;
@@ -59,7 +59,7 @@ export default function Form(props) {
       evt.preventDefault();
       expireDateMsg.current.textContent = "Expiry date's format is MM/YY";
       expireDateMsg.current.style.color = "var(--pink-highlight)";
-    } else if (cvvInput.value.length < 3) {
+    } else if (cvvInput.value.trim().length < 3) {
       evt.preventDefault();
       cvvMsg.current.textContent = "CVV number must have 3 digits";
       cvvMsg.current.style.color = "var(--pink-highlight)";
@@ -94,15 +94,7 @@ export default function Form(props) {
   const onlyTextAllow = (evt) => {
     //https://stackoverflow.com/questions/29823591/html-input-do-not-allow-numbers
     let key = evt.keyCode;
-    if (
-      !(
-        key === 8 ||
-        key === 32 ||
-        key === 46 ||
-        (key >= 35 && key <= 40) ||
-        (key >= 65 && key <= 90)
-      )
-    ) {
+    if (!(key === 8 || key === 32 || key === 46 || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
       evt.preventDefault();
     }
 
@@ -203,30 +195,12 @@ export default function Form(props) {
       <fieldset className={styles.fieldsetWrapper}>
         <label className={styles.expireDateLabel} id="dateYear">
           Expire
-          <NumberFormat
-            format={cardExpiry}
-            placeholder="MM/YY"
-            className={styles.cardExpire}
-            onKeyDown={showDateEg}
-            onBlur={hideDateEg}
-            onInvalid={emptyDate}
-            allowEmptyFormatting={false}
-            required
-          />
+          <NumberFormat format={cardExpiry} placeholder="MM/YY" className={styles.cardExpire} onKeyDown={showDateEg} onBlur={hideDateEg} onInvalid={emptyDate} allowEmptyFormatting={false} required />
           <p id="expireDateExample" ref={expireDateMsg}></p>
         </label>
         <label className={styles.cvvLabel} id="cvvNumber">
           CVV
-          <NumberFormat
-            format="###"
-            placeholder="123"
-            className={styles.cardCVV}
-            onKeyDown={showCVVEg}
-            onBlur={hideCVVEg}
-            onInvalid={emptyCVV}
-            allowEmptyFormatting={false}
-            required
-          />
+          <NumberFormat format="###" placeholder="123" className={styles.cardCVV} onKeyDown={showCVVEg} onBlur={hideCVVEg} onInvalid={emptyCVV} allowEmptyFormatting={false} required />
           <p id="cvvExample" ref={cvvMsg}></p>
         </label>
       </fieldset>

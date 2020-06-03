@@ -66,9 +66,6 @@
   flex-flow: row wrap;
   justify-content: space-between;
 }
-.invalid {
-  color: var(--pink-highlight);
-}
 @media screen and (min-width: 768px) {
   .payForm {
     margin: 2vw 6vw;
@@ -81,7 +78,6 @@
   }
   .payForm input {
     padding: 3vw;
-    width: 71vw;
   }
   .cardHolderName,
   .cardNumber,
@@ -156,5 +152,17 @@
   }
   .payForm label {
     font-size: 1.3vw;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .payForm input,
+  .payForm label {
+    font-size: 1vw;
+  }
+  .payForm input {
+    padding: 1.2vw;
+  }
+  .payForm p {
+    font-size: 0.8vw;
   }
 }

@@ -4,10 +4,14 @@ import { useHistory, useLocation } from "react-router-dom";
 import EditAmount from "./EditAmount.js";
 import Mug from "./Mug.js";
 import { useMediaPredicate } from "react-media-hook";
+import ButtonBack from "./ButtonBack";
+import { Link } from "react-router-dom";
+import BackLogo from "../svgs/back_logo.svg";
 
+// import buttonStyles from "./PaymentScreen.module.css";
 export default function CheckOrder(props) {
   let history = useHistory();
-  const isMin815px = useMediaPredicate("(min-width: 815px)");
+  const isMin615px = useMediaPredicate("(min-width: 615px)");
   const [info, setInfo] = useState(props.orders);
 
   console.log(props);
@@ -64,20 +68,20 @@ export default function CheckOrder(props) {
   }
   return (
     <main id="checkOrder">
-      {isMin815px ? (
+      {isMin615px ? (
         <article id="editOrder">
           <h2>Edit your order</h2>
           {editOrder()}
-          <button
-            id="checkOutbackButton"
+          <Link
             onClick={() => {
               props.sendBackOrders(info);
               props.getState("Gone back");
-              history.push("/select");
             }}
+            to="/select"
+            className="checkOrderBackButton"
           >
-            Back
-          </button>
+            <img className="checkOrderBackButtonSVG" src={BackLogo} alt="Back button" />
+          </Link>
         </article>
       ) : (
         <article id="editOrder">
@@ -85,16 +89,16 @@ export default function CheckOrder(props) {
             <summary>Edit your order</summary>
             {editOrder()}
           </details>
-          <button
-            id="checkOutbackButton"
+          <Link
             onClick={() => {
               props.sendBackOrders(info);
               props.getState("Gone back");
-              history.push("/select");
             }}
+            className="checkOrderBackButton"
+            to="/select"
           >
-            Back
-          </button>
+            <img className="checkOrderBackButtonSVG" src={BackLogo} alt="Back button" />
+          </Link>
         </article>
       )}
 
@@ -105,7 +109,7 @@ export default function CheckOrder(props) {
           if (data.name !== undefined) {
             return (
               <article id="amountWrapperCheckOrder" key={info.indexOf(data)}>
-                <h3>
+                <h3 className="name">
                   {data.name} x {data.count}
                 </h3>
                 <h4>{data.count * 25} kr</h4>

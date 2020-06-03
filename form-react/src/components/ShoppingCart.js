@@ -3,6 +3,7 @@ import styles from "./ShoppingCart.modules.css";
 import EditAmount from "./EditAmount.js";
 import { useHistory } from "react-router-dom";
 import shoppingcarticon from "../svgs/shopping-cart.svg";
+import Logo from "../images/final-logo.png";
 
 export default function ShoppingCart(props) {
   let history = useHistory();
@@ -70,6 +71,8 @@ export default function ShoppingCart(props) {
 
   return (
     <header id="shopping-cart">
+      <img src={Logo} className="fooBarLogo"></img>
+
       <section id="shopping-wrapper">
         <div
           onClick={() => {

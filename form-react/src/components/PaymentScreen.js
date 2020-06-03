@@ -45,8 +45,6 @@ export default function PaymentScreen(props) {
   }
   return (
     <main className={styles.paymentScreen}>
-      <img src={Logo} className={styles.fooBarLogo} />
-      <LanguageLink />
       <article className={styles.paymentIntro}>
         <h2>Almost there!</h2>
         <h2>Please choose a payment method</h2>
@@ -93,20 +91,12 @@ export default function PaymentScreen(props) {
         {payment === "mobilepay" ? donePayment() : null}
         {payment === "wireless" && (
           <div>
-            <ReactSVG
-              src={WirelessIcon}
-              className={OnePaymentStyle.showWireless}
-            />
+            <ReactSVG src={WirelessIcon} className={OnePaymentStyle.showWireless} />
             <h3>Tap your card</h3>
           </div>
         )}
         {payment === "wireless" ? donePayment() : null}
-        {payment === "carddetails" && (
-          <PayForm
-            sendBackOrders={props.sendBackOrders}
-            orders={props.orders}
-          />
-        )}
+        {payment === "carddetails" && <PayForm sendBackOrders={props.sendBackOrders} orders={props.orders} />}
       </Modal>
     </main>
   );

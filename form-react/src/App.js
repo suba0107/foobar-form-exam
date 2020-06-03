@@ -1,24 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { MemoryRouter, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import Landing_page from "./components/Landing_page";
 import Select_beer from "./components/Select_beer";
 import CheckOrder from "./components/CheckOrder";
 import PaymentScreen from "./components/PaymentScreen";
 import EndingScreen from "./components/EndingScreen";
+import Logo from "./images/final-logo.png";
 
 export default function App() {
-  // const [info, setData] = useState([]);
-  // useEffect(() => {
-  //   Heroku.getData(setData);
-  // }, []);
-
-  // function onSubmitOrder(info) {
-  //   Heroku.postOrder(info);
-  // }
-
   const [orders, setOrders] = useState([]);
   const [sentBackOrders, setSentBackOrders] = useState([]);
   const [state, setState] = useState("");
+  let location = useLocation();
 
   function getState(state) {
     setState(state);
@@ -40,71 +33,34 @@ export default function App() {
 
   return (
     <div>
-      <MemoryRouter>
-        <div>
-          <nav>
-            <ul
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr 1fr",
-                width: "200px",
-                listStyle: "none",
-              }}
-            >
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/checkorder">Check order</Link>
-              </li>
-              <li>
-                <Link to="/select">Select</Link>
-              </li>
-              <li>
-                <Link to="/payment">Payment</Link>
-              </li>
-
-              <li>
-                <Link to="/end">End</Link>
-              </li>
-            </ul>
-          </nav>
-
-          {/* <Switch> looks through <Route>s and
+      {/* <Switch> looks through <Route>s and
             renders the first <Route> that matches the current URL. */}
-          <Switch>
-            <Route path="/end">
-              <EndingScreen />
-            </Route>
-            <Route path="/payment">
-              <div className="App">
-                <PaymentScreen
-                  sendBackOrders={sendBackOrders}
-                  orders={orders}
-                />
-              </div>
-            </Route>
+      {location.pathname !== "/select" && location.pathname !== "/" && (
+        <header className="header-other">
+          <img src={Logo} className="fooBarLogo"></img>
+        </header>
+      )}
 
-            <Route path="/checkOrder">
-              <CheckOrder
-                orders={orders}
-                sendBackOrders={sendBackOrders}
-                getState={getState}
-              />
-            </Route>
-            <Route path="/select">
-              <Select_beer
-                orderSentBack={sentBackOrders}
-                getOrders={getOrders}
-                state={state}
-              />
-            </Route>
-            <Route path="/">
-              <Landing_page getState={getState} />
-            </Route>
-          </Switch>
-        </div>
-      </MemoryRouter>
+      <Switch>
+        <Route path="/end">
+          <EndingScreen />
+        </Route>
+        <Route path="/payment">
+          <div className="App">
+            <PaymentScreen sendBackOrders={sendBackOrders} orders={orders} />
+          </div>
+        </Route>
+
+        <Route path="/checkOrder">
+          <CheckOrder orders={orders} sendBackOrders={sendBackOrders} getState={getState} />
+        </Route>
+        <Route path="/select">
+          <Select_beer orderSentBack={sentBackOrders} getOrders={getOrders} state={state} />
+        </Route>
+        <Route path="/">
+          <Landing_page getState={getState} />
+        </Route>
+      </Switch>
     </div>
   );
 }
