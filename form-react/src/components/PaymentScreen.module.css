@@ -39,9 +39,6 @@
   display: flex;
   flex-flow: column wrap;
 }
-.hidden {
-  display: none;
-}
 @media screen and (min-width: 768px) {
   /*.paymentScreen {
      padding: 6vw 5vw 1vw 5vw; 
