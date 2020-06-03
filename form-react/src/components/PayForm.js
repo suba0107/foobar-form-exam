@@ -16,6 +16,12 @@ export default function Form(props) {
   const [egcc, setEgCC] = useState("");
   const [egexdate, setEgEx] = useState("");
   const [egcvv, setEgCVV] = useState("");
+  const [text, setText] = useState({});
+  const onlyText = (evt) => {
+    let value = evt.target.value;
+    value = value.replace(/[^A-Za-z]/gi, "");
+    setText({ value });
+  };
   // console.log(orders[1].name);
   // const changeArr = Object.values(orders[1]); //["1", "Fairy tale"]
   // changeArr.shift();
@@ -147,13 +153,14 @@ export default function Form(props) {
           placeholder="John Something"
           autoCapitalize="words"
           name="nameOnCard"
-          onInput={checkName}
-          onKeyDown={() => {
+          // onChange={checkName}
+          onKeyDown={(evt) => {
+            checkName(evt);
             setEgName("E.g. John Smith");
           }}
           pattern="[a-zA-Z]*"
           required
-        />
+        ></input>
         <p id="nameError">{egname}</p>
       </label>
       <label className={styles.cardNumber} id="cardnumber">
