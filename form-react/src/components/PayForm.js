@@ -32,12 +32,14 @@ export default function Form(props) {
 
   function submit(evt) {
     evt.preventDefault();
-    let cardno = document.querySelector("#cardnumber > input:nth-child(1)");
-    let value = cardno.value.split(" ");
-    let test = value.join("");
+    let cardnoInput = document.querySelector(
+      "#cardnumber > input:nth-child(1)"
+    );
+    let value = cardnoInput.value.split(" ");
+    let trueLength = value.join("");
     // let visa = /^4[0-9]{12}(?:[0-9]{3})?$/;
     // let master = /^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/;
-    if (test.length < 16) {
+    if (trueLength.length < 16) {
       evt.preventDefault();
       console.log(false);
       document.querySelector("#cardNoExample").textContent =
