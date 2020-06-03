@@ -83,6 +83,9 @@ export default function PaymentScreen(props) {
           <div>
             <ReactSVG
               src={MobilePayIcon}
+              beforeInjection={(svg) => {
+                svg.classList.add("mobilepayCode");
+              }}
               className={OnePaymentStyle.showMobilePay}
             />
           </div>

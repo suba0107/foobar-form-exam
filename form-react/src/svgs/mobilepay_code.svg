@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="422" height="422" viewBox="0 0 422 422">
   <defs>
-    <filter id="Path_1" x="134.411" y="341.627" width="44.366" height="36.773" filterUnits="userSpaceOnUse">
+    <filter id="Path_1" x="134.431" y="341.644" width="44.353" height="36.785" filterUnits="userSpaceOnUse">
       <feOffset dx="-1" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="1.5" result="blur"/>
       <feFlood flood-color="#1a2764"/>
@@ -10,11 +10,11 @@
   </defs>
   <g id="Group_95" data-name="Group 95" transform="translate(-173 -301)">
     <rect id="Rectangle_28" data-name="Rectangle 28" width="422" height="422" rx="23" transform="translate(173 301)" fill="#5a78fe"/>
-    <text id="MobilePay_100_kr._til_1234_FooBar" data-name="MobilePay 100 kr. til
-
-1234
-
-FooBar" transform="translate(384 543)" fill="#fff" font-size="20" font-family="Ubuntu-Light, Ubuntu" font-weight="300"><tspan x="-89.63" y="0">MobilePay 100 kr. til</tspan><tspan font-family="Ubuntu-Regular, Ubuntu" font-weight="400"><tspan x="0" y="18"></tspan></tspan><tspan font-size="34" font-family="Ubuntu-Regular, Ubuntu" font-weight="400"><tspan x="-38.352" y="36">1234</tspan></tspan><tspan font-family="Ubuntu-Regular, Ubuntu" font-weight="400"><tspan x="0" y="54"></tspan></tspan><tspan x="-31.97" y="72">FooBar</tspan></text>
+    <g id="Group">
+      <text id="MobilePay_Code_is" data-name="MobilePay Code is" transform="translate(294.37 543)" fill="#fff" font-size="20" font-family="Ubuntu-Light, Ubuntu" font-weight="300"><tspan x="0" y="0">MobilePay Code is</tspan></text>
+      <text id="_1234" data-name="1234" transform="translate(345.648 579)" fill="#fff" font-size="34" font-family="Ubuntu-Regular, Ubuntu"><tspan x="0" y="0">1234</tspan></text>
+      <text id="FooBar" transform="translate(352.03 615)" fill="#fff" font-size="20" font-family="Ubuntu-Light, Ubuntu" font-weight="300"><tspan x="0" y="0">FooBar</tspan></text>
+    </g>
     <g id="Group_94" data-name="Group 94" transform="translate(-1 -10)">
       <g id="Rectangle_29" data-name="Rectangle 29" transform="translate(305 341)" fill="#fff" stroke="#707070" stroke-width="1">
         <rect width="161" height="164" stroke="none"/>
@@ -30,9 +30,9 @@ FooBar" transform="translate(384 543)" fill="#fff" font-size="20" font-family="U
           <rect x="1.5" y="1.5" width="29.422" height="50.535" rx="4.5" fill="none"/>
         </g>
         <g id="Group_1" data-name="Group 1" transform="translate(17.174 6.873)">
-          <path id="Path_2" data-name="Path 2" d="M0,0S7.412,3.735,15.154,3.735,30.967,0,30.967,0V16.516a53.51,53.51,0,0,1-15.316,2.626A57.32,57.32,0,0,1,0,16.516Z" transform="translate(36.402 16.407) rotate(149)" fill="#fff"/>
+          <path id="Path_2" data-name="Path 2" d="M0,0S7.412,3.735,15.154,3.735,30.967,0,30.967,0V16.516a53.51,53.51,0,0,1-15.316,2.626A57.32,57.32,0,0,1,0,16.516Z" transform="matrix(-0.857, 0.515, -0.515, -0.857, 36.402, 16.407)" fill="#fff"/>
           <g transform="matrix(1, 0, 0, 1, -136.17, -337.4)" filter="url(#Path_1)">
-            <path id="Path_1-2" data-name="Path 1" d="M0,0S7.412,3.735,15.154,3.735,30.967,0,30.967,0V16.516a53.51,53.51,0,0,1-15.316,2.626A57.32,57.32,0,0,1,0,16.516Z" transform="matrix(-0.95, 0.31, -0.31, -0.95, 175.28, 364.33)" fill="#fff"/>
+            <path id="Path_1-2" data-name="Path 1" d="M0,0S7.412,3.735,15.154,3.735,30.967,0,30.967,0V16.516a53.51,53.51,0,0,1-15.316,2.626A57.32,57.32,0,0,1,0,16.516Z" transform="translate(175.28 364.33) rotate(161.93)" fill="#fff"/>
           </g>
         </g>
       </g>
