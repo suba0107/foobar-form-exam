@@ -59,13 +59,11 @@ export default function Form(props) {
       evt.preventDefault();
       expireDateMsg.current.textContent = "Expiry date's format is MM/YY";
       expireDateMsg.current.style.color = "var(--pink-highlight)";
-    }
-    // else if (cvvLength.length < 2) {
-    //   evt.preventDefault();
-    //   cvvMsg.current.textContent = "CVV number must have 3 digits";
-    //   cvvMsg.current.style.color = "var(--pink-highlight)";
-    // }
-    else {
+    } else if (cvvInput.value.length < 3) {
+      evt.preventDefault();
+      cvvMsg.current.textContent = "CVV number must have 3 digits";
+      cvvMsg.current.style.color = "var(--pink-highlight)";
+    } else {
       Heroku.postOrder(orders);
       history.push("/end");
     }
