@@ -54,7 +54,7 @@ export default function PaymentScreen(props) {
     return clearInterval(donePayment);
   }, []);
   return (
-    <section className={styles.paymentScreen}>
+    <main className={styles.paymentScreen}>
       <img src={Logo} className={styles.fooBarLogo} />
       <LanguageLink />
       <article className={styles.paymentIntro}>
@@ -114,6 +114,6 @@ export default function PaymentScreen(props) {
           />
         )}
       </Modal>
-    </section>
+    </main>
   );
 }
