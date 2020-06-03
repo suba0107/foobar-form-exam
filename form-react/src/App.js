@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Moment from "react-moment";
-import { Heroku } from "./modules/Heroku";
-import Main from "./components/Main";
-import styles from "./App.css";
-import { MemoryRouter, Router, Switch, Route, Link } from "react-router-dom";
+import { MemoryRouter, Switch, Route, Link } from "react-router-dom";
 import Landing_page from "./components/Landing_page";
 import Select_beer from "./components/Select_beer";
 import CheckOrder from "./components/CheckOrder";
