@@ -12,6 +12,10 @@ import CreditCardInput from "react-credit-card-input";
 export default function Form(props) {
   console.log(props.orders);
   const [orders, setOrders] = useState([]);
+  const [egname, setEgName] = useState("");
+  const [egcc, setEgCC] = useState("");
+  const [egexdate, setEgEx] = useState("");
+  const [egcvv, setEgCVV] = useState("");
   // console.log(orders[1].name);
   // const changeArr = Object.values(orders[1]); //["1", "Fairy tale"]
   // changeArr.shift();
@@ -72,18 +76,6 @@ export default function Form(props) {
 
     return month + (year.length ? "/" + year : "");
   }
-  function showCardNoExample(evt) {
-    document.querySelector("#cardNoExample").textContent =
-      "Example: 1234 1234 1234 1234";
-  }
-  function showExpireExample(evt) {
-    document.querySelector("#expireDateExample").textContent =
-      "Example: mm / yy";
-  }
-
-  function showCVVExample(evt) {
-    document.querySelector("#cvvExample").textContent = "Ex: 123";
-  }
   function hideExample(evt) {
     document
       .querySelectorAll("#cardNoExample,#expireDateExample,#cvvExample")
@@ -109,6 +101,7 @@ export default function Form(props) {
       evt.preventDefault();
     }
   }
+
   // class NameCard extends React.PureComponent {
   //   state = {
   //     value: "",
@@ -154,11 +147,14 @@ export default function Form(props) {
           placeholder="John Something"
           autoCapitalize="words"
           name="nameOnCard"
-          onKeyDown={checkName}
+          onInput={checkName}
+          onKeyDown={() => {
+            setEgName("E.g. John Smith");
+          }}
           pattern="[a-zA-Z]*"
           required
         />
-        <p id="nameError"></p>
+        <p id="nameError">{egname}</p>
       </label>
       <label className={styles.cardNumber} id="cardnumber">
         Card number
@@ -177,7 +173,8 @@ export default function Form(props) {
           format="#### #### #### ####"
           placeholder="1234 1234 1234 1234"
           onKeyDown={() => {
-            showCardNoExample();
+            // showCardNoExample();
+            setEgCC("E.g. 1234 1234 1234 1234");
           }}
           onBlur={() => {
             hideExample();
@@ -186,7 +183,7 @@ export default function Form(props) {
           allowEmptyFormatting={false}
           required
         />
-        <p id="cardNoExample"></p>
+        <p id="cardNoExample">{egcc}</p>
       </label>
       <fieldset className={styles.fieldsetWrapper}>
         <label className={styles.expireDateLabel}>
@@ -196,11 +193,13 @@ export default function Form(props) {
             format={cardExpiry}
             placeholder="mm/yy"
             className={styles.cardExpire}
-            onKeyDown={showExpireExample}
+            onKeyDown={() => {
+              setEgEx("E.g. MM/YY");
+            }}
             onBlur={hideExample}
             required
           />
-          <p id="expireDateExample"></p>
+          <p id="expireDateExample">{egexdate}</p>
         </label>
         <label className={styles.cvvLabel}>
           CVV
@@ -210,11 +209,13 @@ export default function Form(props) {
             minLength={3}
             placeholder="123"
             className={styles.cardCVV}
-            onKeyDown={showCVVExample}
+            onKeyDown={() => {
+              setEgCVV("E.g. 123");
+            }}
             onBlur={hideExample}
             required
           />
-          <p id="cvvExample"></p>
+          <p id="cvvExample">{egcvv}</p>
         </label>
       </fieldset>
       <ButtonPay type="submit"></ButtonPay>
