@@ -1,7 +1,7 @@
 .methodsContainer {
   background-color: var(--white-sec-bg);
   /* background-color: black; */
-  border-radius: 8vw;
+  border-radius: 25px;
   padding: 9vw;
   z-index: 99;
   position: absolute;
@@ -98,38 +98,25 @@
     width: 33vw;
     left: 62vw;
     height: fit-content;
-    /* height: 86vh; */
-    border-radius: 5vw;
   }
   .methodsContainer img {
     width: 195%;
     margin: auto;
   }
-  /* .showWireless {
-    padding: 11vw 0;
-  } */
-  /* .showMobilePay {
-    padding: 2.3vw 0;
-  } */
   .showWireless svg {
     left: 0vw;
     top: 3vw;
   }
   .showMobilePay svg {
-    /* width: 138%; */
     left: 1vw;
   }
 }
 @media screen and (min-width: 1200px) {
   .methodsContainer {
-    /* width: 36vw;
-    left: 59vw;
-    top: 18vw; */
     padding: 6vw;
     width: 31vw;
     left: 62vw;
     top: 14vw;
-    /* height: 86vh; */
   }
   .showWireless {
     padding: 1vw 0;
@@ -149,9 +136,7 @@
 }
 @media screen and (min-width: 1400px) {
   .methodsContainer {
-    /* height: 82vh; */
     top: 10vw;
-    border-radius: 25px;
   }
   .showWireless svg {
     top: 3vw;

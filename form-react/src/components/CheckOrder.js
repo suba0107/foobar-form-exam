@@ -78,42 +78,11 @@ export default function CheckOrder(props) {
   }
   return (
     <main id="checkOrder">
-      <article id="editOrder">
-        <details>
-          <summary>Edit your order</summary>
-          {editOrder()}
-        </details>
-        <div
-          onClick={() => {
-            props.sendBackOrders(info);
-            props.getState("Gone back");
-            history.push("/select");
-          }}
-          className="checkOrderBackButton"
-        >
-          {" "}
-          <ButtonBack />
-        </div>
-      </article>
-      {/* {isMin615px ? (
+      {isMin615px ? (
         <article id="editOrder">
           <h2>Edit your order</h2>
           {editOrder()}
-          {/* <Link
-            onClick={() => {
-              props.sendBackOrders(info);
-              props.getState("Gone back");
-            }}
-            to="/select"
-            className="checkOrderBackButton"
-          >
-            <img
-              className="checkOrderBackButtonSVG"
-              src={BackLogo}
-              alt="Back button"
-            />
-          </Link> */}
-      {/* <div
+          <div
             onClick={() => {
               props.sendBackOrders(info);
               props.getState("Gone back");
@@ -125,31 +94,18 @@ export default function CheckOrder(props) {
             <ButtonBack />
           </div>
         </article>
-      ) : ( */}
-      {/* <article id="editOrder">
+      ) : (
+        <article id="editOrder">
           <details>
             <summary>Edit your order</summary>
             {editOrder()}
           </details>
-          <Link
-            onClick={() => {
-              props.sendBackOrders(info);
-              props.getState("Gone back");
-            }}
-            className="checkOrderBackButton"
-            to="/select"
-          >
-            <img
-              className="checkOrderBackButtonSVG"
-              src={BackLogo}
-              alt="Back button"
-            />
-          </Link>
           <div className="checkOrderBackButton">
             {" "}
             <ButtonBack />
           </div>
-        </article> */}
+        </article>
+      )}
 
       <article id="your-order">
         <h2>Your order</h2>
