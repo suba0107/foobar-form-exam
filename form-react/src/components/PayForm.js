@@ -36,7 +36,7 @@ export default function Form(props) {
 
   //Check on submit
   function submit(evt) {
-    evt.preventDefault();
+    let nameInput = document.querySelector("#nameOnCard");
     let cardnoInput = document.querySelector(
       "#cardnumber > input:nth-child(1)"
     );
@@ -48,7 +48,21 @@ export default function Form(props) {
     const dateLength = datevalue.join("");
 
     let cvvInput = document.querySelector("#cvvNumber > input");
+    const cvvLength = cvvInput.value.trim();
 
+    //Validate all, if empty
+    if (
+      nameInput.value.length === 0 &&
+      ccLength.length === 0 &&
+      dateLength.length === 0 &&
+      cvvLength.length === 0
+    ) {
+      emptyName();
+      emptyCVV();
+      emptyDate();
+      emptyCC();
+      evt.preventDefault();
+    }
     // Validate inputs' length for Credit card details
     if (ccLength.length < 16) {
       evt.preventDefault();
@@ -58,7 +72,7 @@ export default function Form(props) {
       evt.preventDefault();
       expireDateMsg.current.textContent = "Expiry date's format is MM/YY";
       expireDateMsg.current.style.color = "var(--pink-highlight)";
-    } else if (cvvInput.value.trim().length < 3) {
+    } else if (cvvLength.length < 3) {
       evt.preventDefault();
       cvvMsg.current.textContent = "CVV number must have 3 digits";
       cvvMsg.current.style.color = "var(--pink-highlight)";
@@ -155,11 +169,11 @@ export default function Form(props) {
   };
 
   return (
-    <form className={styles.payForm} onSubmit={submit}>
+    <form className={styles.payForm} onSubmit={submit} noValidate>
       <div id="paymentOptionsLogo" className={styles.paymentOptionLogos}>
-        <img id="dankort" src={Dankort} />
-        <img id="visa" src={VisaIcon} />
-        <img id="master" src={MastercardIcon} />
+        <img id="dankort" src={Dankort} alt="dankort icon" />
+        <img id="visa" src={VisaIcon} alt="visa icon" />
+        <img id="master" src={MastercardIcon} alt="mastercard icon" />
       </div>
       <label id="cardName" className={styles.cardHolderName}>
         Name on Card
@@ -180,7 +194,8 @@ export default function Form(props) {
       </label>
       <label className={styles.cardNumber} id="cardnumber">
         Card number
-        {/* use NumberFormat to format input value accordingly */}
+        {/* use NumberFormat to format input value accordingly credit card's format
+         */}
         <NumberFormat
           id="cardNo"
           name="cardNo"
