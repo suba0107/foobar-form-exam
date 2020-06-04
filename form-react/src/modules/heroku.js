@@ -1,4 +1,4 @@
-import { foobarUrl, beertypesUrl, orderUrl } from "./Vars";
+import { foobarUrl, orderUrl } from "./Vars";
 function getData(callback, name) {
   fetch(foobarUrl, {
     method: "get",
@@ -10,8 +10,6 @@ function getData(callback, name) {
     .then((data) => {
       callback(data[name]);
     });
-  // .then((res) => res.json())
-  // .then((data) => {});
 }
 function postOrder(data) {
   const postData = JSON.stringify(data);
