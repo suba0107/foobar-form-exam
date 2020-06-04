@@ -24,7 +24,7 @@ export default function Mug(props) {
           />
           <path className="mug-4" d="M16.13,7s63.8,16.7,145.5,0C161.63,7,87.09,50,16.13,7Z" />
           <path className="mug-5" d="M14.34,250.33s63.8,16.7,145.5,0C159.84,250.33,85.3,293.27,14.34,250.33Z" />
-          <image width="808" height="926" transform="translate(20.39 76.37) scale(0.17)" xlinkHref={`../images/beers/${label}.png`} />
+          <image width="808" height="926" transform="translate(20.39 76.37) scale(0.17)" xlinkHref={`${process.env.PUBLIC_URL}/labels/${label}.png`} />
           <path className="mug-6" d="M162.79,9.41s-11.85,7.9-20.94,10.28V251.21s16.79-2.46,21.13-5.62Z" />
           <path className="mug-7" d="M9.35,7S26,20.71,46,24.78v228s-25-2-36.11-6.4Z" />
           <path className="mug-8" d="M107.69,27.42s13.92-.93,21.11-3.94V252.14s-13.22,2.08-23,1.62V27.42Z" />

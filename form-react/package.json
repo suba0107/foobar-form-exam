@@ -20,7 +20,7 @@
     "react-svg": "^11.0.22",
     "styled-components": "^5.1.1"
   },
-  "homepage": "https://rhdvo.dk/kea/3-sem/foobar-examproject/",
+  "homepage": "https://subangi.dk/kea/foobar",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
