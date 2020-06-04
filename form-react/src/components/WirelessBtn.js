@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
-import WirelessIcon from "../svgs/wireless_icon2.svg";
 import styles from "./PaymentButtons.module.css";
+import WirelessIcon from "../svgs/wireless_icon2.svg";
 
 export default function WirelessLink(props) {
   return (

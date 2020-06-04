@@ -1,15 +1,17 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
-import EndingBgSVG from "../svgs/pub-with-bartender.svg";
 import { useMediaPredicate } from "react-media-hook";
+import EndingBgSVG from "../svgs/pub-with-bartender.svg";
 
 export default function EndingBg() {
+  // different svg vewbox size for ending background
   function MediaQueriesBg() {
     const mobileFirst = useMediaPredicate("(max-width: 460px)");
     const ipad768px = useMediaPredicate("(max-width: 800px)");
     const ipad1024px = useMediaPredicate("(max-width: 1100px)");
     const screen1200px = useMediaPredicate("(max-width: 1300px)");
     const screen1400px = useMediaPredicate("min-width: 1400px");
+
     if (mobileFirst) {
       return (
         <ReactSVG

@@ -1,7 +1,7 @@
 import React from "react";
+import styles from "./EndingScreen.module.css";
 import EndingStatusBox from "./EndingStatusBox";
 import EndingBg from "./EndingBg";
-import styles from "./EndingScreen.module.css";
 
 export default function EndingScreen() {
   return (

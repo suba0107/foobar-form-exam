@@ -34,6 +34,7 @@
 .endingSttRoundCon .inactive {
   background-color: white;
 }
+/* iPad verticle */
 @media screen and (min-width: 768px) {
   .endingSttRoundCon,
   .endingSttRoundConInactive {
@@ -54,6 +55,7 @@
     top: 0vw;
   }
 }
+/* iPad horizontal */
 @media screen and (min-width: 1024px) {
   .endingSttRoundCon,
   .endingSttRoundConInactive {
@@ -71,11 +73,11 @@
     > div:nth-child(1)
     > div:nth-child(1)
     > svg:nth-child(1) {
-    /* width: 100%; */
     left: 0vw;
     top: -0.2vw;
   }
 }
+/* Desktop - Macbook 13" */
 @media screen and (min-width: 1400px) {
   .endingSttRoundCon,
   .endingSttRoundConInactive {

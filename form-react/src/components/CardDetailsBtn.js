@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
-import CardDetailsIcon from "../svgs/creditcards_icon3.svg";
 import styles from "./PaymentButtons.module.css";
+import CardDetailsIcon from "../svgs/creditcards_icon3.svg";
 
 export default function CardDetailsLink(props) {
   return (

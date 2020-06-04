@@ -65,6 +65,7 @@
   flex-flow: row wrap;
   justify-content: space-between;
 }
+/* iPad verticle */
 @media screen and (min-width: 768px) {
   .payForm {
     margin: 2vw 6vw;
@@ -93,13 +94,13 @@
     width: 47vw;
   }
   .paymentOptionLogos {
-    /* margin: 4vw auto; */
     margin: 0.5vw auto;
   }
   .payForm p {
     font-size: 2vw;
   }
 }
+/* iPad horizontal */
 @media screen and (min-width: 1024px) {
   .payForm p {
     font-size: 1.3vw;
@@ -129,6 +130,7 @@
     width: 10vw;
   }
 }
+/* Bigger and in between */
 @media screen and (min-width: 1200px) {
   .payForm p {
     font-size: 1vw;
@@ -140,6 +142,7 @@
     margin: 0vw;
   }
 }
+/* Destop - macbook */
 @media screen and (min-width: 1400px) {
   .payForm {
     margin-top: -4vw;
@@ -155,6 +158,7 @@
     font-size: 1.3vw;
   }
 }
+/* Bigger monitors */
 @media screen and (min-width: 1900px) {
   .payForm input,
   .payForm label {

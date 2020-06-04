@@ -1,13 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import EndingStt from "./EndingStt";
 import EndingMsg from "./EndingMsg";
 import ButtonEnding from "./ButtonEnding";
-import { useHistory } from "react-router-dom";
 
 import styles from "./EndingStatusBox.module.css";
 
 export default function EndingStatusBox(props) {
-  let history = useHistory();
   return (
     <article className={styles.endingStatusBox}>
       <div>
@@ -20,14 +19,9 @@ export default function EndingStatusBox(props) {
         <EndingStt />
         <EndingMsg />
       </div>
-      <div
-        onClick={() => {
-          history.push("/");
-        }}
-      >
+      <Link to="/">
         <ButtonEnding />
-      </div>
-
+      </Link>
       {props.children}
     </article>
   );

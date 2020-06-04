@@ -2,8 +2,6 @@
   background-color: var(--purple-ish-bg);
   padding: 1rem 5vw 11vw 5vw;
   overflow-x: hidden;
-  /* max-width: 1400px;
-  margin: 0 auto; */
 }
 .roundBckBtn,
 .hideBackBtn {
@@ -38,6 +36,7 @@
   display: flex;
   flex-flow: column wrap;
 }
+/* iPad verticle */
 @media screen and (min-width: 768px) {
   .roundBckBtn,
   .hideBackBtn {
@@ -49,6 +48,7 @@
     top: 15vw;
   }
 }
+/* iPad horizontal */
 @media screen and (min-width: 1024px) {
   .roundBckBtn {
     right: 42px;
@@ -70,6 +70,7 @@
     top: 13vw;
   }
 }
+/* Bigger and in between */
 @media screen and (min-width: 1200px) {
   .roundBckBtn {
     left: 43vw;
@@ -85,6 +86,7 @@
     width: 4%;
   }
 }
+/* Desktopn - macbook 13' */
 @media screen and (min-width: 1400px) {
   .paymentIntro {
     height: 85vh;

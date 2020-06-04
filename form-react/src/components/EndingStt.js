@@ -7,6 +7,8 @@ export default function EndingStt() {
   const stage2 = useRef();
   const stage3 = useRef();
   const stage4 = useRef();
+  // Fake the status with setInterval
+  // status cirle no. 2
   useEffect(() => {
     const fakeStt = setInterval(() => {
       stage2.current.style.backgroundColor = "var(--pink-highlight)";
@@ -15,6 +17,7 @@ export default function EndingStt() {
       clearInterval(fakeStt);
     };
   }, []);
+  //status circle no. 3
   useEffect(() => {
     const fakeStt3 = setInterval(() => {
       stage3.current.style.backgroundColor = "var(--pink-highlight)";
@@ -23,6 +26,7 @@ export default function EndingStt() {
       clearInterval(fakeStt3);
     };
   }, []);
+  //status circle no. 4
   useEffect(() => {
     const fakeStt4 = setInterval(() => {
       stage4.current.style.backgroundColor = "var(--pink-highlight)";
@@ -32,6 +36,7 @@ export default function EndingStt() {
     };
   }, []);
   return (
+    // set status circle no. 1 by default
     <div className={styles.endingSttCon}>
       <div className={styles.endingSttRoundCon}>
         <ReactSVG src={Checkmark} />

@@ -122,7 +122,7 @@
     top: 4vw;
   }
 }
-/* desktop */
+/* desktop - macbook 13"*/
 @media screen and (min-width: 1400px) {
   .methodsContainer {
     top: 10vw;

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import ButtonPay from "./ButtonPay";
 import { Heroku } from "../modules/Heroku";
+import { useHistory } from "react-router-dom";
 import NumberFormat from "react-number-format";
+import ButtonPay from "./ButtonPay";
+import styles from "./PayForm.module.css";
 import Dankort from "../images/dankort.png";
 import MastercardIcon from "../images/mastercard.png";
 import VisaIcon from "../images/visa.png";
-import styles from "./PayForm.module.css";
-import { useHistory } from "react-router-dom";
 
 export default function Form(props) {
   console.log(props.orders);
@@ -26,6 +26,7 @@ export default function Form(props) {
     console.log(ordertest);
     setOrders(ordertest);
   }, [props.orders]);
+
   //referencing HTML tags
   const cardNoMsg = useRef("");
   const cvvMsg = useRef("");
@@ -48,6 +49,7 @@ export default function Form(props) {
 
     let cvvInput = document.querySelector("#cvvNumber > input");
 
+    // Validate the length of the input for Credit card details
     if (ccLength.length < 16) {
       evt.preventDefault();
       cardNoMsg.current.textContent = "Card number has to have 16 digits";
@@ -101,7 +103,7 @@ export default function Form(props) {
     ) {
       evt.preventDefault();
     }
-    //error msgs for name
+    //Error msgs for name
     nameMsg.current.textContent = "E.g. John Smith";
     nameMsg.current.style.color = "var(--bright-purple-bg)";
   };
@@ -125,6 +127,7 @@ export default function Form(props) {
     cardNoMsg.current.textContent = "E.g. 1234 1234 1234 1234";
     cardNoMsg.current.style.color = "var(--bright-purple-bg)";
   };
+
   //Error messages for expiry date
   const showDateEg = () => {
     expireDateMsg.current.textContent = "E.g. MM/YY";
@@ -137,6 +140,7 @@ export default function Form(props) {
   const hideDateEg = () => {
     expireDateMsg.current.textContent = "";
   };
+
   //error messages for CVV number
   const emptyCVV = () => {
     cvvMsg.current.textContent = "Missing CVV number";
@@ -176,6 +180,7 @@ export default function Form(props) {
       </label>
       <label className={styles.cardNumber} id="cardnumber">
         Card number
+        {/* use NumberFormat to format input value accordingly */}
         <NumberFormat
           id="cardNo"
           name="cardNo"
@@ -185,7 +190,6 @@ export default function Form(props) {
           onBlur={hideCCEg}
           onInvalid={emptyCC}
           ref={cardInput}
-          value=""
           allowEmptyFormatting={false}
           required
         />

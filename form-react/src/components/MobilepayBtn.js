@@ -1,7 +1,7 @@
 import React from "react";
-import MobilePayIcon from "../svgs/mobilepay_icon.svg";
 import { ReactSVG } from "react-svg";
 import styles from "./PaymentButtons.module.css";
+import MobilePayIcon from "../svgs/mobilepay_icon.svg";
 
 export default function MobilepayLink(props) {
   return (
