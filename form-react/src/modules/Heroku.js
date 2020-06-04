@@ -11,7 +11,7 @@ function getData(callback, name) {
       callback(data[name]);
     });
 }
-// Test
+
 function postOrder(data) {
   const postData = JSON.stringify(data);
   fetch(orderUrl, {
