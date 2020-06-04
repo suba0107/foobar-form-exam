@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactSVG } from "react-svg";
 import WirelessIcon from "../svgs/wireless_icon2.svg";
-import styles from "./PaymentLinks.module.css";
+import styles from "./PaymentButtons.module.css";
 
 export default function WirelessLink(props) {
   return (
-    <a href="#" className={styles.wirelessLink} onClick={props.onClick}>
+    <button className={styles.chooseWireless} onClick={props.onClick}>
       <ReactSVG src={WirelessIcon} />
       {props.children}
-    </a>
+    </button>
   );
 }

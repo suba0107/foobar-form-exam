@@ -3,7 +3,6 @@
   background-color: var(--white-sec-bg);
   border-radius: 25px;
   padding: 8vw;
-  /* top: 145vh; */
   top: 21vh;
   left: 5vw;
   width: 90%;
@@ -34,6 +33,7 @@
 .emptyMsg {
   display: none;
 }
+/* iPad verticle */
 @media screen and (min-width: 768px) {
   .endingStatusBox {
     top: 29vh;
@@ -44,6 +44,7 @@
     font-size: 24px;
   }
 }
+/* iPad horizontal */
 @media screen and (min-width: 1024px) {
   .endingStatusBox {
     top: 30vh;
@@ -52,6 +53,7 @@
     padding: 5vw;
   }
 }
+/* Bigger and in between screen */
 @media screen and (min-width: 1200px) {
   .endingStatusBox {
     top: 26vh;
@@ -60,9 +62,9 @@
     padding: 4vw;
   }
 }
+/* Desktop and bigger */
 @media screen and (min-width: 1400px) {
   .endingStatusBox {
-    top: 38vh;
     left: 65vw;
     width: 30%;
     padding: 3.5vw;

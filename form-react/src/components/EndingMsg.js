@@ -1,9 +1,6 @@
-import React, { useRef, useEffect } from "react";
-import { ReactSVG } from "react-svg";
-import Checkmark from "../svgs/checkmark_status.svg";
-import styles from "./EndingStatusBox.module.css";
+import React, { useRef } from "react";
 
-export default function EndingMsg(props) {
+export default function EndingMsg() {
   const status = useRef("");
   const statusMsg = setInterval(changeStatus, 4000);
   function changeStatus() {

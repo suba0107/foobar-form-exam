@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import EndingStt from "./EndingStt";
 import EndingMsg from "./EndingMsg";
 import ButtonEnding from "./ButtonEnding";

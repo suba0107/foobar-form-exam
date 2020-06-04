@@ -1,0 +1,55 @@
+.chooseCC,
+.chooseMobilePay,
+.chooseWireless {
+  all: initial;
+  align-self: center;
+  margin: 0.8vw auto;
+}
+.chooseMobilePay svg {
+  width: 60%;
+}
+.chooseCC svg {
+  width: 60%;
+}
+.chooseMobilePay {
+  margin-top: 12vw;
+}
+.chooseWireless svg {
+  width: 48%;
+}
+.chooseMobilePay > div:nth-child(1) > div:nth-child(1),
+.chooseWireless > div:nth-child(1) > div:nth-child(1),
+.chooseCC > div:nth-child(1) > div:nth-child(1) {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .chooseMobilePay svg,
+  .chooseCC svg {
+    width: 88%;
+  }
+  .chooseWireless svg {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .chooseMobilePay,
+  .chooseWireless {
+    flex-grow: 1;
+    flex-basis: 150px;
+  }
+  .chooseMobilePay {
+    margin: unset;
+  }
+  .chooseCC {
+    flex-grow: 1;
+    flex-basis: 100px;
+  }
+  .chooseCC svg,
+  .chooseWireless svg,
+  .chooseMobilePay svg {
+    width: 75%;
+    margin-top: 1vw;
+  }
+}

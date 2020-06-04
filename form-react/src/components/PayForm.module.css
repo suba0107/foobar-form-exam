@@ -38,7 +38,6 @@
   border: 0.5vw solid var(--bright-purple-bg);
   border-radius: 10vw;
   height: 5vh;
-  /* width: fit-content; */
   padding: 5vw;
 }
 .payForm p {
@@ -116,7 +115,6 @@
     border: 0.3vw solid var(--bright-purple-bg);
     padding: 1.5vw;
     margin-top: 0.8vw;
-    /* font-size: 1vw; */
   }
   .payForm label {
     font-size: 1.5vw;

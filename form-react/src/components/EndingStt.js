@@ -1,50 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { ReactSVG } from "react-svg";
 import Checkmark from "../svgs/checkmark_status.svg";
-// import StatusChecked from "./StatusChecked";
 import styles from "./EndingStt.module.css";
 
-export default function EndingStt(props) {
-  //   const [activeStt, setActiveStt] = useState(false);
-  //   const [activeID, setID] = useState(id);
-  //   const activeSttRef = useRef(null);
-  //   useEffect(() => {
-  //     if (activeSttRef.current) {
-  //       activeSttRef.current.style({
-  //         backgroundColor: "var(--pink-highlight)",
-  //       });
-  //     }
-  //   }, [activeStt]);
-  //   function activeCircle() {
-  //     return (
-  //       <div>
-  //         {(children) => {
-  //           const active = activeStt;
-  //           return (
-  //             <div
-  //               className={`c ${active ? "active" : ""}`}
-  //               ref={active ? activeSttRef : null}
-  //             >
-  //               {children}
-  //             </div>
-  //           );
-  //         }}
-  //       </div>
-  //     );
-  //   }
-  //   useEffect(() => {
-  //     const fakeStt = setInterval(() => {
-  //       activeCircle();
-  //     }, 3000);
-  //     return () => {
-  //       clearInterval(fakeStt);
-  //     };
-  //   }, []);
+export default function EndingStt() {
+  const stage2 = useRef();
+  const stage3 = useRef();
+  const stage4 = useRef();
   useEffect(() => {
     const fakeStt = setInterval(() => {
-      // document.querySelector(setActiveStt)
-      document.querySelector("#stage2").style.backgroundColor =
-        "var(--pink-highlight)";
+      stage2.current.style.backgroundColor = "var(--pink-highlight)";
     }, 4000);
     return () => {
       clearInterval(fakeStt);
@@ -52,9 +17,7 @@ export default function EndingStt(props) {
   }, []);
   useEffect(() => {
     const fakeStt3 = setInterval(() => {
-      document.querySelector("#stage3").style.backgroundColor =
-        "var(--pink-highlight)";
-      return <ReactSVG src={Checkmark} />;
+      stage3.current.style.backgroundColor = "var(--pink-highlight)";
     }, 7000);
     return () => {
       clearInterval(fakeStt3);
@@ -62,8 +25,7 @@ export default function EndingStt(props) {
   }, []);
   useEffect(() => {
     const fakeStt4 = setInterval(() => {
-      document.querySelector("#stage4").style.backgroundColor =
-        "var(--pink-highlight)";
+      stage4.current.style.backgroundColor = "var(--pink-highlight)";
     }, 10000);
     return () => {
       clearInterval(fakeStt4);
@@ -75,18 +37,15 @@ export default function EndingStt(props) {
         <ReactSVG src={Checkmark} />
       </div>
       <div className={styles.endingSttLine}></div>
-      <div id="stage2" className={styles.endingSttRoundConInactive}>
-        {" "}
+      <div ref={stage2} className={styles.endingSttRoundConInactive}>
         <ReactSVG src={Checkmark} />
       </div>
       <div className={styles.endingSttLine}></div>
-      <div id="stage3" className={styles.endingSttRoundConInactive}>
-        {" "}
+      <div ref={stage3} className={styles.endingSttRoundConInactive}>
         <ReactSVG src={Checkmark} />
       </div>
       <div className={styles.endingSttLine}></div>
-      <div id="stage4" className={styles.endingSttRoundConInactive}>
-        {" "}
+      <div ref={stage4} className={styles.endingSttRoundConInactive}>
         <ReactSVG src={Checkmark} />
       </div>
     </div>

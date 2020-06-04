@@ -3,9 +3,9 @@ import { ReactSVG } from "react-svg";
 import MobilePayIcon from "../svgs/mobilepay_code.svg";
 import OnePaymentStyle from "./OnePayment.module.css";
 import WirelessIcon from "../svgs/wireless_icon.svg";
-import MobilepayLink from "./MobilepayLink";
-import WirelessLink from "./WirelessLink";
-import CardDetailsLink from "./CardDetailsLink";
+import MobilepayBtn from "./MobilepayBtn";
+import WirelessBtn from "./WirelessBtn";
+import CardDetailsBtn from "./CardDetailsBtn";
 import ButtonBack from "./ButtonBack";
 import styles from "./PaymentScreen.module.css";
 import PayForm from "./PayForm";
@@ -41,19 +41,19 @@ export default function PaymentScreen(props) {
         <h2>Almost there!</h2>
         <h2>Please choose a payment method</h2>
         <div className={styles.paymentWrapper}>
-          <MobilepayLink
+          <MobilepayBtn
             onClick={() => {
               setState(true);
               setPayment("mobilepay");
             }}
           />
-          <WirelessLink
+          <WirelessBtn
             onClick={() => {
               setState(true);
               setPayment("wireless");
             }}
           />
-          <CardDetailsLink
+          <CardDetailsBtn
             onClick={() => {
               setState(true);
               setPayment("carddetails");

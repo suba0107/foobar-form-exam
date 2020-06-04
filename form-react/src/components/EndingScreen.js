@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import EndingStatusBox from "./EndingStatusBox";
 import EndingBg from "./EndingBg";
 import styles from "./EndingScreen.module.css";

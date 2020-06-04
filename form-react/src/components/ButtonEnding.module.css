@@ -11,6 +11,7 @@
   text-align: center;
   margin: 1vw auto;
 }
+/* iPad verticle */
 @media screen and (min-width: 768px) {
   .buttonEnding {
     font-size: 3vw;
@@ -18,6 +19,7 @@
     padding: 2vw;
   }
 }
+/* iPad horizontal */
 @media screen and (min-width: 1024px) {
   .buttonEnding {
     font-size: 1.8vw;
@@ -25,12 +27,14 @@
     padding: 1.5vw;
   }
 }
+/* Bigger and in between screens */
 @media screen and (min-width: 1200px) {
   .buttonEnding {
     width: 17vw;
     padding: 1vw;
   }
 }
+/* Desktop */
 @media screen and (min-width: 1400px) {
   .buttonEnding {
     font-size: 1.5vw;

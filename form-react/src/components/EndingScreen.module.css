@@ -8,6 +8,7 @@
 .endingScreen > div:nth-child(1) > div:nth-child(1) {
   background-color: var(--purple-ish-bg);
 }
+/* Bigger than mobile devices */
 @media screen and (min-width: 1000px) {
   .endingScreen {
     max-height: unset;

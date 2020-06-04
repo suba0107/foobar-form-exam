@@ -11,22 +11,23 @@
   text-align: center;
   align-self: center;
 }
+/* iPad verticle */
 @media screen and (min-width: 768px) {
   .payButton {
     width: 40vw;
   }
 }
+/* iPad horizontal */
 @media screen and (min-width: 1024px) {
   .payButton {
     width: 20vw;
     padding: 1.2vw;
   }
 }
+/* Bigger and in between screens */
 @media screen and (min-width: 1200px) {
   .payButton {
     width: 15vw;
     margin-top: 0.5vw;
   }
-}
-@media screen and (min-width: 1400px) {
 }
