@@ -43,20 +43,22 @@
 .showMobilePay svg {
   width: 90%;
   position: relative;
-  left: 0vw;
+  /* left: 0vw; */
+  left: 4vw;
 }
 .showWireless svg {
   width: 77%;
   position: relative;
-  /* left: 8vw;
-  top: 55vw; */
-  left: 2vw;
-  top: 38vw;
+  left: 8vw;
+  margin: 23vw auto;
+  /* top: 55vw; */
+  /* left: 2vw;
+  top: 38vw; */
 }
-.methodsContainer > div:nth-child(1) > h3:nth-child(2) {
+.pretendPayment {
   text-align: center;
   position: relative;
-  top: 46vw;
+  /* top: 46vw; */
   font-family: var(--text-font);
   color: var(--bright-purple-bg);
   font-weight: 530;
@@ -81,21 +83,18 @@
     height: 69vh;
     width: 86vw;
   }
-  .showWireless > div:nth-child(1) {
-    width: 40vw;
-  }
   .showWireless svg {
     width: 100%;
-    left: 2vw;
-    top: 23vw;
+    position: unset;
+    margin: 4vw auto;
   }
 }
 @media screen and (min-width: 1024px) {
-  .methodsContainer > div:nth-child(1) > h3:nth-child(2) {
+  /* .pretendPayment {
     top: 4vw;
-  }
+  } */
   .methodsContainer {
-    top: 21vw;
+    top: 14vw;
     width: 33vw;
     left: 62vw;
     height: fit-content;
@@ -106,19 +105,19 @@
     width: 195%;
     margin: auto;
   }
-  .showWireless {
+  /* .showWireless {
     padding: 11vw 0;
-  }
-  .showMobilePay {
+  } */
+  /* .showMobilePay {
     padding: 2.3vw 0;
-  }
+  } */
   .showWireless svg {
     left: 0vw;
     top: 3vw;
   }
   .showMobilePay svg {
-    width: 138%;
-    left: -3vw;
+    /* width: 138%; */
+    left: 1vw;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -129,7 +128,7 @@
     padding: 6vw;
     width: 31vw;
     left: 62vw;
-    top: 19vw;
+    top: 14vw;
     /* height: 86vh; */
   }
   .showWireless {
@@ -144,14 +143,15 @@
     width: 100%;
     top: 3vw;
   }
-  .methodsContainer > div:nth-child(1) > h3:nth-child(2) {
+  .pretendPayment {
     top: 4vw;
   }
 }
 @media screen and (min-width: 1400px) {
   .methodsContainer {
     /* height: 82vh; */
-    top: 18vw;
+    top: 10vw;
+    border-radius: 25px;
   }
   .showWireless svg {
     top: 3vw;
@@ -161,7 +161,7 @@
   .methodsContainer {
     top: 16vw;
   }
-  .methodsContainer > div:nth-child(1) > h3:nth-child(2) {
+  .pretendPayment {
     top: 3vw;
   }
   .showWireless {

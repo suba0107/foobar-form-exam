@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React from "react";
 import styles from "./ButtonPay.module.css";
 
 export default function ButtonPay(props) {

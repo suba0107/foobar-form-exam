@@ -148,7 +148,10 @@
     line-height: normal;
   }
   .payForm input {
+    border: 0.2vw solid var(--bright-purple-bg);
     font-size: 1.2vw;
+    height: unset;
+    padding: 0.7vw;
   }
   .payForm label {
     font-size: 1.3vw;

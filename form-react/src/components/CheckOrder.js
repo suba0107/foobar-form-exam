@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CheckOrder.modules.css";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import EditAmount from "./EditAmount.js";
 import Mug from "./Mug.js";
 import { useMediaPredicate } from "react-media-hook";
@@ -30,7 +30,13 @@ export default function CheckOrder(props) {
                   </div>
                   <h3>{data.name}</h3>
                   <h4>{data.count * 25} kr</h4>
-                  <EditAmount id="check-order-amount" startAt={data.count} page={"CheckOrder"} countBeers={{ count: data.count, name: data.name }} onClickButton={amountOfBeer} />
+                  <EditAmount
+                    id="check-order-amount"
+                    startAt={data.count}
+                    page={"CheckOrder"}
+                    countBeers={{ count: data.count, name: data.name }}
+                    onClickButton={amountOfBeer}
+                  />
                 </article>
               );
             }
@@ -48,10 +54,14 @@ export default function CheckOrder(props) {
     let beerCount = 0;
     const nextState = [...info];
     if (beers.count === 0) {
-      const withoutBeer = nextState.filter((order) => order.name !== beers.name);
+      const withoutBeer = nextState.filter(
+        (order) => order.name !== beers.name
+      );
       setInfo(withoutBeer);
     } else {
-      const newState = nextState.map((obj) => (obj.name === beers.name ? beers : obj));
+      const newState = nextState.map((obj) =>
+        obj.name === beers.name ? beers : obj
+      );
       setInfo(newState);
     }
   }
@@ -68,11 +78,28 @@ export default function CheckOrder(props) {
   }
   return (
     <main id="checkOrder">
-      {isMin615px ? (
+      <article id="editOrder">
+        <details>
+          <summary>Edit your order</summary>
+          {editOrder()}
+        </details>
+        <div
+          onClick={() => {
+            props.sendBackOrders(info);
+            props.getState("Gone back");
+            history.push("/select");
+          }}
+          className="checkOrderBackButton"
+        >
+          {" "}
+          <ButtonBack />
+        </div>
+      </article>
+      {/* {isMin615px ? (
         <article id="editOrder">
           <h2>Edit your order</h2>
           {editOrder()}
-          <Link
+          {/* <Link
             onClick={() => {
               props.sendBackOrders(info);
               props.getState("Gone back");
@@ -80,11 +107,26 @@ export default function CheckOrder(props) {
             to="/select"
             className="checkOrderBackButton"
           >
-            <img className="checkOrderBackButtonSVG" src={BackLogo} alt="Back button" />
-          </Link>
+            <img
+              className="checkOrderBackButtonSVG"
+              src={BackLogo}
+              alt="Back button"
+            />
+          </Link> */}
+      {/* <div
+            onClick={() => {
+              props.sendBackOrders(info);
+              props.getState("Gone back");
+              history.push("/select");
+            }}
+            className="checkOrderBackButton"
+          >
+            {" "}
+            <ButtonBack />
+          </div>
         </article>
-      ) : (
-        <article id="editOrder">
+      ) : ( */}
+      {/* <article id="editOrder">
           <details>
             <summary>Edit your order</summary>
             {editOrder()}
@@ -97,10 +139,17 @@ export default function CheckOrder(props) {
             className="checkOrderBackButton"
             to="/select"
           >
-            <img className="checkOrderBackButtonSVG" src={BackLogo} alt="Back button" />
+            <img
+              className="checkOrderBackButtonSVG"
+              src={BackLogo}
+              alt="Back button"
+            />
           </Link>
-        </article>
-      )}
+          <div className="checkOrderBackButton">
+            {" "}
+            <ButtonBack />
+          </div>
+        </article> */}
 
       <article id="your-order">
         <h2>Your order</h2>
