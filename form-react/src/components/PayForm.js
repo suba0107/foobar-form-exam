@@ -117,15 +117,17 @@ export default function Form(props) {
     ) {
       evt.preventDefault();
     }
-    //Error msgs for name
+    //example msg for name
     nameMsg.current.textContent = "E.g. John Smith";
     nameMsg.current.style.color = "var(--bright-purple-bg)";
   };
   const emptyName = () => {
+    //show exmple for name
     nameMsg.current.textContent = "Missing cardholder's name";
     nameMsg.current.style.color = "var(--pink-highlight)";
   };
   const hideNameEg = () => {
+    //hide example for name
     nameMsg.current.textContent = "";
   };
 
@@ -135,6 +137,7 @@ export default function Form(props) {
     cardNoMsg.current.style.color = "var(--pink-highlight)";
   };
   const hideCCEg = () => {
+    //hide example for CC
     cardNoMsg.current.textContent = "";
   };
   const showCCEg = () => {
@@ -144,6 +147,7 @@ export default function Form(props) {
 
   //Error messages for expiry date
   const showDateEg = () => {
+    // show example for Date
     expireDateMsg.current.textContent = "E.g. MM/YY";
     expireDateMsg.current.style.color = "var(--bright-purple-bg)";
   };
@@ -152,6 +156,7 @@ export default function Form(props) {
     expireDateMsg.current.style.color = "var(--pink-highlight)";
   };
   const hideDateEg = () => {
+    // hide example for Date
     expireDateMsg.current.textContent = "";
   };
 
@@ -161,9 +166,11 @@ export default function Form(props) {
     cvvMsg.current.style.color = "var(--pink-highlight)";
   };
   const hideCVVEg = () => {
+    //hide example for CVV
     cvvMsg.current.textContent = "";
   };
   const showCVVEg = () => {
+    //show example for CVV
     cvvMsg.current.textContent = "E.g. 123";
     cvvMsg.current.style.color = "var(--bright-purple-bg)";
   };
