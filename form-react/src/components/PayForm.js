@@ -57,11 +57,11 @@ export default function Form(props) {
       dateLength.length === 0 &&
       cvvLength.length === 0
     ) {
+      evt.preventDefault();
       emptyName();
       emptyCVV();
       emptyDate();
       emptyCC();
-      evt.preventDefault();
     }
     // Validate inputs' length for Credit card details
     if (ccLength.length < 16) {
