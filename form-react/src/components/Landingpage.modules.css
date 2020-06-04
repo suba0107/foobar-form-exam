@@ -17,7 +17,7 @@
   background-position: 50% 20%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(svg/landingpage.svg);
+  background-image: url(../svgs/landingpage.svg);
   background-color: darkblue;
   height: 100vh;
   position: relative;

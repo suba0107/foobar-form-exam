@@ -27,9 +27,7 @@ body {
   overflow-x: hidden;
   margin: 0 auto;
 }
-/* img {
-  width: 100%;
-} */
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
@@ -46,6 +44,9 @@ code {
   border-width: 4px;
 }
 
+a:hover {
+  text-decoration: none;
+}
 .navigationButton:disabled {
   opacity: 0.6;
   background-color: #ceb039;
@@ -58,13 +59,9 @@ header {
 }
 
 .header-other {
-  /* position: fixed; */
   max-width: 1400px;
   width: 100vw;
   margin: 0 auto;
-  /* position: absolute; */
-  /* background */
-  /* background-color: var(--purple-ish-bg); */
   top: 0;
 }
 
@@ -74,20 +71,9 @@ header {
   left: 15px;
 }
 
-/* .landing {
-  position: fixed;
-  z-index: 10000;
-  width: 100vw;
-  background-color: transparent;
-  top: 0;
-} */
-
 .fooBarLogo {
   height: 70px;
   margin-left: 2rem;
   margin-top: 1.3rem;
   margin-bottom: 1rem;
-  /* position: absolute; */
-  /* top: 21vw;
-  left: 2.5vw; */
 }
