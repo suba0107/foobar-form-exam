@@ -26,7 +26,7 @@ export default function SelectBeer(props) {
   }
 
   function getDesc(callback) {
-    fetch("https://new-foo-diverse.herokuapp.com/beertypes", {
+    fetch("https://foobar-teamdiverse.herokuapp.com/beertypes", {
       method: "get",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -68,7 +68,12 @@ export default function SelectBeer(props) {
   }
   return (
     <>
-      <ShoppingCart beer={selected} getOrders={getOrders} state={props.state} orderSentBack={props.orderSentBack} />
+      <ShoppingCart
+        beer={selected}
+        getOrders={getOrders}
+        state={props.state}
+        orderSentBack={props.orderSentBack}
+      />
       <main id="select_beer_main">
         {info.length === 0 && (
           <h2
@@ -82,12 +87,24 @@ export default function SelectBeer(props) {
             Loading ...
           </h2>
         )}
-        {info.length !== 0 && <h1 id="chooseBeer">Choose your favorite beer!</h1>}
+        {info.length !== 0 && (
+          <h1 id="chooseBeer">Choose your favorite beer!</h1>
+        )}
 
         <article id="selection-of-beers">
-          <Popup desc={desc} beer={name} popUp={toggleInfoBox} onClose={onClose} />
+          <Popup
+            desc={desc}
+            beer={name}
+            popUp={toggleInfoBox}
+            onClose={onClose}
+          />
           {oneOfEachBeer.map((data) => (
-            <EachBeer key={data} name={data} popUp={onInfoClick} amountOfBeer={selectingBeer} />
+            <EachBeer
+              key={data}
+              name={data}
+              popUp={onInfoClick}
+              amountOfBeer={selectingBeer}
+            />
           ))}
         </article>
       </main>
