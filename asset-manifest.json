@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/kea/3-sem/foobar-examproject/static/css/main.0d107205.chunk.css",
+    "main.js": "/kea/3-sem/foobar-examproject/static/js/main.c454f4f4.chunk.js",
+    "main.js.map": "/kea/3-sem/foobar-examproject/static/js/main.c454f4f4.chunk.js.map",
+    "runtime-main.js": "/kea/3-sem/foobar-examproject/static/js/runtime-main.d74770ab.js",
+    "runtime-main.js.map": "/kea/3-sem/foobar-examproject/static/js/runtime-main.d74770ab.js.map",
+    "static/js/2.f6c8b5fd.chunk.js": "/kea/3-sem/foobar-examproject/static/js/2.f6c8b5fd.chunk.js",
+    "static/js/2.f6c8b5fd.chunk.js.map": "/kea/3-sem/foobar-examproject/static/js/2.f6c8b5fd.chunk.js.map",
+    "index.html": "/kea/3-sem/foobar-examproject/index.html",
+    "precache-manifest.6fc02df1367432ff5e2c6bfe2ef75f53.js": "/kea/3-sem/foobar-examproject/precache-manifest.6fc02df1367432ff5e2c6bfe2ef75f53.js",
+    "service-worker.js": "/kea/3-sem/foobar-examproject/service-worker.js",
+    "static/css/main.0d107205.chunk.css.map": "/kea/3-sem/foobar-examproject/static/css/main.0d107205.chunk.css.map",
+    "static/js/2.f6c8b5fd.chunk.js.LICENSE.txt": "/kea/3-sem/foobar-examproject/static/js/2.f6c8b5fd.chunk.js.LICENSE.txt",
+    "static/media/back_logo.svg": "/kea/3-sem/foobar-examproject/static/media/back_logo.27f7e109.svg",
+    "static/media/checkmark_status.svg": "/kea/3-sem/foobar-examproject/static/media/checkmark_status.80a1d293.svg",
+    "static/media/creditcards_icon3.svg": "/kea/3-sem/foobar-examproject/static/media/creditcards_icon3.f3bb1c70.svg",
+    "static/media/final-logo.3b4eeae0.png": "/kea/3-sem/foobar-examproject/static/media/final-logo.3b4eeae0.png",
+    "static/media/Landingpage.modules.css": "/kea/3-sem/foobar-examproject/static/media/landingpage.6e330b7b.svg",
+    "static/media/mastercard.e89e3fbf.png": "/kea/3-sem/foobar-examproject/static/media/mastercard.e89e3fbf.png",
+    "static/media/mobilepay_code.svg": "/kea/3-sem/foobar-examproject/static/media/mobilepay_code.e1dd9005.svg",
+    "static/media/mobilepay_icon.svg": "/kea/3-sem/foobar-examproject/static/media/mobilepay_icon.43c4ecd2.svg",
+    "static/media/pub-with-bartender.svg": "/kea/3-sem/foobar-examproject/static/media/pub-with-bartender.512608b8.svg",
+    "static/media/shopping-cart.svg": "/kea/3-sem/foobar-examproject/static/media/shopping-cart.4446fbc4.svg",
+    "static/media/wireless_icon.svg": "/kea/3-sem/foobar-examproject/static/media/wireless_icon.e237adca.svg",
+    "static/media/wireless_icon2.svg": "/kea/3-sem/foobar-examproject/static/media/wireless_icon2.e9354bf7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d74770ab.js",
+    "static/js/2.f6c8b5fd.chunk.js",
+    "static/css/main.0d107205.chunk.css",
+    "static/js/main.c454f4f4.chunk.js"
+  ]
+}
