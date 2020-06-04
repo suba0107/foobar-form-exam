@@ -6,7 +6,7 @@ import EachBeer from "./EachBeer.js";
 import ShoppingCart from "./ShoppingCart.js";
 import Popup from "./Popup.js";
 
-export default function Select_beer(props) {
+export default function SelectBeer(props) {
   const [info, setData] = useState([]);
   const [name, setName] = useState("");
   const [selected, setSelected] = useState({});

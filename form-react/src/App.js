@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
-import Landing_page from "./components/Landing_page";
-import Select_beer from "./components/Select_beer";
+import LandingPage from "./components/LandingPage";
+import SelectBeer from "./components/SelectBeer";
 import CheckOrder from "./components/CheckOrder";
 import PaymentScreen from "./components/PaymentScreen";
 import EndingScreen from "./components/EndingScreen";
@@ -17,7 +17,6 @@ export default function App() {
     setState(state);
   }
 
-  console.log(state);
   function getOrders(orders) {
     console.log(orders);
     setOrders(orders);
@@ -26,10 +25,6 @@ export default function App() {
     setSentBackOrders(orders);
     console.log(orders);
   }
-
-  useEffect(() => {
-    console.log(sentBackOrders);
-  }, [sentBackOrders]);
 
   return (
     <div>
@@ -61,10 +56,10 @@ export default function App() {
           <CheckOrder orders={orders} sendBackOrders={sendBackOrders} getState={getState} />
         </Route>
         <Route path="/select">
-          <Select_beer orderSentBack={sentBackOrders} getOrders={getOrders} state={state} />
+          <SelectBeer orderSentBack={sentBackOrders} getOrders={getOrders} state={state} />
         </Route>
         <Route path="/">
-          <Landing_page getState={getState} />
+          <LandingPage getState={getState} />
         </Route>
       </Switch>
     </div>

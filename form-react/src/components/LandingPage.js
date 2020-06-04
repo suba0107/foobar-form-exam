@@ -4,7 +4,7 @@ import styles from "./Landingpage.modules.css";
 import { useHistory } from "react-router-dom";
 import Logo from "../images/final-logo.png";
 
-export default function Landing_page(props) {
+export default function LandingPage(props) {
   let history = useHistory();
 
   return (

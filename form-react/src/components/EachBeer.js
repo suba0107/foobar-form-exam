@@ -26,13 +26,6 @@ export default function EachBeer(props, onInfoClick) {
     // console.log({ count: count, name: props.name });
   }, [counting]);
 
-  function onInfo(name) {}
-
-  // }
-
-  function something(beer) {
-    console.log(beer);
-  }
   return (
     <article
       style={{
