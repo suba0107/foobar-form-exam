@@ -5,7 +5,8 @@
   /* max-width: 1400px;
   margin: 0 auto; */
 }
-.roundBckBtn {
+.roundBckBtn,
+.hideBackBtn {
   position: absolute;
   right: 27px;
   bottom: 20px;
@@ -38,7 +39,8 @@
   flex-flow: column wrap;
 }
 @media screen and (min-width: 768px) {
-  .roundBckBtn {
+  .roundBckBtn,
+  .hideBackBtn {
     right: 54px;
     bottom: 35px;
   }
