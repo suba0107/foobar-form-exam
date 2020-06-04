@@ -51,13 +51,17 @@ export default function ShoppingCart(props) {
     const doesBeerExist = nextState.filter((order) => order.name === beer.name);
     if (doesBeerExist.length > 0) {
       if (beer.count === 0 || beer === undefined) {
+        //Removes object from array
         const newState = nextState.filter((order) => order.name !== beer.name);
         setOrder(newState);
       } else {
         if (from === "counter") {
+          //Replaces object with object from edit counter
           const newState = nextState.map((obj) => (obj.name === beer.name ? beer : obj));
           setOrder(newState);
         } else {
+          //Replaces object with object from counter
+
           const newObj = { count: doesBeerExist[0].count + beer.count, name: beer.name };
           const newState = nextState.map((obj) => (obj.name === beer.name ? newObj : obj));
           setOrder(newState);
@@ -71,7 +75,7 @@ export default function ShoppingCart(props) {
 
   return (
     <header id="shopping-cart">
-      <img src={Logo} className="fooBarLogo"></img>
+      <img src={Logo} className="fooBarLogo" alt="Foobar logo"></img>
 
       <section id="shopping-wrapper">
         <div
@@ -85,7 +89,7 @@ export default function ShoppingCart(props) {
           className="heading-wrapper"
         >
           {totalAmount() !== 0 && <p id="showTotal">{totalAmount()}</p>}
-          <img src={shoppingcarticon} id="shopping-cart-heading" />
+          <img src={shoppingcarticon} alt="Shopping cart icon" aria-label="Open and close shopping cart" id="shopping-cart-heading" />
         </div>
         {togglePopUp && (
           <article className="cart-popUp">

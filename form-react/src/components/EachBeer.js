@@ -1,38 +1,22 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Select_beer.modules.css";
-import { useHistory } from "react-router-dom";
 import Amount from "./Amount.js";
-import { ReactSVG } from "react-svg";
-import { ReactKeg } from "./svg/keg.svg";
 import Keg from "./Keg.js";
 
-export default function EachBeer(props, onInfoClick) {
+export default function EachBeer(props) {
   const [counting, setCounting] = useState();
-  const [beerAmount, setBeerAmount] = useState();
 
   function counter(count) {
-    // setCounting(count);
-    // setCounting(count);
     console.log(count);
     setCounting(count);
   }
 
   useEffect(() => {
-    // console.log({ count: counting, name: props.name });
     if (counting !== undefined) {
       props.amountOfBeer(counting);
     }
-    // // setCount(count - amount);
-    // console.log({ count: count, name: props.name });
   }, [counting]);
 
-  function onInfo(name) {}
-
-  // }
-
-  function something(beer) {
-    console.log(beer);
-  }
   return (
     <article
       style={{
@@ -55,7 +39,6 @@ export default function EachBeer(props, onInfoClick) {
         </button>
         <Keg {...props} />
       </div>
-      {/* <ReactKeg image="./images/fairytaleale.png" /> */}
       <h2>{props.name}</h2>
       <p className="price">25 kr</p>
       <Amount count={counter} name={props.name} startAt={0} countBeers={0} amount={counter} onState={false} />

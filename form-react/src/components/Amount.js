@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Select_beer.modules.css";
 
-export default function Amount(props, onClickButton) {
+export default function Amount(props) {
   const [count, setCount] = useState(0);
   const [state, setState] = useState(props.onState);
   const [addButton, setaddButton] = useState("Add");

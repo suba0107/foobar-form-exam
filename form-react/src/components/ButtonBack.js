@@ -15,11 +15,7 @@ export default function ButtonBack() {
       // iPad verticle
       return (
         <div>
-          <Button
-            variant="fab"
-            className={styles.buttonContainer}
-            onClick={props.onClick}
-          >
+          <Button variant="fab" className={styles.buttonContainer} onClick={props.onClick}>
             <ReactSVG
               src={BackLogo}
               wrapper="span"
@@ -38,12 +34,7 @@ export default function ButtonBack() {
       // iPad horizontal
       return (
         <div>
-          <Button
-            size="large"
-            variant="fab"
-            className={styles.buttonContainer}
-            onClick={props.onClick}
-          >
+          <Button size="large" variant="fab" className={styles.buttonContainer} onClick={props.onClick}>
             <ReactSVG
               src={BackLogo}
               wrapper="span"
@@ -60,13 +51,8 @@ export default function ButtonBack() {
       );
     }
     return (
-      //default Small viewbox for mobile first
-      <Button
-        size="small"
-        variant="fab"
-        className={styles.buttonContainer}
-        onClick={props.onClick}
-      >
+      //default Small mobile first
+      <Button size="small" variant="fab" className={styles.buttonContainer} onClick={props.onClick}>
         <ReactSVG
           src={BackLogo}
           wrapper="span"

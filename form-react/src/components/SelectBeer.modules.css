@@ -1,0 +1,118 @@
+#select_beer_main {
+  background-color: white;
+  border-radius: 25px;
+  padding: 1rem;
+  margin: 2rem;
+  margin-top: 130px;
+}
+
+#selection-of-beers {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.keg {
+  width: 60%;
+  position: relative;
+}
+
+h1 {
+  color: var(--bright-purple-bg);
+  font-family: var(--headings-font);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.plusMinus {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bright-purple-bg);
+  color: white;
+  font-weight: bold;
+  font-family: var(--headings-font);
+  border-style: none;
+}
+
+.plusMinus:disabled {
+  opacity: 0.5;
+}
+
+.add {
+  border-radius: 25px;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  min-width: 25%;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bright-purple-bg);
+  color: white;
+  font-weight: bold;
+  font-family: var(--headings-font);
+}
+
+.price {
+  font-family: var(--headings-font);
+  color: var(--bright-purple-bg);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: var(--headings-font);
+  color: var(--bright-purple-bg);
+  font-weight: bold;
+}
+
+.amount {
+  text-align: center;
+  font-family: var(--headings-font);
+  color: var(--bright-purple-bg);
+  font-weight: bold;
+  align-self: center;
+  font-size: 1.3rem;
+}
+
+article {
+  position: relative;
+}
+
+.information {
+  align-self: flex-end;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-style: none;
+  font-family: var(--headings-font);
+  background-color: var(--bright-purple-bg);
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  right: 1px;
+  top: 15px;
+}
+
+.add:disabled {
+  opacity: 0.5;
+}
+
+.changeColor {
+  /* FROM https://codepen.io/priosoft/pen/dMryaY */
+  background-image: -webkit-linear-gradient(45deg, transparent 50%, #eb627e 50%);
+  background-image: linear-gradient(45deg, transparent 50%, #eb627e 50%);
+  background-position: 100%;
+  background-size: 250%;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  /* FROM https://codepen.io/priosoft/pen/dMryaY */
+}
