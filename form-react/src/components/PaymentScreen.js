@@ -24,7 +24,6 @@ export default function PaymentScreen(props) {
         {children}
         <div
           className={styles.hideBackBtn}
-          className={styles.roundBckBtn}
           onClick={() => {
             setState(false);
             // setPayment(undefined);
