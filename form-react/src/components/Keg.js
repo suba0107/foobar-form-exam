@@ -86,7 +86,7 @@ export default function Keg(props) {
           width="808"
           height="926"
           transform="translate(37.97 102.25) scale(0.17)"
-          xlinkHref={`./images/${label}.png`}
+          xlinkHref={`./images/beers/${label}.png`}
         />
       </g>
       <g id="Layer_5" data-name="Layer 5">

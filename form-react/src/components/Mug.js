@@ -41,7 +41,7 @@ export default function Mug(props) {
             width="808"
             height="926"
             transform="translate(20.39 76.37) scale(0.17)"
-            xlinkHref={`./images/${label}.png`}
+            xlinkHref={`./images/beers/${label}.png`}
           />
           <path
             className="mug-6"
