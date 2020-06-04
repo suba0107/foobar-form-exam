@@ -144,9 +144,9 @@
 }
 
 .checkOrderBackButton {
-  width: 50px;
-  height: 50px;
-  background-color: var(--bright-purple-bg);
+  /* width: 50px;
+  height: 50px; */
+  /* background-color: var(--bright-purple-bg); */
   display: flex;
   justify-content: center;
   align-items: center;

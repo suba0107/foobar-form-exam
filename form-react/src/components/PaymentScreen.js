@@ -1,18 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { ReactSVG } from "react-svg";
-import Logo from "../images/final-logo.png";
 import MobilePayIcon from "../svgs/mobilepay_code.svg";
 import OnePaymentStyle from "./OnePayment.module.css";
 import WirelessIcon from "../svgs/wireless_icon.svg";
-import LanguageLink from "./LanguageLink";
 import MobilepayLink from "./MobilepayLink";
 import WirelessLink from "./WirelessLink";
 import CardDetailsLink from "./CardDetailsLink";
 import ButtonBack from "./ButtonBack";
 import styles from "./PaymentScreen.module.css";
-import onePayment from "./OnePayment.module.css";
 import PayForm from "./PayForm";
 import { useHistory } from "react-router-dom";
+import ButtonPay from "./ButtonPay";
 
 export default function PaymentScreen(props) {
   let history = useHistory();
@@ -22,10 +20,11 @@ export default function PaymentScreen(props) {
 
   const Modal = ({ children, show, setState, setPayment }) => {
     const content = show && (
-      <article id="popUp" className={onePayment.methodsContainer}>
+      <article id="popUp" className={OnePaymentStyle.methodsContainer}>
         {children}
         <div
           className={styles.hideBackBtn}
+          className={styles.roundBckBtn}
           onClick={() => {
             setState(false);
             // setPayment(undefined);
@@ -37,12 +36,6 @@ export default function PaymentScreen(props) {
     );
     return content;
   };
-  function donePayment() {
-    setInterval(() => {
-      history.push("/end");
-    }, 4000);
-    return clearInterval(donePayment);
-  }
   return (
     <main className={styles.paymentScreen}>
       <article className={styles.paymentIntro}>
@@ -72,8 +65,11 @@ export default function PaymentScreen(props) {
           onClick={() => {
             history.push("/checkorder");
           }}
+          className={styles.btnPosition}
+          // className={styles.bckBtn}
+          className={styles.roundBckBtn}
         >
-          <ButtonBack className={styles.btnPosition} />
+          <ButtonBack />
         </div>
       </article>
       <Modal id="popUp" show={show} setState={setState}>
@@ -86,17 +82,34 @@ export default function PaymentScreen(props) {
               }}
               className={OnePaymentStyle.showMobilePay}
             />
+            <div
+              onClick={() => history.push("/end")}
+              className={OnePaymentStyle.pretendPayment}
+            >
+              <ButtonPay />
+            </div>
           </div>
         )}
-        {payment === "mobilepay" ? donePayment() : null}
         {payment === "wireless" && (
           <div>
-            <ReactSVG src={WirelessIcon} className={OnePaymentStyle.showWireless} />
-            <h3>Tap your card</h3>
+            <ReactSVG
+              src={WirelessIcon}
+              className={OnePaymentStyle.showWireless}
+            />
+            <div
+              onClick={() => history.push("/end")}
+              className={OnePaymentStyle.pretendPayment}
+            >
+              <ButtonPay />
+            </div>
           </div>
         )}
-        {payment === "wireless" ? donePayment() : null}
-        {payment === "carddetails" && <PayForm sendBackOrders={props.sendBackOrders} orders={props.orders} />}
+        {payment === "carddetails" && (
+          <PayForm
+            sendBackOrders={props.sendBackOrders}
+            orders={props.orders}
+          />
+        )}
       </Modal>
     </main>
   );
