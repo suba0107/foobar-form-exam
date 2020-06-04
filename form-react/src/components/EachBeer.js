@@ -41,7 +41,14 @@ export default function EachBeer(props) {
       </div>
       <h2>{props.name}</h2>
       <p className="price">25 kr</p>
-      <Amount count={counter} name={props.name} startAt={0} countBeers={0} amount={counter} onState={false} />
+      <Amount
+        count={counter}
+        name={props.name}
+        startAt={0}
+        countBeers={0}
+        amount={counter}
+        onState={false}
+      />
     </article>
   );
 }
