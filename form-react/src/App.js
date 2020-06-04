@@ -35,8 +35,14 @@ export default function App() {
     <div>
       {/* <Switch> looks through <Route>s and
             renders the first <Route> that matches the current URL. */}
-      {location.pathname !== "/select" && location.pathname !== "/" && (
+      {location.pathname !== "/select" && location.pathname !== "/" && location.pathname !== "/end" && (
         <header className="header-other">
+          <img src={Logo} className="fooBarLogo"></img>
+        </header>
+      )}
+
+      {(location.pathname == "/end" || location.pathname === "/") && (
+        <header className="landing-header">
           <img src={Logo} className="fooBarLogo"></img>
         </header>
       )}

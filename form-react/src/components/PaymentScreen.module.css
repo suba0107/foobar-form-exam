@@ -18,17 +18,10 @@
   background-color: var(--white-sec-bg);
   border-radius: 8vw;
   padding: 5vw;
-  /* height: 100%; */
-  /* width: clamp(50vw, 380px, 90%); */
   min-width: 100px;
   margin: 1rem;
-  /* position: unset; */
 }
-/* .mui-btn--fab.mui-btn--small {
-  position: absolute;
-  top: 100vw;
-  left: 20vw;
-} */
+
 .paymentIntro h2 {
   text-align: left;
   font-family: lato, sans-serif;
@@ -40,9 +33,6 @@
   flex-flow: column wrap;
 }
 @media screen and (min-width: 768px) {
-  /*.paymentScreen {
-     padding: 6vw 5vw 1vw 5vw; 
-  }*/
   .fooBarLogo {
     width: 6%;
     top: 15vw;
@@ -54,14 +44,12 @@
     width: 60%;
     height: 86vh;
     border-radius: 5vw;
-    /* padding: 10vw 5vw; */
   }
   .hideBackBtn {
     display: none;
   }
   .paymentWrapper {
     flex-flow: row wrap;
-    /* margin: 4.5vw auto; */
   }
   .fooBarLogo {
     width: 4.5%;
@@ -71,7 +59,6 @@
 @media screen and (min-width: 1200px) {
   .paymentIntro {
     line-height: unset;
-    /* width: 57%; */
   }
   .paymentIntro > div:nth-child(2) {
     margin: 3.5vw auto;
@@ -82,10 +69,6 @@
 }
 @media screen and (min-width: 1400px) {
   .paymentIntro {
-    /* width: 57%; */
     height: 82vh;
   }
-  /*.paymentIntro > div:nth-child(2) {
-     margin: 1vw auto; 
-  }*/
 }
