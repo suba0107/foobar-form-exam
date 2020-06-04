@@ -3,9 +3,7 @@ import styles from "./EditAmount.modules.css";
 
 export default function EditAmount(props, onClickButton) {
   const [count, setCount] = useState(props.startAt);
-  // let [amount, setAmount] = useState(props.countBeers);
 
-  let amount = props.countBeers;
   useEffect(() => {
     console.log(props.countBeers.count + count);
     props.onClickButton({ count: count, name: props.countBeers.name }, "counter");

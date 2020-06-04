@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Select_beer.modules.css";
-import { useHistory } from "react-router-dom";
 import Amount from "./Amount.js";
-import { ReactSVG } from "react-svg";
-import { ReactKeg } from "./svg/keg.svg";
 import Keg from "./Keg.js";
 
 export default function EachBeer(props) {

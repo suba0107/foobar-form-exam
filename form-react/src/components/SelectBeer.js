@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Select_beer.modules.css";
-import { useHistory } from "react-router-dom";
 import { Heroku } from "../modules/Heroku";
 import EachBeer from "./EachBeer.js";
 import ShoppingCart from "./ShoppingCart.js";
@@ -10,7 +9,6 @@ export default function SelectBeer(props) {
   const [info, setData] = useState([]);
   const [name, setName] = useState("");
   const [selected, setSelected] = useState({});
-  let beer;
   const [desc, setDesc] = useState([]);
   const [toggleInfoBox, setToggleInfoBox] = useState(false);
 
@@ -44,7 +42,6 @@ export default function SelectBeer(props) {
     setSelected(beers);
   }
 
-  console.log(beer);
   const beers = info.map(function (item) {
     return item.beer;
   });

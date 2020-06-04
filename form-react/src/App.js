@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import SelectBeer from "./components/SelectBeer";
@@ -28,20 +28,20 @@ export default function App() {
 
   return (
     <div>
-      {/* <Switch> looks through <Route>s and
-            renders the first <Route> that matches the current URL. */}
       {location.pathname !== "/select" && location.pathname !== "/" && location.pathname !== "/end" && (
         <header className="header-other">
-          <img src={Logo} className="fooBarLogo"></img>
+          <img src={Logo} className="fooBarLogo" alt="Foobar logo"></img>
         </header>
       )}
 
-      {(location.pathname == "/end" || location.pathname === "/") && (
+      {(location.pathname === "/end" || location.pathname === "/") && (
         <header className="landing-header">
-          <img src={Logo} className="fooBarLogo"></img>
+          <img src={Logo} className="fooBarLogo" alt="Foobar logo"></img>
         </header>
       )}
 
+      {/* <Switch> looks through <Route>s and
+            renders the first <Route> that matches the current URL. */}
       <Switch>
         <Route path="/end">
           <EndingScreen />

@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./Popup.modules.css";
 import Keg from "./Keg.js";
 
 export default function Popup(props) {
   let desc = props.desc.filter((desc) => desc.name === props.beer);
-  let something = desc[0];
 
   return (
     <>
