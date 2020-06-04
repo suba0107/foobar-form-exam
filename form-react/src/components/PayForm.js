@@ -49,7 +49,7 @@ export default function Form(props) {
 
     let cvvInput = document.querySelector("#cvvNumber > input");
 
-    // Validate the length of the input for Credit card details
+    // Validate inputs' length for Credit card details
     if (ccLength.length < 16) {
       evt.preventDefault();
       cardNoMsg.current.textContent = "Card number has to have 16 digits";
