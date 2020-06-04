@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route, useLocation, Link } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import SelectBeer from "./components/SelectBeer";
 import CheckOrder from "./components/CheckOrder";
@@ -30,13 +30,17 @@ export default function App() {
     <div>
       {location.pathname !== "/select" && location.pathname !== "/" && location.pathname !== "/end" && (
         <header className="header-other">
-          <img src={Logo} className="fooBarLogo" alt="Foobar logo"></img>
+          <Link to="/">
+            <img src={Logo} className="fooBarLogo" alt="Foobar logo"></img>
+          </Link>
         </header>
       )}
 
       {(location.pathname === "/end" || location.pathname === "/") && (
         <header className="landing-header">
-          <img src={Logo} className="fooBarLogo" alt="Foobar logo"></img>
+          <Link to="/">
+            <img src={Logo} className="fooBarLogo" alt="Foobar logo"></img>
+          </Link>
         </header>
       )}
 

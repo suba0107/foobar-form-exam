@@ -4,6 +4,7 @@ import EditAmount from "./EditAmount.js";
 import { useHistory } from "react-router-dom";
 import shoppingcarticon from "../svgs/shopping-cart.svg";
 import Logo from "../images/final-logo.png";
+import { Link } from "react-router-dom";
 
 export default function ShoppingCart(props) {
   let history = useHistory();
@@ -75,8 +76,9 @@ export default function ShoppingCart(props) {
 
   return (
     <header id="shopping-cart">
-      <img src={Logo} className="fooBarLogo" alt="Foobar logo"></img>
-
+      <Link to="/">
+        <img src={Logo} className="fooBarLogo" alt="Foobar logo"></img>
+      </Link>
       <section id="shopping-wrapper">
         <div
           onClick={() => {
